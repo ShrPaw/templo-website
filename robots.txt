@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://shrpaw.github.io/templo-website/sitemap.xml
