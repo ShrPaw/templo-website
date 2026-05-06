@@ -71,7 +71,7 @@
 
   // Apply to sections (excluding hero which has its own animation)
   document.querySelectorAll(
-    '.positioning, .method__card, .experience__item, .audience__card, ' +
+    '.positioning, .social-hub__intro, .social-card, .method__card, .experience__item, .audience__card, ' +
     '.results__content, .testimonial, .plan-card, .founder__grid, ' +
     '.community__item, .location__grid, .faq__item, .final-cta__content'
   ).forEach(function(el) {
