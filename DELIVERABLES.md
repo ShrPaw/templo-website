@@ -5,21 +5,25 @@
 ```
 ┌─────────────────────────────────────────────┐
 │  NAVBAR (fixed)                             │
-│  TEMPLO  |  Método  Espacio  Planes  FAQ    │
+│  TEMPLO  |  Redes  Método  Planes  Familia  Ubicación    │
 │                              [Agendar Visita]│
 ├─────────────────────────────────────────────┤
 │                                             │
 │  HERO SECTION                               │
 │  Full-screen, dark overlay on photo         │
-│  "No vienes solo a entrenar.                │
-│   Vienes a construirte."                    │
-│  [Quiero entrenar en TEMPLO] [Descubrir]    │
+│  "No importa dónde empiezas.                │
+│   En TEMPLO te sientes en casa."            │
+│  [Quiero sentirme parte] [Ver redes]        │
 │                                             │
 ├─────────────────────────────────────────────┤
 │  POSITIONING                                │
-│  "No vendemos acceso a máquinas.            │
-│   Vendemos intención, técnica y             │
+│  "No vendemos solo acceso a máquinas.       │
+│   Construimos confianza, pertenencia y      │
 │   transformación."                          │
+├─────────────────────────────────────────────┤
+│  SOCIAL HUB                                 │
+│  WhatsApp · Instagram · TikTok · Facebook   │
+│  YouTube · Google Maps                      │
 ├─────────────────────────────────────────────┤
 │  THE TEMPLO METHOD (5 pillars)              │
 │  ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐       │
@@ -29,15 +33,15 @@
 ├─────────────────────────────────────────────┤
 │  EXPERIENCE / FACILITIES                    │
 │  Large photo grid of the space              │
-│  "Un lugar que te exige más"                │
+│  "Un lugar que te recibe como eres"         │
 ├─────────────────────────────────────────────┤
 │  WHO IS IT FOR (4 cards)                    │
 │  Principiantes | Disciplina |               │
 │  Transformación | Cansados de entrenar solo │
 ├─────────────────────────────────────────────┤
 │  RESULTS / TRANSFORMATION                   │
-│  "Más fuerte. Más constante.                │
-│   Más dueño de tu cuerpo."                  │
+│  "Más fuerte. Más seguro.                   │
+│   Más dueño de tu proceso."                 │
 │  + Testimonial placeholders                 │
 ├─────────────────────────────────────────────┤
 │  PLANS (3 cards)                            │
@@ -49,11 +53,11 @@
 ├─────────────────────────────────────────────┤
 │  FOUNDER — LUCAS                            │
 │  Photo + trust-building copy                │
-│  "El cuerpo responde al trabajo serio."     │
+│  "TEMPLO te entrega espacio y familia."     │
 ├─────────────────────────────────────────────┤
 │  COMMUNITY (6-photo grid)                   │
-│  "Un lugar donde la disciplina se contagia" │
-│  [Seguir en Instagram →]                    │
+│  "TEMPLO es una familia"                    │
+│  [Ver Instagram oficial →]                  │
 ├─────────────────────────────────────────────┤
 │  LOCATION & SCHEDULE                        │
 │  Address + Map + WhatsApp CTA               │
@@ -63,8 +67,8 @@
 │  Principiante? Guiado? Dónde? Cómo?         │
 ├─────────────────────────────────────────────┤
 │  FINAL CTA                                  │
-│  "Tu cuerpo no cambia solo con intención."  │
-│  [Agendar mi visita]                        │
+│  "Tu cambio empieza con un mensaje."        │
+│  [Escribir y reservar mi visita]            │
 ├─────────────────────────────────────────────┤
 │  FOOTER                                     │
 │  TEMPLO | Nav links | Contact links         │
@@ -77,34 +81,42 @@
 
 ### HERO
 - **Tag:** COCHABAMBA · BOLIVIA
-- **Headline:** No vienes solo a entrenar. / Vienes a construirte.
-- **Sub:** Enfoque físico integral para un estilo de vida óptimo. Técnica. Disciplina. Comunidad.
-- **CTA 1:** Quiero entrenar en TEMPLO
-- **CTA 2:** Descubrir el método
+- **Headline:** No importa dónde empiezas. / En TEMPLO te sientes en casa.
+- **Sub:** Un gimnasio para autosuperarte con coaches que te guían, una comunidad que te acepta y todos los enlaces oficiales para hablar, reservar o seguirnos en redes.
+- **CTA 1:** Quiero sentirme parte de TEMPLO
+- **CTA 2:** Ver redes oficiales
 
 ### POSITIONING
-- No vendemos acceso a máquinas. Vendemos *intención, técnica y transformación.*
-- TEMPLO es un espacio donde cada repetición tiene propósito, cada sesión tiene dirección, y cada persona tiene un plan.
+- No vendemos solo acceso a máquinas. Construimos *confianza, pertenencia y transformación.*
+- TEMPLO es el lugar donde cualquier persona —sin importar edad, peso, experiencia o miedo mental— puede sentirse aceptada, guiada y lista para dar el primer paso.
+
+### SOCIAL HUB
+- WhatsApp: reserva o pregunta directo.
+- Instagram: vida dentro de TEMPLO.
+- TikTok: motivación rápida y cercana.
+- Facebook: noticias para la comunidad.
+- YouTube: método y contenido educativo.
+- Google Maps: ubicación del espacio.
 
 ### METHOD (5 Pillars)
-1. **Entrenamiento Guiado** — Cada sesión tiene dirección. No hay improvisación. Trabajas con supervisión técnica que corrige, ajusta y optimiza cada movimiento.
-2. **Técnica y Progresión** — La forma correcta es la base de todo resultado sostenible. Progresas con inteligencia, no con ego.
-3. **Fuerza y Condicionamiento** — Calistenia, pesas libres, resistencia funcional. Construimos cuerpos fuertes, no decorativos.
-4. **Comunidad** — La disciplina se contagia. Aquí entrenas rodeado de personas que comparten tu estándar y tu compromiso.
-5. **Estilo de Vida Físico Integral** — No es solo lo que haces dentro del gym. Es cómo vives, cómo te mueves, cómo cuidas tu cuerpo cada día.
+1. **Entrenamiento Guiado** — Cada sesión tiene dirección. Un coach te mira, te corrige y adapta el trabajo para que avances sin sentirte perdido.
+2. **Técnica y Progresión** — La forma correcta es la base de todo resultado sostenible. Progresas con inteligencia, no con ego, respetando tu nivel y tu historia.
+3. **Fuerza y Condicionamiento** — Calistenia, pesas libres, resistencia funcional. Construimos cuerpos fuertes para vivir mejor, moverte mejor y confiar más en ti.
+4. **Comunidad** — La energía se contagia. Aquí entrenas con personas distintas, pero con el mismo deseo de superarse.
+5. **Estilo de Vida Físico Integral** — No es solo lo que haces dentro del gym. Es cómo empiezas a verte, cuidarte y creer en lo que puedes lograr.
 
 ### EXPERIENCE
-- Un lugar que te exige más
-- El entorno importa. Las personas entrenan mejor cuando el espacio los inspira a dar lo mejor de sí.
+- Un lugar que te recibe como eres
+- El entorno importa. Entrenas mejor cuando te sientes seguro, acompañado y respetado desde el primer día.
 - Captions for each photo area
 
 ### AUDIENCE
-- TEMPLO es para ti si...
+- TEMPLO también es para ti si...
 - 4 cards: Principiante, Disciplina, Transformación, Sin dirección
 
 ### RESULTS
-- Más fuerte. Más constante. Más dueño de tu cuerpo.
-- No prometemos magia. Prometemos un sistema.
+- Más fuerte. Más seguro. Más dueño de tu proceso.
+- No prometemos magia. Prometemos acompañamiento.
 - 2 testimonial placeholders
 
 ### PLANS
@@ -113,12 +125,12 @@
 - **Plan Premium:** 1 a 1, evaluación física, plan nutricional, comunicación directa
 
 ### FOUNDER (Lucas)
-- Lucas creó TEMPLO con una idea simple: entrenar con intención, técnica y disciplina.
-- Quote: "El cuerpo responde al trabajo serio. Mi trabajo es asegurarme de que ese trabajo esté bien hecho."
+- Lucas creó TEMPLO con una idea simple: que entrenar no sea un acto de intimidación, sino una experiencia de intención, técnica y pertenencia.
+- Quote: "TEMPLO te entrega el espacio, la guía y la familia. El cambio nace cuando decides volver por ti."
 
 ### COMMUNITY
-- Un lugar donde la disciplina se contagia
-- Instagram link
+- TEMPLO es una familia
+- Instagram link and social hub links
 
 ### LOCATION
 - Ciclovía casi Av. Simón López, Cochabamba, Bolivia
@@ -133,8 +145,8 @@
 6. ¿Cuál plan es el adecuado para mí?
 
 ### FINAL CTA
-- Tu cuerpo no cambia solo con intención. Cambia cuando encuentras el lugar correcto para construirlo.
-- [Agendar mi visita]
+- Tu cambio empieza con un mensaje. Después llega el primer día, el primer coach y la primera vez que te sientes parte de TEMPLO.
+- [Escribir y reservar mi visita]
 
 ---
 
@@ -282,13 +294,13 @@ templo-website/
 ├── styles.css      (22KB — complete dark theme)
 ├── script.js       (3KB — minimal vanilla JS)
 ├── assets/         (placeholder for images)
-│   ├── hero.jpg
-│   ├── space-main.jpg
-│   ├── space-weights.jpg
-│   ├── space-calisthenics.jpg
-│   ├── lucas.jpg
-│   ├── community-1.jpg through community-6.jpg
-│   └── favicon.ico
+│   ├── hero.svg
+│   ├── space-main.svg
+│   ├── space-weights.svg
+│   ├── space-calisthenics.svg
+│   ├── lucas.svg
+│   ├── community-1.svg through community-6.svg
+│   └── favicon.svg
 ├── README.md
 └── DELIVERABLES.md
 ```

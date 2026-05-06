@@ -1,8 +1,8 @@
-# TEMPLO — Premium Fitness Website
+# TEMPLO — Social Hub Fitness Website
 
-> Enfoque físico integral para un estilo de vida óptimo.
+> La familia fitness donde puedes empezar como eres y construir la versión que quieres ser.
 
-A premium landing page for TEMPLO gym in Cochabamba, Bolivia.
+Landing page estática para TEMPLO en Cochabamba, Bolivia. La página funciona como centro oficial de enlaces: WhatsApp, Instagram, TikTok, Facebook, YouTube y Google Maps, con copy enfocado en pertenencia, autosuperación y conversión emocional.
 
 ## Quick Start
 
@@ -11,36 +11,36 @@ A premium landing page for TEMPLO gym in Cochabamba, Bolivia.
 open index.html
 
 # Or serve locally
-npx serve .
+python3 -m http.server 8000
 ```
 
 ## Structure
 
 ```
 templo-website/
-├── index.html          # Main landing page
-├── styles.css          # All styles (dark premium theme)
-├── script.js           # Minimal interactions
-├── assets/             # Place gym photos here
-│   ├── hero.jpg        # Hero background
-│   ├── method-*.jpg    # Method pillar images
-│   ├── space-*.jpg     # Facility photos
-│   └── team.jpg        # Coach/owner photo
-├── DELIVERABLES.md     # Full project documentation
+├── index.html          # Landing page + social hub + conversion CTAs
+├── styles.css          # Dark premium theme and responsive components
+├── script.js           # Mobile menu, smooth scroll, scroll reveal
+├── assets/             # Replaceable branded SVG placeholders
+│   ├── hero.svg        # Hero background placeholder
+│   ├── space-*.svg     # Facility placeholders
+│   ├── community-*.svg # Community placeholders
+│   └── lucas.svg       # Coach/founder placeholder
+├── DELIVERABLES.md     # Project documentation
 └── README.md
 ```
 
 ## Customization
 
-1. Replace placeholder images in `assets/`
-2. Update WhatsApp number in `index.html` (search for `591XXXXXXXX`)
-3. Update pricing in the Plans section
-4. Add real testimonials
-5. Update opening hours
+1. Replace `591XXXXXXXX` in `index.html` with the real WhatsApp number.
+2. Confirm or update official social handles in the social hub (`Instagram`, `TikTok`, `Facebook`, `YouTube`).
+3. Replace SVG placeholders in `assets/` with real gym photos when available.
+4. Update pricing in the Plans section.
+5. Add real testimonials and final opening hours.
 
 ## Deployment
 
-Deploy to Vercel, Netlify, or GitHub Pages — it's static HTML.
+Deploy to Vercel, Netlify, Cloudflare Pages, GitHub Pages, or any static hosting.
 
 ## Credits
 
