@@ -653,6 +653,31 @@ a {
   font-style: italic;
 }
 
+.service-card--premium {
+  border: 1px solid rgba(212, 168, 83, 0.2);
+  background: linear-gradient(135deg, var(--dark-2) 0%, rgba(212, 168, 83, 0.03) 100%);
+  position: relative;
+}
+
+.service-card--premium:hover {
+  border-color: rgba(212, 168, 83, 0.35);
+  box-shadow: 0 0 40px rgba(212, 168, 83, 0.06);
+}
+
+.service-card__badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--accent);
+  color: var(--black);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 1px;
+}
+
 .services__cta {
   text-align: center;
 }
