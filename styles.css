@@ -298,6 +298,21 @@ a {
 }
 
 /* ---------- RESPONSIVE NAV ---------- */
+@media (max-width: 900px) {
+  .hero__content {
+    text-align: center;
+    margin: 0 auto;
+  }
+  .hero__sub {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero__proof,
+  .hero__actions {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 768px) {
   .nav__links,
   .nav__cta {
@@ -319,7 +334,7 @@ a {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: hidden;
 }
 
@@ -334,6 +349,7 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  filter: saturate(0.9) contrast(1.08);
   /* Placeholder gradient when no image */
   background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%);
 }
@@ -341,20 +357,17 @@ a {
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(10,10,10,0.4) 0%,
-    rgba(10,10,10,0.6) 50%,
-    rgba(10,10,10,0.95) 100%
-  );
+  background:
+    linear-gradient(90deg, rgba(5,5,5,0.9) 0%, rgba(5,5,5,0.62) 42%, rgba(5,5,5,0.18) 74%, rgba(5,5,5,0.72) 100%),
+    linear-gradient(to bottom, rgba(10,10,10,0.16) 0%, rgba(10,10,10,0.48) 55%, rgba(10,10,10,0.96) 100%);
 }
 
 .hero__content {
   position: relative;
   z-index: 1;
-  text-align: center;
-  max-width: 800px;
-  padding: 0 24px;
+  text-align: left;
+  max-width: 700px;
+  padding: 0 clamp(24px, 7vw, 96px);
 }
 
 .hero__tag {
@@ -388,19 +401,37 @@ a {
   font-size: clamp(1rem, 2vw, 1.15rem);
   color: var(--gray-light);
   line-height: 1.7;
-  margin-bottom: 40px;
-  max-width: 540px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-bottom: 24px;
+  max-width: 560px;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 0.8s 0.6s var(--ease) forwards;
 }
 
+.hero__proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s 0.72s var(--ease) forwards;
+}
+
+.hero__proof span {
+  border: 1px solid rgba(201, 169, 110, 0.26);
+  color: var(--gray-light);
+  background: rgba(255, 255, 255, 0.035);
+  padding: 8px 12px;
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .hero__actions {
   display: flex;
   gap: 16px;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   opacity: 0;
   transform: translateY(20px);
@@ -480,6 +511,46 @@ a {
   font-size: 1rem !important;
   color: var(--gray-light) !important;
   line-height: 1.7;
+}
+
+
+/* ========================================
+   COMPACT SOCIAL LINKS
+   ======================================== */
+.location__social {
+  margin-top: 32px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.location__social p {
+  font-size: 0.72rem;
+  color: var(--gray);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.location__social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.location__social-links a {
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--gray-light);
+  padding: 8px 12px;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease);
+}
+
+.location__social-links a:hover {
+  color: var(--accent);
+  border-color: rgba(201, 169, 110, 0.42);
+  background: rgba(201, 169, 110, 0.06);
 }
 
 /* ========================================
@@ -706,6 +777,14 @@ a {
   color: var(--white);
   margin-bottom: 24px;
   font-style: italic;
+}
+
+.testimonial__text--placeholder {
+  color: var(--gray-light);
+  font-family: var(--font-body);
+  font-style: normal;
+  border: 1px dashed rgba(201, 169, 110, 0.35);
+  padding: 16px;
 }
 
 .testimonial__author {
@@ -1210,7 +1289,7 @@ a {
 /* ========================================
    PLACEHOLDER IMAGES
    ======================================== */
-.hero__img[src="assets/hero.jpg"],
+.hero__img[src="assets/hero-buddha-placeholder.svg"],
 .experience__item img[src^="assets/"],
 .founder__image img[src^="assets/"],
 .community__item img[src^="assets/"] {

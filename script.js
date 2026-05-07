@@ -73,7 +73,7 @@
   document.querySelectorAll(
     '.positioning, .method__card, .experience__item, .audience__card, ' +
     '.results__content, .testimonial, .plan-card, .founder__grid, ' +
-    '.community__item, .location__grid, .faq__item, .final-cta__content'
+    '.community__item, .location__grid, .location__social, .faq__item, .final-cta__content'
   ).forEach(function(el) {
     el.classList.add('fade-in');
     observer.observe(el);
