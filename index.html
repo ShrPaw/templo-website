@@ -8,7 +8,7 @@
   <meta property="og:title" content="TEMPLO — Entrenamiento Guiado en Cochabamba">
   <meta property="og:description" content="No vienes solo a entrenar. Vienes a construirte. Power Plate, calistenia, máquinas y entrenamiento funcional guiado.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/hero-buddha-placeholder.svg">
+  <meta property="og:image" content="assets/BUDDHA-og.webp">
   <meta property="og:url" content="https://templo-website-qbw5.vercel.app/">
   <meta name="theme-color" content="#0a0a0a">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -52,7 +52,11 @@
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
     <div class="hero__bg">
-      <img src="assets/hero-buddha-placeholder.svg" alt="Estatua Buda en piedra oscura — símbolo visual de TEMPLO" class="hero__img" loading="eager" fetchpriority="high">
+      <picture>
+        <source media="(max-width: 768px)" srcset="assets/BUDDHA-mobile.webp">
+        <source media="(min-width: 769px)" srcset="assets/BUDDHA-desktop.webp">
+        <img src="assets/BUDDHA-desktop.webp" alt="Estatua Buda en piedra oscura — símbolo visual de TEMPLO" class="hero__img" loading="eager" fetchpriority="high">
+      </picture>
       <div class="hero__overlay"></div>
     </div>
     <div class="hero__content">
