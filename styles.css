@@ -183,12 +183,19 @@ a {
 .nav__logo {
   display: inline-flex;
   align-items: center;
+  gap: 10px;
+}
+
+.nav__logo-symbol {
+  display: block;
+  height: 24px;
+  width: auto;
 }
 
 .nav__logo-img {
-  height: 32px;
-  width: auto;
   display: block;
+  height: 28px;
+  width: auto;
 }
 
 .nav__links {
@@ -345,8 +352,11 @@ a {
   .nav__toggle {
     display: flex;
   }
+  .nav__logo-symbol {
+    height: 20px;
+  }
   .nav__logo-img {
-    height: 28px;
+    height: 24px;
   }
   .mobile-menu {
     display: flex;
@@ -420,13 +430,26 @@ a {
 }
 
 .hero__symbol {
-  width: 36px;
+  width: 56px;
   height: auto;
-  opacity: 0.25;
   margin-bottom: 20px;
   opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s 0.15s var(--ease-out) forwards;
+  transform: translateY(16px);
+  animation: fadeUpSubtle 0.8s 0.15s var(--ease-out) forwards;
+}
+
+@keyframes fadeUpSubtle {
+  to {
+    opacity: 0.5;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__symbol {
+    width: 46px;
+    margin-bottom: 16px;
+  }
 }
 
 .hero__title {
