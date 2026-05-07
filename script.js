@@ -7,24 +7,21 @@
   'use strict';
 
   // ---- Nav scroll effect ----
-  const nav = document.getElementById('nav');
-  let lastScroll = 0;
+  var nav = document.getElementById('nav');
 
   function handleScroll() {
-    const scrollY = window.scrollY;
-    if (scrollY > 60) {
+    if (window.scrollY > 60) {
       nav.classList.add('nav--scrolled');
     } else {
       nav.classList.remove('nav--scrolled');
     }
-    lastScroll = scrollY;
   }
 
   window.addEventListener('scroll', handleScroll, { passive: true });
 
   // ---- Mobile menu ----
-  const toggle = document.getElementById('navToggle');
-  const menu = document.getElementById('mobileMenu');
+  var toggle = document.getElementById('navToggle');
+  var menu = document.getElementById('mobileMenu');
 
   if (toggle && menu) {
     toggle.addEventListener('click', function() {
@@ -32,7 +29,6 @@
       document.body.style.overflow = menu.classList.contains('mobile-menu--open') ? 'hidden' : '';
     });
 
-    // Close on link click
     menu.querySelectorAll('a').forEach(function(link) {
       link.addEventListener('click', function() {
         menu.classList.remove('mobile-menu--open');
@@ -69,9 +65,8 @@
     });
   }, observerOptions);
 
-  // Apply to sections (excluding hero which has its own animation)
   document.querySelectorAll(
-    '.positioning, .social-hub__intro, .social-card, .method__card, .experience__item, .audience__card, ' +
+    '.positioning, .method__card, .experience__item, .audience__card, ' +
     '.results__content, .testimonial, .plan-card, .founder__grid, ' +
     '.community__item, .location__grid, .location__social, .faq__item, .final-cta__content'
   ).forEach(function(el) {
