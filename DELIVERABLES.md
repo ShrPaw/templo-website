@@ -6,6 +6,7 @@
 ┌─────────────────────────────────────────────┐
 │  NAVBAR (fixed)                             │
 │  TEMPLO  |  Método  Espacio  Planes  Comunidad  Ubicación    │
+│  TEMPLO  |  Redes  Método  Planes  Familia  Ubicación    │
 │                              [Agendar Visita]│
 ├─────────────────────────────────────────────┤
 │                                             │
@@ -20,6 +21,19 @@
 │  "TEMPLO no es solo un gym.                 │
 │   Es un entorno para entrenar con           │
 │   dirección, técnica y disciplina."         │
+│  "No importa dónde empiezas.                │
+│   En TEMPLO te sientes en casa."            │
+│  [Quiero sentirme parte] [Ver redes]        │
+│                                             │
+├─────────────────────────────────────────────┤
+│  POSITIONING                                │
+│  "No vendemos solo acceso a máquinas.       │
+│   Construimos confianza, pertenencia y      │
+│   transformación."                          │
+├─────────────────────────────────────────────┤
+│  SOCIAL HUB                                 │
+│  WhatsApp · Instagram · TikTok · Facebook   │
+│  YouTube · Google Maps                      │
 ├─────────────────────────────────────────────┤
 │  THE TEMPLO METHOD (5 pillars)              │
 │  ┌────┐ ┌────┐ ┌────┐ ┌────┐ ┌────┐       │
@@ -30,14 +44,15 @@
 │  EXPERIENCE / FACILITIES                    │
 │  Large photo grid of the space              │
 │  "Un espacio diseñado para elevar tu estándar" │
+│  "Un lugar que te recibe como eres"         │
 ├─────────────────────────────────────────────┤
 │  WHO IS IT FOR (4 cards)                    │
 │  Principiantes | Disciplina |               │
 │  Transformación | Cansados de entrenar solo │
 ├─────────────────────────────────────────────┤
 │  RESULTS / TRANSFORMATION                   │
-│  "Más fuerte. Más constante.                │
-│   Más dueño de tu cuerpo."                  │
+│  "Más fuerte. Más seguro.                   │
+│   Más dueño de tu proceso."                 │
 │  + Testimonial placeholders                 │
 ├─────────────────────────────────────────────┤
 │  PLANS (3 cards)                            │
@@ -53,6 +68,10 @@
 ├─────────────────────────────────────────────┤
 │  COMMUNITY (6-photo grid)                   │
 │  "Un ambiente donde la disciplina se contagia" │
+│  "TEMPLO te entrega espacio y familia."     │
+├─────────────────────────────────────────────┤
+│  COMMUNITY (6-photo grid)                   │
+│  "TEMPLO es una familia"                    │
 │  [Ver Instagram oficial →]                  │
 ├─────────────────────────────────────────────┤
 │  LOCATION & SCHEDULE                        │
@@ -65,6 +84,8 @@
 │  FINAL CTA                                  │
 │  "Empieza con una visita."                  │
 │  [Agendar mi visita por WhatsApp]           │
+│  "Tu cambio empieza con un mensaje."        │
+│  [Escribir y reservar mi visita]            │
 ├─────────────────────────────────────────────┤
 │  FOOTER                                     │
 │  TEMPLO | Nav links | Contact links         │
@@ -101,6 +122,33 @@
 ### EXPERIENCE
 - Un espacio diseñado para elevar tu estándar
 - Materiales oscuros, energía enfocada y equipamiento real. Un ambiente premium para entrenar con calma, intensidad y dirección.
+- **Headline:** No importa dónde empiezas. / En TEMPLO te sientes en casa.
+- **Sub:** Un gimnasio para autosuperarte con coaches que te guían, una comunidad que te acepta y todos los enlaces oficiales para hablar, reservar o seguirnos en redes.
+- **CTA 1:** Quiero sentirme parte de TEMPLO
+- **CTA 2:** Ver redes oficiales
+
+### POSITIONING
+- No vendemos solo acceso a máquinas. Construimos *confianza, pertenencia y transformación.*
+- TEMPLO es el lugar donde cualquier persona —sin importar edad, peso, experiencia o miedo mental— puede sentirse aceptada, guiada y lista para dar el primer paso.
+
+### SOCIAL HUB
+- WhatsApp: reserva o pregunta directo.
+- Instagram: vida dentro de TEMPLO.
+- TikTok: motivación rápida y cercana.
+- Facebook: noticias para la comunidad.
+- YouTube: método y contenido educativo.
+- Google Maps: ubicación del espacio.
+
+### METHOD (5 Pillars)
+1. **Entrenamiento Guiado** — Cada sesión tiene dirección. Un coach te mira, te corrige y adapta el trabajo para que avances sin sentirte perdido.
+2. **Técnica y Progresión** — La forma correcta es la base de todo resultado sostenible. Progresas con inteligencia, no con ego, respetando tu nivel y tu historia.
+3. **Fuerza y Condicionamiento** — Calistenia, pesas libres, resistencia funcional. Construimos cuerpos fuertes para vivir mejor, moverte mejor y confiar más en ti.
+4. **Comunidad** — La energía se contagia. Aquí entrenas con personas distintas, pero con el mismo deseo de superarse.
+5. **Estilo de Vida Físico Integral** — No es solo lo que haces dentro del gym. Es cómo empiezas a verte, cuidarte y creer en lo que puedes lograr.
+
+### EXPERIENCE
+- Un lugar que te recibe como eres
+- El entorno importa. Entrenas mejor cuando te sientes seguro, acompañado y respetado desde el primer día.
 - Captions for each photo area
 
 ### AUDIENCE
@@ -124,6 +172,12 @@
 ### COMMUNITY
 - Un ambiente donde la disciplina se contagia
 - Instagram link + compact official social links in location/contact
+- Lucas creó TEMPLO con una idea simple: que entrenar no sea un acto de intimidación, sino una experiencia de intención, técnica y pertenencia.
+- Quote: "TEMPLO te entrega el espacio, la guía y la familia. El cambio nace cuando decides volver por ti."
+
+### COMMUNITY
+- TEMPLO es una familia
+- Instagram link and social hub links
 
 ### LOCATION
 - Ciclovía casi Av. Simón López, Cochabamba, Bolivia
@@ -140,6 +194,8 @@
 ### FINAL CTA
 - Empieza con una visita. Lo demás se construye con disciplina.
 - [Agendar mi visita por WhatsApp]
+- Tu cambio empieza con un mensaje. Después llega el primer día, el primer coach y la primera vez que te sientes parte de TEMPLO.
+- [Escribir y reservar mi visita]
 
 ---
 
@@ -293,6 +349,7 @@ templo-website/
 ├── script.js       (3KB — minimal vanilla JS)
 ├── assets/         (placeholder for images)
 │   ├── hero-buddha-placeholder.svg
+│   ├── hero.svg
 │   ├── space-main.svg
 │   ├── space-weights.svg
 │   ├── space-calisthenics.svg
