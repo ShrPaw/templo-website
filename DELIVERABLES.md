@@ -5,12 +5,22 @@
 ```
 ┌─────────────────────────────────────────────┐
 │  NAVBAR (fixed)                             │
+│  TEMPLO  |  Método  Espacio  Planes  Comunidad  Ubicación    │
 │  TEMPLO  |  Redes  Método  Planes  Familia  Ubicación    │
 │                              [Agendar Visita]│
 ├─────────────────────────────────────────────┤
 │                                             │
 │  HERO SECTION                               │
 │  Full-screen, dark overlay on photo         │
+│  "Construye fuerza.                         │
+│   Entrena con propósito."                   │
+│  [Agendar WhatsApp] [Conocer método]        │
+│                                             │
+├─────────────────────────────────────────────┤
+│  POSITIONING                                │
+│  "TEMPLO no es solo un gym.                 │
+│   Es un entorno para entrenar con           │
+│   dirección, técnica y disciplina."         │
 │  "No importa dónde empiezas.                │
 │   En TEMPLO te sientes en casa."            │
 │  [Quiero sentirme parte] [Ver redes]        │
@@ -33,6 +43,7 @@
 ├─────────────────────────────────────────────┤
 │  EXPERIENCE / FACILITIES                    │
 │  Large photo grid of the space              │
+│  "Un espacio diseñado para elevar tu estándar" │
 │  "Un lugar que te recibe como eres"         │
 ├─────────────────────────────────────────────┤
 │  WHO IS IT FOR (4 cards)                    │
@@ -53,6 +64,10 @@
 ├─────────────────────────────────────────────┤
 │  FOUNDER — LUCAS                            │
 │  Photo + trust-building copy                │
+│  "Entrenar con intención cambia tu estándar."     │
+├─────────────────────────────────────────────┤
+│  COMMUNITY (6-photo grid)                   │
+│  "Un ambiente donde la disciplina se contagia" │
 │  "TEMPLO te entrega espacio y familia."     │
 ├─────────────────────────────────────────────┤
 │  COMMUNITY (6-photo grid)                   │
@@ -67,6 +82,8 @@
 │  Principiante? Guiado? Dónde? Cómo?         │
 ├─────────────────────────────────────────────┤
 │  FINAL CTA                                  │
+│  "Empieza con una visita."                  │
+│  [Agendar mi visita por WhatsApp]           │
 │  "Tu cambio empieza con un mensaje."        │
 │  [Escribir y reservar mi visita]            │
 ├─────────────────────────────────────────────┤
@@ -81,6 +98,30 @@
 
 ### HERO
 - **Tag:** COCHABAMBA · BOLIVIA
+- **Headline:** Construye fuerza. / Entrena con propósito.
+- **Sub:** Disciplina, guía técnica y un espacio hecho para transformarte. TEMPLO es un entorno de entrenamiento donde el cuerpo se construye con intención.
+- **CTA 1:** Agendar visita por WhatsApp
+- **CTA 2:** Conocer el método
+
+### POSITIONING
+- TEMPLO no es solo un gym. Es un entorno para entrenar con *dirección, técnica y disciplina.*
+- Aquí no vienes a improvisar. Vienes a progresar con guía, elevar tu estándar y construir un cuerpo y una mentalidad más fuertes.
+
+### SOCIAL LINKS
+- Los enlaces sociales quedan compactos en contacto/ubicación.
+- Prioridad: WhatsApp, Instagram y Google Maps.
+- Secundarios: TikTok, Facebook y YouTube.
+
+### METHOD (5 Pillars)
+1. **Entrenamiento Guiado** — No entrenas al azar. Un coach orienta, corrige y ajusta para que cada sesión tenga propósito.
+2. **Técnica y Progresión** — La técnica ordena el esfuerzo. Progresas con estructura, control y cargas adecuadas a tu nivel.
+3. **Fuerza y Acondicionamiento** — Pesas libres, calistenia y trabajo funcional para construir fuerza útil, capacidad física y confianza corporal.
+4. **Comunidad** — El esfuerzo compartido eleva el estándar. Entrenas con personas que también eligieron superarse.
+5. **Estilo de Vida Físico Integral** — El entrenamiento se vuelve parte de tu identidad: cómo te mueves, cómo te cuidas y cómo sostienes disciplina fuera del gym.
+
+### EXPERIENCE
+- Un espacio diseñado para elevar tu estándar
+- Materiales oscuros, energía enfocada y equipamiento real. Un ambiente premium para entrenar con calma, intensidad y dirección.
 - **Headline:** No importa dónde empiezas. / En TEMPLO te sientes en casa.
 - **Sub:** Un gimnasio para autosuperarte con coaches que te guían, una comunidad que te acepta y todos los enlaces oficiales para hablar, reservar o seguirnos en redes.
 - **CTA 1:** Quiero sentirme parte de TEMPLO
@@ -125,6 +166,12 @@
 - **Plan Premium:** 1 a 1, evaluación física, plan nutricional, comunicación directa
 
 ### FOUNDER (Lucas)
+- Lucas creó TEMPLO con una idea clara: que entrenar no sea improvisado, sino un proceso con dirección, técnica y una cultura que te impulse a crecer.
+- Quote: "Entrenar con intención cambia la forma en que te mueves, decides y sostienes tu propio estándar."
+
+### COMMUNITY
+- Un ambiente donde la disciplina se contagia
+- Instagram link + compact official social links in location/contact
 - Lucas creó TEMPLO con una idea simple: que entrenar no sea un acto de intimidación, sino una experiencia de intención, técnica y pertenencia.
 - Quote: "TEMPLO te entrega el espacio, la guía y la familia. El cambio nace cuando decides volver por ti."
 
@@ -145,6 +192,8 @@
 6. ¿Cuál plan es el adecuado para mí?
 
 ### FINAL CTA
+- Empieza con una visita. Lo demás se construye con disciplina.
+- [Agendar mi visita por WhatsApp]
 - Tu cambio empieza con un mensaje. Después llega el primer día, el primer coach y la primera vez que te sientes parte de TEMPLO.
 - [Escribir y reservar mi visita]
 
@@ -170,6 +219,11 @@
 - **Display / Headlines:** Playfair Display (serif) — weight 400–600
 - **Body / UI:** Inter (sans-serif) — weight 300–600
 - **Scale:** Responsive with `clamp()`, min ~1rem, max ~4rem for hero
+
+### Buddha visual direction
+- Buddha is a premium brand symbol, not religious teaching content.
+- Final asset should feel cinematic, sculptural, dark stone / dark bronze / gunmetal, with controlled warm gold lighting.
+- Current implementation uses `assets/hero-buddha-placeholder.svg` until final art is supplied.
 
 ### Design Principles
 - **Dark dominance:** 95%+ of the page is dark. Light text. Gold accents.
@@ -219,10 +273,10 @@
 ## 5. Conversion Checklist
 
 ### WhatsApp Integration
-- [ ] Replace `591XXXXXXXX` with real WhatsApp number in ALL links (search the HTML for this placeholder)
-- [ ] Pre-filled messages are contextual per section (different for plans, visits, general)
-- [ ] Floating WhatsApp button visible on all screen sizes
-- [ ] WhatsApp links open in new tab with `wa.me` format
+- [x] Real WhatsApp number added: `+59172001680`
+- [x] Pre-filled messages are contextual per section (different for plans, visits, general)
+- [x] Floating WhatsApp button visible on all screen sizes
+- [x] WhatsApp links open in new tab with `wa.me` format
 
 ### CTAs (Count & Placement)
 - [x] Hero: 2 CTAs (primary + secondary)
@@ -294,6 +348,7 @@ templo-website/
 ├── styles.css      (22KB — complete dark theme)
 ├── script.js       (3KB — minimal vanilla JS)
 ├── assets/         (placeholder for images)
+│   ├── hero-buddha-placeholder.svg
 │   ├── hero.svg
 │   ├── space-main.svg
 │   ├── space-weights.svg
