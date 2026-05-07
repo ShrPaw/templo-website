@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TEMPLO — Entrenamiento Guiado en Cochabamba</title>
-  <meta name="description" content="TEMPLO: entorno premium de entrenamiento guiado, fuerza y disciplina en Cochabamba. Agenda tu visita por WhatsApp.">
+  <meta name="description" content="TEMPLO: entorno premium de entrenamiento guiado con Power Plate, calistenia, máquinas y fuerza en Cochabamba. Agenda tu visita por WhatsApp.">
   <meta property="og:title" content="TEMPLO — Entrenamiento Guiado en Cochabamba">
-  <meta property="og:description" content="Disciplina, guía técnica y un espacio diseñado para transformar tu cuerpo con intención.">
+  <meta property="og:description" content="No vienes solo a entrenar. Vienes a construirte. Power Plate, calistenia, máquinas y entrenamiento funcional guiado.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/hero-buddha-placeholder.svg">
   <meta property="og:url" content="https://templo-website-qbw5.vercel.app/">
@@ -25,21 +25,23 @@
       <a href="#" class="nav__logo">TEMPLO</a>
       <div class="nav__links" id="navLinks">
         <a href="#method" class="nav__link">Método</a>
+        <a href="#services" class="nav__link">Servicios</a>
         <a href="#plans" class="nav__link">Planes</a>
         <a href="#location" class="nav__link">Ubicación</a>
       </div>
       <a href="https://wa.me/59172001680?text=Hola%2C%20quiero%20agendar%20una%20visita%20a%20TEMPLO." class="nav__cta" target="_blank" rel="noopener">
         Agendar Visita
       </a>
-      <button class="nav__toggle" id="navToggle" aria-label="Menú">
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Menú de navegación">
     <a href="#method" class="mobile-menu__link">Método</a>
+    <a href="#services" class="mobile-menu__link">Servicios</a>
     <a href="#plans" class="mobile-menu__link">Planes</a>
     <a href="#location" class="mobile-menu__link">Ubicación</a>
     <a href="https://wa.me/59172001680?text=Hola%2C%20quiero%20agendar%20una%20visita%20a%20TEMPLO." class="mobile-menu__cta" target="_blank" rel="noopener">
@@ -50,19 +52,13 @@
   <!-- ========== HERO ========== -->
   <section class="hero" id="hero">
     <div class="hero__bg">
-      <img src="assets/hero-buddha-placeholder.svg" alt="Estatua Buda en piedra oscura — símbolo visual de TEMPLO" class="hero__img" loading="eager">
+      <img src="assets/hero-buddha-placeholder.svg" alt="Estatua Buda en piedra oscura — símbolo visual de TEMPLO" class="hero__img" loading="eager" fetchpriority="high">
       <div class="hero__overlay"></div>
     </div>
     <div class="hero__content">
       <p class="hero__tag">COCHABAMBA · BOLIVIA</p>
       <h1 class="hero__title">No vienes solo a entrenar.<br><span class="hero__title--accent">Vienes a construirte.</span></h1>
-      <p class="hero__sub">Entrenamiento guiado, técnica y disciplina en un espacio diseñado para transformar tu cuerpo con intención.</p>
-      <div class="hero__proof">
-        <span>Entrenamiento guiado</span>
-        <span>Técnica</span>
-        <span>Fuerza</span>
-        <span>Disciplina</span>
-      </div>
+      <p class="hero__sub">Guía, técnica y disciplina en un entorno diseñado para elevar tu cuerpo, tu constancia y tu estándar.</p>
       <div class="hero__actions">
         <a href="https://wa.me/59172001680?text=Hola%2C%20quiero%20agendar%20una%20visita%20a%20TEMPLO." class="btn btn--primary" target="_blank" rel="noopener">
           Agendar visita por WhatsApp
@@ -72,8 +68,7 @@
         </a>
       </div>
     </div>
-    <div class="hero__scroll">
-      <span>Descubre más</span>
+    <div class="hero__scroll" aria-hidden="true">
       <div class="hero__scroll-line"></div>
     </div>
   </section>
@@ -83,7 +78,6 @@
     <div class="container">
       <blockquote class="positioning__quote">
         <p>TEMPLO no es un gym más.<br>Es un entorno para entrenar con <em>dirección, técnica y disciplina.</em></p>
-        <p class="positioning__sub">No vendemos acceso a máquinas. Construimos fuerza, confianza y transformación real — sesión por sesión.</p>
       </blockquote>
     </div>
   </section>
@@ -94,7 +88,7 @@
       <div class="section-header">
         <span class="section-label">Nuestro Enfoque</span>
         <h2 class="section-title">El Método TEMPLO</h2>
-        <p class="section-sub">Cuatro pilares para que entrenar deje de sentirse improvisado y se convierta en progreso real.</p>
+        <p class="section-sub">Cuatro pilares para que entrenar deje de improvisado y se convierta en progreso real.</p>
       </div>
       <div class="method__grid">
         <div class="method__card">
@@ -121,36 +115,56 @@
     </div>
   </section>
 
-  <!-- ========== EXPERIENCE / FACILITIES ========== -->
-  <section class="experience" id="experience">
+  <!-- ========== SERVICES / TRAINING EXPERIENCES ========== -->
+  <section class="services" id="services">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">El Espacio</span>
-        <h2 class="section-title">Diseñado para elevar tu estándar</h2>
-        <p class="section-sub">Materiales oscuros, energía enfocada, equipamiento real. Un ambiente que cambia cómo entrenas.</p>
+        <span class="section-label">Entrenamiento</span>
+        <h2 class="section-title">Tu meta necesita un método.</h2>
+        <p class="section-sub">Power Plate, calistenia, máquinas y trabajo funcional se integran con una sola idea: elegir la herramienta correcta para avanzar con intención.</p>
       </div>
-      <div class="experience__grid">
-        <div class="experience__item experience__item--large">
-          <img src="assets/space-main.svg" alt="Interior de TEMPLO" loading="lazy">
-          <div class="experience__caption">
-            <h3>Zona de Entrenamiento</h3>
-            <p>Equipamiento profesional, amplitud y una atmósfera pensada para trabajo serio.</p>
+      <div class="services__grid">
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4m4 0h4"/></svg>
           </div>
+          <h3 class="service-card__name">Power Plate Premium</h3>
+          <p class="service-card__desc">Entrenamiento avanzado en plataformas reconocidas internacionalmente para activación, fuerza, estabilidad y acondicionamiento.</p>
         </div>
-        <div class="experience__item">
-          <img src="assets/space-weights.svg" alt="Área de pesas TEMPLO" loading="lazy">
-          <div class="experience__caption">
-            <h3>Pesas Libres</h3>
-            <p>Herramientas precisas para fuerza, técnica y progresión.</p>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="5" r="2"/><path d="M12 7v5l-3 5m3-5l3 5M7 12h10"/></svg>
           </div>
+          <h3 class="service-card__name">Calistenia</h3>
+          <p class="service-card__desc">Fuerza, control corporal y progresión usando el peso de tu propio cuerpo.</p>
         </div>
-        <div class="experience__item">
-          <img src="assets/space-calisthenics.svg" alt="Calistenia TEMPLO" loading="lazy">
-          <div class="experience__caption">
-            <h3>Calistenia</h3>
-            <p>Control corporal, movilidad y dominio del propio peso.</p>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 4v16M18 4v16M6 12h12M3 8h6M15 8h6M3 16h6M15 16h6"/></svg>
           </div>
+          <h3 class="service-card__name">Fuerza y Máquinas</h3>
+          <p class="service-card__desc">Trabajo guiado con resistencia, técnica y progresión para fortalecer músculos específicos.</p>
         </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 class="service-card__name">Funcional y Acondicionamiento</h3>
+          <p class="service-card__desc">Movimientos desde distintos ángulos para mejorar capacidad física, coordinación, intensidad y rendimiento.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <h3 class="service-card__name">Entrenamiento Adaptado</h3>
+          <p class="service-card__desc">Ejercicios seleccionados con mayor control y menor impacto cuando tu cuerpo necesita avanzar de forma más inteligente.</p>
+          <p class="service-card__disclaimer">TEMPLO no reemplaza atención médica o fisioterapia. Si tienes una lesión o condición específica, consulta con un profesional de salud.</p>
+        </div>
+      </div>
+      <div class="services__cta">
+        <a href="https://wa.me/59172001680?text=Hola%2C%20quiero%20saber%20qu%C3%A9%20tipo%20de%20entrenamiento%20me%20conviene%20en%20TEMPLO." class="btn btn--primary" target="_blank" rel="noopener">
+          Quiero saber qué entrenamiento me conviene
+        </a>
       </div>
     </div>
   </section>
@@ -160,36 +174,58 @@
     <div class="container">
       <div class="section-header">
         <span class="section-label">Para Quién</span>
-        <h2 class="section-title">TEMPLO es para ti si...</h2>
+        <h2 class="section-title">TEMPLO es para personas con una meta.</h2>
       </div>
       <div class="audience__grid">
         <div class="audience__card">
-          <div class="audience__icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-          </div>
-          <h3>Estás empezando desde cero</h3>
-          <p>Quieres dirección, técnica y un proceso claro desde el primer día — sin improvisar.</p>
+          <h3>Quieres un cuerpo más fuerte</h3>
+          <p>Construir fuerza real, mejorar tu presencia física y ver progreso concreto — sesión por sesión.</p>
         </div>
         <div class="audience__card">
-          <div class="audience__icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-          </div>
-          <h3>Necesitas disciplina</h3>
-          <p>Cuando la motivación se acaba, necesitas estructura, rutina y un estándar que te sostenga.</p>
+          <h3>Quieres disciplina</h3>
+          <p>Estructura, rutina y un estándar que te sostiene cuando la motivación se acaba.</p>
         </div>
         <div class="audience__card">
-          <div class="audience__icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-          </div>
-          <h3>Quieres transformarte</h3>
-          <p>Un cambio físico que también construya seguridad, constancia y respeto por tu propio proceso.</p>
+          <h3>Quieres entrenar con dirección</h3>
+          <p>No más azar. Un método claro, guía técnica y un proceso diseñado para tu objetivo.</p>
         </div>
         <div class="audience__card">
-          <div class="audience__icon">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+          <h3>Quieres elevar tu estándar</h3>
+          <p>Más que un gimnasio. Un entorno donde entrenar se convierte en algo serio, intencional y tuyo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SPACE / EXPERIENCE ========== -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">El Espacio</span>
+        <h2 class="section-title">Diseñado para elevar tu estándar</h2>
+        <p class="section-sub">Materiales oscuros, energía enfocada, equipamiento real. Un ambiente que cambia cómo entrenas.</p>
+      </div>
+      <div class="experience__grid">
+        <div class="experience__item experience__item--large">
+          <img src="assets/space-main.svg" alt="Interior de TEMPLO — zona de entrenamiento principal" loading="lazy">
+          <div class="experience__caption">
+            <h3>Zona de Entrenamiento</h3>
+            <p>Equipamiento profesional, amplitud y una atmósfera pensada para trabajo serio.</p>
           </div>
-          <h3>Estás cansado de improvisar</h3>
-          <p>Sin progreso, sin dirección, sintiéndote perdido. TEMPLO te da guía, estructura y resultado.</p>
+        </div>
+        <div class="experience__item">
+          <img src="assets/space-weights.svg" alt="Área de pesas libres en TEMPLO" loading="lazy">
+          <div class="experience__caption">
+            <h3>Pesas Libres</h3>
+            <p>Herramientas precisas para fuerza, técnica y progresión.</p>
+          </div>
+        </div>
+        <div class="experience__item">
+          <img src="assets/space-calisthenics.svg" alt="Zona de calistenia en TEMPLO" loading="lazy">
+          <div class="experience__caption">
+            <h3>Calistenia</h3>
+            <p>Control corporal, movilidad y dominio del propio peso.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -215,10 +251,6 @@
             <li>Equipamiento completo</li>
             <li>Ambiente premium y enfocado</li>
           </ul>
-          <div class="plan-card__price">
-            <span class="plan-card__price-label">Desde</span>
-            <span class="plan-card__price-value">[Consultar]</span>
-          </div>
           <a href="https://wa.me/59172001680?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20planes%20de%20TEMPLO." class="btn btn--primary btn--full" target="_blank" rel="noopener">
             Consultar este plan
           </a>
@@ -236,10 +268,6 @@
             <li>Supervisión técnica de coaches</li>
             <li>Ajustes mensuales</li>
           </ul>
-          <div class="plan-card__price">
-            <span class="plan-card__price-label">Desde</span>
-            <span class="plan-card__price-value">[Consultar]</span>
-          </div>
           <a href="https://wa.me/59172001680?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20Plan%20Guiado%20de%20TEMPLO." class="btn btn--primary btn--full" target="_blank" rel="noopener">
             Consultar este plan
           </a>
@@ -256,16 +284,12 @@
             <li>Plan nutricional básico</li>
             <li>Comunicación directa con tu coach</li>
           </ul>
-          <div class="plan-card__price">
-            <span class="plan-card__price-label">Desde</span>
-            <span class="plan-card__price-value">[Consultar]</span>
-          </div>
           <a href="https://wa.me/59172001680?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20Plan%20Premium%20de%20TEMPLO." class="btn btn--primary btn--full" target="_blank" rel="noopener">
             Consultar este plan
           </a>
         </div>
       </div>
-      <p class="plans__note">¿No sabes por dónde empezar? <a href="https://wa.me/59172001680?text=Hola%2C%20quiero%20orientaci%C3%B3n%20para%20empezar%20en%20TEMPLO." target="_blank" rel="noopener">Quiero orientación</a> y te ayudamos a elegir.</p>
+      <p class="plans__note">¿No sabes por dónde empezar? <a href="https://wa.me/59172001680?text=Hola%2C%20quiero%20orientaci%C3%B3n%20para%20empezar%20en%20TEMPLO." target="_blank" rel="noopener">Escríbenos</a> y te ayudamos a elegir.</p>
     </div>
   </section>
 
@@ -279,9 +303,9 @@
         <div class="founder__content">
           <span class="section-label">El Fundador</span>
           <h2 class="founder__name">Lucas</h2>
-          <p class="founder__text">Lucas creó TEMPLO con una convicción: que entrenar no debería ser improvisado. Que toda persona merece un espacio con dirección, técnica y un entorno que la impulse a crecer.</p>
-          <p class="founder__text">No promete transformaciones rápidas. Construye procesos — sesión por sesión, técnica por técnica, hábito por hábito.</p>
-          <p class="founder__quote">"Entrenar con intención cambia la forma en que te mueves, decides y sostienes tu propio estándar."</p>
+          <p class="founder__text">Lucas entiende que cada meta necesita una estrategia: a veces fuerza, a veces calistenia, a veces Power Plate, a veces trabajo funcional. Su enfoque es elegir la herramienta correcta y sostener el proceso con intención.</p>
+          <p class="founder__text">Combina experiencia práctica en Power Plate, calistenia, máquinas, fuerza y movimiento funcional para orientar cada proceso con criterio, técnica y progresión.</p>
+          <p class="founder__quote">"La diferencia no está en entrenar más, sino en entrenar con dirección."</p>
         </div>
       </div>
     </div>
@@ -296,12 +320,12 @@
         <p class="section-sub">Entrenas con personas que también eligieron superarse. El esfuerzo compartido eleva el estándar de todos.</p>
       </div>
       <div class="community__feed">
-        <div class="community__item"><img src="assets/community-1.svg" alt="Comunidad TEMPLO" loading="lazy"></div>
-        <div class="community__item"><img src="assets/community-2.svg" alt="Entrenamiento TEMPLO" loading="lazy"></div>
-        <div class="community__item"><img src="assets/community-3.svg" alt="Fuerza en TEMPLO" loading="lazy"></div>
-        <div class="community__item"><img src="assets/community-4.svg" alt="Equipo TEMPLO" loading="lazy"></div>
-        <div class="community__item"><img src="assets/community-5.svg" alt="Progreso TEMPLO" loading="lazy"></div>
-        <div class="community__item"><img src="assets/community-6.svg" alt="TEMPLO Bolivia" loading="lazy"></div>
+        <div class="community__item"><img src="assets/community-1.svg" alt="Comunidad TEMPLO entrenando" loading="lazy"></div>
+        <div class="community__item"><img src="assets/community-2.svg" alt="Sesión de entrenamiento en TEMPLO" loading="lazy"></div>
+        <div class="community__item"><img src="assets/community-3.svg" alt="Trabajo de fuerza en TEMPLO" loading="lazy"></div>
+        <div class="community__item"><img src="assets/community-4.svg" alt="Equipo TEMPLO en sesión" loading="lazy"></div>
+        <div class="community__item"><img src="assets/community-5.svg" alt="Progreso de miembros TEMPLO" loading="lazy"></div>
+        <div class="community__item"><img src="assets/community-6.svg" alt="Entrenamiento en TEMPLO Bolivia" loading="lazy"></div>
       </div>
       <div class="community__cta">
         <a href="https://www.instagram.com/templo.bol/" class="btn btn--ghost" target="_blank" rel="noopener">
@@ -311,28 +335,17 @@
     </div>
   </section>
 
-  <!-- ========== TESTIMONIALS ========== -->
+  <!-- ========== PROOF / TRANSFORMATIONS ========== -->
   <section class="results" id="results">
     <div class="container">
       <div class="results__content">
         <span class="section-label">Transformación</span>
-        <h2 class="results__title">Más fuerte.<br>Más seguro.<br>Más dueño de tu proceso.</h2>
+        <h2 class="results__title">Más fuerte. Más seguro. Más dueño de tu proceso.</h2>
         <p class="results__text">No prometemos magia. Prometemos método, guía y continuidad. El progreso aparece cuando el esfuerzo tiene dirección.</p>
       </div>
-      <div class="results__testimonials">
-        <div class="testimonial">
-          <p class="testimonial__text">"Empecé sin saber nada. Hoy entreno con técnica, fuerza y confianza. TEMPLO cambió mi relación con el ejercicio."</p>
-          <div class="testimonial__author">
-            <span class="testimonial__name">[Nombre del cliente]</span>
-            <span class="testimonial__time">6 meses en TEMPLO</span>
-          </div>
-        </div>
-        <div class="testimonial">
-          <p class="testimonial__text">"Lo que me gusta es que aquí no te dejan hacer las cosas mal. Te corrigen, te guían, te hacen mejor."</p>
-          <div class="testimonial__author">
-            <span class="testimonial__name">[Nombre del cliente]</span>
-            <span class="testimonial__time">1 año en TEMPLO</span>
-          </div>
+      <div class="results__proof">
+        <div class="results__proof-card">
+          <p class="results__proof-text">Transformaciones reales. Historias autorizadas próximamente.</p>
         </div>
       </div>
     </div>
@@ -360,7 +373,7 @@
             </div>
             <div>
               <h3>Horarios</h3>
-              <p>Lunes a Viernes: [Consultar]<br>Sábados: [Consultar]</p>
+              <p>Lunes a Viernes: 6:00 – 21:00<br>Sábados: 7:00 – 13:00</p>
             </div>
           </div>
           <div class="location__actions">
@@ -371,7 +384,6 @@
               Agendar visita por WhatsApp
             </a>
           </div>
-          <!-- Compact social links -->
           <div class="location__social" aria-label="Canales oficiales de TEMPLO">
             <p>Canales oficiales</p>
             <div class="location__social-links">
@@ -388,7 +400,8 @@
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.5!2d-66.1!3d-17.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI0JzAwLjAiUyA2NsKwMDYnMDAuMCJX!5e0!3m2!1ses!2sbo!4v1"
             width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Ubicación de TEMPLO en Google Maps">
           </iframe>
         </div>
       </div>
@@ -412,8 +425,12 @@
           <p class="faq__answer">Sí. La guía es parte central de TEMPLO. Según el plan, recibes supervisión técnica, rutina y seguimiento.</p>
         </details>
         <details class="faq__item">
+          <summary class="faq__question">¿Qué es Power Plate?</summary>
+          <p class="faq__answer">Power Plate es una plataforma de vibración reconocida internacionalmente. En TEMPLO la usamos como herramienta premium para activación, fuerza y acondicionamiento.</p>
+        </details>
+        <details class="faq__item">
           <summary class="faq__question">¿Necesito experiencia previa?</summary>
-          <p class="faq__answer">No. Lo importante es estar dispuesto a aprender y sostener el proceso.</p>
+          <p class="faq__answer">No. Lo importante es tener una meta y estar dispuesto a aprender y sostener el proceso.</p>
         </details>
         <details class="faq__item">
           <summary class="faq__question">¿Dónde están ubicados?</summary>
@@ -435,7 +452,8 @@
   <section class="final-cta" id="final-cta">
     <div class="container">
       <div class="final-cta__content">
-        <h2 class="final-cta__title">Empieza con una visita.<br>Lo demás se construye con disciplina.</h2>
+        <h2 class="final-cta__title">Si tienes una meta, entrenar al azar no es suficiente.</h2>
+        <p class="final-cta__sub">Agenda tu visita. Conoce el espacio. Empieza con dirección.</p>
         <a href="https://wa.me/59172001680?text=Hola%2C%20quiero%20agendar%20mi%20visita%20a%20TEMPLO." class="btn btn--primary btn--large" target="_blank" rel="noopener">
           Agendar mi visita por WhatsApp
         </a>
@@ -454,6 +472,7 @@
         <div class="footer__nav">
           <h4>Navegación</h4>
           <a href="#method">Método</a>
+          <a href="#services">Servicios</a>
           <a href="#plans">Planes</a>
           <a href="#location">Ubicación</a>
           <a href="#faq">Preguntas frecuentes</a>

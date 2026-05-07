@@ -25,13 +25,17 @@
 
   if (toggle && menu) {
     toggle.addEventListener('click', function() {
-      menu.classList.toggle('mobile-menu--open');
-      document.body.style.overflow = menu.classList.contains('mobile-menu--open') ? 'hidden' : '';
+      var isOpen = menu.classList.toggle('mobile-menu--open');
+      toggle.classList.toggle('nav__toggle--active', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     menu.querySelectorAll('a').forEach(function(link) {
       link.addEventListener('click', function() {
         menu.classList.remove('mobile-menu--open');
+        toggle.classList.remove('nav__toggle--active');
+        toggle.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
       });
     });
@@ -40,7 +44,9 @@
   // ---- Smooth scroll for anchor links ----
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
-      var target = document.querySelector(this.getAttribute('href'));
+      var href = this.getAttribute('href');
+      if (href === '#') return;
+      var target = document.querySelector(href);
       if (target) {
         e.preventDefault();
         var offset = 80;
@@ -66,9 +72,10 @@
   }, observerOptions);
 
   document.querySelectorAll(
-    '.positioning, .method__card, .experience__item, .audience__card, ' +
-    '.results__content, .testimonial, .plan-card, .founder__grid, ' +
-    '.community__item, .location__grid, .location__social, .faq__item, .final-cta__content'
+    '.positioning, .method__card, .service-card, .audience__card, ' +
+    '.experience__item, .results__content, .results__proof-card, ' +
+    '.plan-card, .founder__grid, .community__item, ' +
+    '.location__grid, .location__social, .faq__item, .final-cta__content'
   ).forEach(function(el) {
     el.classList.add('fade-in');
     observer.observe(el);
