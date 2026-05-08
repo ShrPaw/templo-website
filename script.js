@@ -28,7 +28,8 @@
       },
       availability: ['Consultar disponibilidad'],
       availabilityNote: 'Disponibilidad por confirmar',
-      whatsappMessage: 'Hola, me interesa recibir orientación en TEMPLO. ¿Me pueden ayudar con la disponibilidad de Lucas o del coach adecuado?'
+      whatsappMessage: 'Hola, me interesa recibir orientación en TEMPLO. ¿Me pueden ayudar con la disponibilidad de Lucas o del coach adecuado?',
+      socials: {} // Add real links when available: { instagram: '', tiktok: '', facebook: '' }
     },
     {
       id: 'coach-fuerza',
@@ -44,7 +45,8 @@
       },
       availability: ['Mar', 'Jue'],
       availabilityNote: 'Consultar agenda por WhatsApp',
-      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con el coach de fuerza y técnica. ¿Me pueden ayudar con su disponibilidad?'
+      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con el coach de fuerza y técnica. ¿Me pueden ayudar con su disponibilidad?',
+      socials: {}
     },
     {
       id: 'coach-calistenia',
@@ -60,7 +62,8 @@
       },
       availability: ['Lun', 'Mié'],
       availabilityNote: 'Consultar agenda por WhatsApp',
-      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con el coach de calistenia. ¿Me pueden ayudar con su disponibilidad?'
+      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con el coach de calistenia. ¿Me pueden ayudar con su disponibilidad?',
+      socials: {}
     },
     {
       id: 'coach-funcional',
@@ -76,7 +79,8 @@
       },
       availability: ['Mar', 'Jue', 'Sáb'],
       availabilityNote: 'Consultar agenda por WhatsApp',
-      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con el coach de funcional y acondicionamiento. ¿Me pueden ayudar con su disponibilidad?'
+      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con el coach de funcional y acondicionamiento. ¿Me pueden ayudar con su disponibilidad?',
+      socials: {}
     },
     {
       id: 'coach-powerplate',
@@ -92,7 +96,8 @@
       },
       availability: ['Consultar disponibilidad'],
       availabilityNote: 'Consultar agenda por WhatsApp',
-      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con el coach de Power Plate. ¿Me pueden ayudar con su disponibilidad?'
+      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con el coach de Power Plate. ¿Me pueden ayudar con su disponibilidad?',
+      socials: {}
     },
     {
       id: 'coach-seguimiento',
@@ -108,7 +113,8 @@
       },
       availability: ['Consultar disponibilidad'],
       availabilityNote: 'Consultar agenda por WhatsApp',
-      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con el coach de seguimiento y progresión. ¿Me pueden ayudar con su disponibilidad?'
+      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con el coach de seguimiento y progresión. ¿Me pueden ayudar con su disponibilidad?',
+      socials: {}
     }
   ];
 
@@ -186,12 +192,29 @@
       var ctaLabel = coach.isFounder ? 'Consultar disponibilidad' : 'Consultar con este coach';
       var ctaClass = coach.isFounder ? 'btn btn--primary' : 'btn btn--ghost';
 
+      // Social links — only render if URLs are provided
+      var socialsHtml = '';
+      var socialLabels = { instagram: 'Instagram', tiktok: 'TikTok', facebook: 'Facebook' };
+      var socialKeys = ['instagram', 'tiktok', 'facebook'];
+      var hasSocials = false;
+      var socialItems = '';
+      socialKeys.forEach(function(key) {
+        if (coach.socials && coach.socials[key]) {
+          hasSocials = true;
+          socialItems += '<a href="' + coach.socials[key] + '" class="coach-socials__link" target="_blank" rel="noopener">' + socialLabels[key] + '</a>';
+        }
+      });
+      if (hasSocials) {
+        socialsHtml = '<div class="coach-socials">' + socialItems + '</div>';
+      }
+
       html += '<article class="coach-card' + (coach.isFounder ? ' coach-card--founder' : '') + '">' +
         '<div class="coach-card__portrait"><span class="coach-card__initial">' + coach.initial + '</span></div>' +
         '<div class="coach-card__role">' + coach.role + '</div>' +
         '<h3 class="coach-card__name">' + coach.name + '</h3>' +
         '<p class="coach-card__specialty">' + coach.specialty + '</p>' +
         '<div class="coach-stats">' + statsHtml + '</div>' +
+        socialsHtml +
         '<div class="coach-availability">' +
           '<div class="coach-availability__title">Disponibilidad</div>' +
           '<div class="coach-availability__days">' + availHtml + '</div>' +
