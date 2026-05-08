@@ -11,11 +11,44 @@
   <meta property="og:image" content="assets/BUDDHA-og.webp">
   <meta property="og:url" content="https://templo-website-qbw5.vercel.app/">
   <meta name="theme-color" content="#0a0a0a">
+  <!-- Favicon: TEMPLO symbol -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured Data: TEMPLO Fitness Studio -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HealthClub",
+    "name": "TEMPLO",
+    "description": "Estudio de entrenamiento guiado con Power Plate, calistenia, fuerza y método en Cochabamba, Bolivia.",
+    "url": "https://templo-website-qbw5.vercel.app/",
+    "image": "assets/BUDDHA-og.webp",
+    "telephone": "+59172001680",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Cochabamba",
+      "addressCountry": "BO"
+    },
+    "sameAs": [
+      "https://www.instagram.com/templo.bol/",
+      "https://www.tiktok.com/@templo.bol",
+      "https://www.facebook.com/templo.bol",
+      "https://www.youtube.com/@templo.bol"
+    ],
+    "areaServed": {
+      "@type": "City",
+      "name": "Cochabamba"
+    },
+    "priceRange": "Consultar por WhatsApp"
+  }
+  </script>
 </head>
 <body>
 
@@ -32,7 +65,7 @@
         <a href="#plans" class="nav__link">Planes</a>
         <a href="#location" class="nav__link">Ubicación</a>
       </div>
-      <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="nav__cta" target="_blank" rel="noopener">
+      <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="nav__cta" target="_blank" rel="noopener" data-cta="nav-whatsapp">
         Agendar Visita
       </a>
       <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
@@ -47,7 +80,7 @@
     <a href="#method" class="mobile-menu__link">Método</a>
     <a href="#plans" class="mobile-menu__link">Planes</a>
     <a href="#location" class="mobile-menu__link">Ubicación</a>
-    <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="mobile-menu__cta" target="_blank" rel="noopener">
+    <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="mobile-menu__cta" target="_blank" rel="noopener" data-cta="mobile-menu-whatsapp">
       Agendar Visita
     </a>
   </div>
@@ -67,7 +100,7 @@
       <h1 class="hero__title">No vienes solo a entrenar.<br><span class="hero__title--accent">Vienes a construirte.</span></h1>
       <p class="hero__sub">Guía, técnica y disciplina para construir un cuerpo que refleje tu meta.</p>
       <div class="hero__actions">
-        <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="btn btn--primary" target="_blank" rel="noopener">
+        <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="btn btn--primary" target="_blank" rel="noopener" data-cta="hero-whatsapp">
           Agendar visita por WhatsApp
         </a>
         <a href="#experiencias" class="btn btn--ghost">
@@ -90,6 +123,7 @@
   </section>
 
   <!-- ========== TRAINING EXPERIENCES ========== -->
+  <!-- Future photos: assets/experience-powerplate.webp, experience-calisthenics.webp, experience-strength.webp, experience-functional.webp, experience-adapted.webp -->
   <section class="experiencias" id="experiencias">
     <div class="container">
       <div class="section-header section-header--center">
@@ -101,7 +135,12 @@
 
         <article class="exp-card exp-card--premium">
           <div class="exp-card__visual">
-            <img src="assets/space-main.svg" alt="Power Plate en TEMPLO" loading="lazy">
+            <!-- Replace with: <img src="assets/experience-powerplate.webp" alt="Power Plate en TEMPLO" loading="lazy"> -->
+            <div class="exp-panel" data-exp="01">
+              <span class="exp-panel__number">01</span>
+              <span class="exp-panel__label">Power Plate</span>
+              <div class="exp-panel__line"></div>
+            </div>
             <div class="exp-card__filter"></div>
           </div>
           <div class="exp-card__body">
@@ -113,7 +152,12 @@
 
         <article class="exp-card">
           <div class="exp-card__visual">
-            <img src="assets/space-calisthenics.svg" alt="Calistenia en TEMPLO" loading="lazy">
+            <!-- Replace with: <img src="assets/experience-calisthenics.webp" alt="Calistenia en TEMPLO" loading="lazy"> -->
+            <div class="exp-panel" data-exp="02">
+              <span class="exp-panel__number">02</span>
+              <span class="exp-panel__label">Calistenia</span>
+              <div class="exp-panel__line"></div>
+            </div>
             <div class="exp-card__filter"></div>
           </div>
           <div class="exp-card__body">
@@ -124,7 +168,12 @@
 
         <article class="exp-card">
           <div class="exp-card__visual">
-            <img src="assets/space-weights.svg" alt="Fuerza y máquinas en TEMPLO" loading="lazy">
+            <!-- Replace with: <img src="assets/experience-strength.webp" alt="Fuerza y máquinas en TEMPLO" loading="lazy"> -->
+            <div class="exp-panel" data-exp="03">
+              <span class="exp-panel__number">03</span>
+              <span class="exp-panel__label">Fuerza</span>
+              <div class="exp-panel__line"></div>
+            </div>
             <div class="exp-card__filter"></div>
           </div>
           <div class="exp-card__body">
@@ -135,7 +184,12 @@
 
         <article class="exp-card">
           <div class="exp-card__visual">
-            <img src="assets/community-1.svg" alt="Funcional y acondicionamiento en TEMPLO" loading="lazy">
+            <!-- Replace with: <img src="assets/experience-functional.webp" alt="Funcional y acondicionamiento en TEMPLO" loading="lazy"> -->
+            <div class="exp-panel" data-exp="04">
+              <span class="exp-panel__number">04</span>
+              <span class="exp-panel__label">Funcional</span>
+              <div class="exp-panel__line"></div>
+            </div>
             <div class="exp-card__filter"></div>
           </div>
           <div class="exp-card__body">
@@ -146,7 +200,12 @@
 
         <article class="exp-card">
           <div class="exp-card__visual">
-            <img src="assets/community-2.svg" alt="Entrenamiento adaptado en TEMPLO" loading="lazy">
+            <!-- Replace with: <img src="assets/experience-adapted.webp" alt="Entrenamiento adaptado en TEMPLO" loading="lazy"> -->
+            <div class="exp-panel" data-exp="05">
+              <span class="exp-panel__number">05</span>
+              <span class="exp-panel__label">Adaptado</span>
+              <div class="exp-panel__line"></div>
+            </div>
             <div class="exp-card__filter"></div>
           </div>
           <div class="exp-card__body">
@@ -157,7 +216,7 @@
 
       </div>
       <div class="experiencias__cta">
-        <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20orientar%3F" class="btn btn--primary" target="_blank" rel="noopener">
+        <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20orientar%3F" class="btn btn--primary" target="_blank" rel="noopener" data-cta="experiences-whatsapp">
           Quiero saber qué experiencia me conviene
         </a>
       </div>
@@ -198,6 +257,7 @@
   </section>
 
   <!-- ========== LIFESTYLE / ENERGY ========== -->
+  <!-- Future photos: assets/community-01.webp through community-04.webp -->
   <section class="lifestyle" id="lifestyle">
     <div class="container">
       <div class="lifestyle__content">
@@ -208,19 +268,31 @@
       <div class="lifestyle__visual">
         <div class="lifestyle__grid">
           <div class="lifestyle__img lifestyle__img--tall">
-            <img src="assets/community-3.svg" alt="Comunidad TEMPLO entrenando" loading="lazy">
+            <!-- Replace with: <img src="assets/community-01.webp" alt="Comunidad TEMPLO entrenando" loading="lazy"> -->
+            <div class="lifestyle-panel" data-panel="01">
+              <span class="lifestyle-panel__label">Fuerza</span>
+            </div>
             <div class="lifestyle__filter"></div>
           </div>
           <div class="lifestyle__img">
-            <img src="assets/community-4.svg" alt="Sesión de fuerza en TEMPLO" loading="lazy">
+            <!-- Replace with: <img src="assets/community-02.webp" alt="Sesión de fuerza en TEMPLO" loading="lazy"> -->
+            <div class="lifestyle-panel" data-panel="02">
+              <span class="lifestyle-panel__label">Disciplina</span>
+            </div>
             <div class="lifestyle__filter"></div>
           </div>
           <div class="lifestyle__img">
-            <img src="assets/community-5.svg" alt="Entrenamiento funcional TEMPLO" loading="lazy">
+            <!-- Replace with: <img src="assets/community-03.webp" alt="Entrenamiento funcional TEMPLO" loading="lazy"> -->
+            <div class="lifestyle-panel" data-panel="03">
+              <span class="lifestyle-panel__label">Técnica</span>
+            </div>
             <div class="lifestyle__filter"></div>
           </div>
           <div class="lifestyle__img lifestyle__img--wide">
-            <img src="assets/community-6.svg" alt="Equipo TEMPLO" loading="lazy">
+            <!-- Replace with: <img src="assets/community-04.webp" alt="Equipo TEMPLO" loading="lazy"> -->
+            <div class="lifestyle-panel" data-panel="04">
+              <span class="lifestyle-panel__label">Comunidad</span>
+            </div>
             <div class="lifestyle__filter"></div>
           </div>
         </div>
@@ -229,11 +301,16 @@
   </section>
 
   <!-- ========== FOUNDER / COACH ========== -->
+  <!-- Future photo: assets/lucas-founder.webp -->
   <section class="founder" id="founder">
     <div class="container">
       <div class="founder__grid">
         <div class="founder__image">
-          <img src="assets/lucas.svg" alt="Lucas, fundador de TEMPLO" loading="lazy">
+          <!-- Replace with: <img src="assets/lucas-founder.webp" alt="Lucas, fundador de TEMPLO" loading="lazy"> -->
+          <div class="founder-panel">
+            <span class="founder-panel__initial">L</span>
+            <span class="founder-panel__label">Fundador</span>
+          </div>
           <div class="founder__filter"></div>
         </div>
         <div class="founder__content">
@@ -242,7 +319,7 @@
           <p class="founder__text">Lucas entiende que cada meta necesita una estrategia: a veces fuerza, a veces calistenia, a veces Power Plate, a veces trabajo funcional. Su enfoque es elegir la herramienta correcta y sostener el proceso con intención.</p>
           <p class="founder__text">Combina experiencia práctica en Power Plate, calistenia, máquinas, fuerza y movimiento funcional para orientar cada proceso con criterio, técnica y progresión.</p>
           <p class="founder__quote">"La diferencia no está en entrenar más, sino en entrenar con dirección."</p>
-          <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20recibir%20orientaci%C3%B3n%20para%20entrenar%20en%20TEMPLO." class="btn btn--primary" target="_blank" rel="noopener">
+          <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20recibir%20orientaci%C3%B3n%20para%20entrenar%20en%20TEMPLO." class="btn btn--primary" target="_blank" rel="noopener" data-cta="founder-whatsapp">
             Agendar visita
           </a>
         </div>
@@ -270,7 +347,7 @@
             <li>Ambiente enfocado</li>
             <li>Ideal para sostener constancia</li>
           </ul>
-          <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20conocer%20los%20planes%20de%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="btn btn--primary btn--full" target="_blank" rel="noopener">
+          <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20conocer%20los%20planes%20de%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="btn btn--primary btn--full" target="_blank" rel="noopener" data-cta="plans-whatsapp">
             Consultar este plan
           </a>
         </div>
@@ -287,7 +364,7 @@
             <li>Supervisión técnica de coaches</li>
             <li>Ajustes mensuales</li>
           </ul>
-          <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20conocer%20los%20planes%20de%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="btn btn--primary btn--full" target="_blank" rel="noopener">
+          <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20conocer%20los%20planes%20de%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="btn btn--primary btn--full" target="_blank" rel="noopener" data-cta="plans-whatsapp">
             Consultar este plan
           </a>
         </div>
@@ -303,7 +380,7 @@
             <li>Plan nutricional básico</li>
             <li>Comunicación directa con tu coach</li>
           </ul>
-          <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20conocer%20los%20planes%20de%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="btn btn--primary btn--full" target="_blank" rel="noopener">
+          <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20conocer%20los%20planes%20de%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="btn btn--primary btn--full" target="_blank" rel="noopener" data-cta="plans-whatsapp">
             Consultar este plan
           </a>
         </div>
@@ -334,14 +411,14 @@
             </div>
             <div>
               <h3>Horarios</h3>
-              <p>Lunes a Viernes: 6:00 – 21:00<br>Sábados: 7:00 – 13:00</p>
+              <p>Consultar por WhatsApp</p>
             </div>
           </div>
           <div class="location__actions">
             <a href="https://maps.google.com/?q=Ciclovia+casi+Av+Simon+Lopez+Cochabamba+Bolivia" class="btn btn--primary" target="_blank" rel="noopener">
               Cómo llegar
             </a>
-            <a href="https://wa.me/59172001680?text=Hola%2C%20quiero%20visitar%20TEMPLO.%20%C2%BFMe%20pueden%20pasar%20la%20ubicaci%C3%B3n%20y%20horarios%3F" class="btn btn--ghost" target="_blank" rel="noopener">
+            <a href="https://wa.me/59172001680?text=Hola%2C%20quiero%20visitar%20TEMPLO.%20%C2%BFMe%20pueden%20pasar%20la%20ubicaci%C3%B3n%20y%20horarios%3F" class="btn btn--ghost" target="_blank" rel="noopener" data-cta="location-whatsapp">
               Agendar visita por WhatsApp
             </a>
           </div>
@@ -415,7 +492,7 @@
       <div class="final-cta__content">
         <h2 class="final-cta__title">Si tienes una meta, entrenar al azar no es suficiente.</h2>
         <p class="final-cta__sub">Agenda tu visita. Conoce el espacio. Empieza con dirección.</p>
-        <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="btn btn--primary btn--large" target="_blank" rel="noopener">
+        <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="btn btn--primary btn--large" target="_blank" rel="noopener" data-cta="final-whatsapp">
           Agendar mi visita por WhatsApp
         </a>
       </div>
@@ -454,7 +531,7 @@
   </footer>
 
   <!-- WhatsApp Floating Button -->
-  <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp" data-cta="floating-whatsapp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
     </svg>

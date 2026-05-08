@@ -75,7 +75,7 @@
   document.querySelectorAll(
     '.positioning, .exp-card, .method__card, ' +
     '.lifestyle__content, .lifestyle__img, ' +
-    '.founder__grid, .plan-card, ' +
+    '.founder__grid, .founder-panel, .plan-card, ' +
     '.location__grid, .location__social, ' +
     '.faq__item, .final-cta__content'
   ).forEach(function(el) {

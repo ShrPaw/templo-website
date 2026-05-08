@@ -612,6 +612,92 @@ a {
   transform: scale(1.06);
 }
 
+/* Editorial placeholder panels (used until real photos are available) */
+.exp-panel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(24px, 3vw, 40px);
+  position: relative;
+  background:
+    linear-gradient(135deg, rgba(212,168,83,0.08) 0%, rgba(10,10,10,0.95) 100%),
+    linear-gradient(to bottom, var(--dark-2) 0%, var(--dark-3) 100%);
+  overflow: hidden;
+}
+
+/* Subtle diagonal texture */
+.exp-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 40px,
+    rgba(212,168,83,0.02) 40px,
+    rgba(212,168,83,0.02) 41px
+  );
+  pointer-events: none;
+}
+
+/* Gold corner accent */
+.exp-panel::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(225deg, rgba(212,168,83,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.exp-panel__number {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  color: rgba(212, 168, 83, 0.08);
+  line-height: 1;
+  position: absolute;
+  top: clamp(16px, 2vw, 24px);
+  left: clamp(16px, 2vw, 24px);
+  letter-spacing: -0.04em;
+}
+
+.exp-panel__label {
+  font-family: var(--font-display);
+  font-size: clamp(0.65rem, 1vw, 0.75rem);
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
+}
+
+.exp-panel__line {
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+  margin-top: 12px;
+  opacity: 0.4;
+}
+
+/* Power Plate panel: slightly more dominant gold glow */
+.exp-card--premium .exp-panel {
+  background:
+    linear-gradient(135deg, rgba(212,168,83,0.14) 0%, rgba(10,10,10,0.92) 100%),
+    linear-gradient(to bottom, var(--dark-2) 0%, var(--dark-3) 100%);
+}
+
+.exp-card--premium .exp-panel::after {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(225deg, rgba(212,168,83,0.18) 0%, transparent 60%);
+}
+
 /* Gold filter overlay on images */
 .exp-card__filter {
   position: absolute;
@@ -853,6 +939,98 @@ a {
   inset: 0;
   background: linear-gradient(135deg, rgba(212,168,83,0.12) 0%, rgba(10,10,10,0.5) 100%);
   pointer-events: none;
+}
+
+/* Lifestyle editorial panels */
+.lifestyle-panel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: clamp(16px, 2vw, 24px);
+  background:
+    linear-gradient(135deg, rgba(212,168,83,0.06) 0%, rgba(10,10,10,0.9) 100%),
+    linear-gradient(to bottom, var(--dark-2) 0%, var(--dark-3) 100%);
+  position: relative;
+}
+
+/* Subtle noise texture */
+.lifestyle-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 60px,
+    rgba(212,168,83,0.015) 60px,
+    rgba(212,168,83,0.015) 61px
+  );
+  pointer-events: none;
+}
+
+.lifestyle-panel__label {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(212, 168, 83, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+/* Founder editorial panel */
+.founder-panel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background:
+    linear-gradient(160deg, rgba(212,168,83,0.1) 0%, rgba(10,10,10,0.95) 100%),
+    linear-gradient(to bottom, var(--dark-2) 0%, var(--dark-3) 100%);
+  position: relative;
+}
+
+/* Diagonal texture */
+.founder-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 50px,
+    rgba(212,168,83,0.02) 50px,
+    rgba(212,168,83,0.02) 51px
+  );
+  pointer-events: none;
+}
+
+.founder-panel__initial {
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 8vw, 6rem);
+  font-weight: 900;
+  color: rgba(212, 168, 83, 0.12);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  position: relative;
+  z-index: 1;
+}
+
+.founder-panel__label {
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 768px) {
@@ -1413,10 +1591,7 @@ a {
 /* ========================================
    PLACEHOLDER IMAGES
    ======================================== */
-.hero__img[src="assets/hero-buddha-placeholder.svg"],
-.exp-card__visual img[src^="assets/"],
-.founder__image img[src^="assets/"],
-.lifestyle__img img[src^="assets/"] {
+.hero__img[src="assets/hero-buddha-placeholder.svg"] {
   background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark-3) 100%);
   min-height: 200px;
 }
