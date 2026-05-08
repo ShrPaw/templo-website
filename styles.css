@@ -1153,7 +1153,7 @@ a {
 /* Pricing card */
 .pricing-card {
   background: var(--dark);
-  padding: clamp(28px, 3vw, 40px);
+  padding: clamp(24px, 3vw, 40px);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -1178,7 +1178,7 @@ a {
 
 /* Header */
 .pricing-card__header {
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -1195,7 +1195,7 @@ a {
 
 .pricing-card__name {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
   font-weight: 800;
   color: var(--white-pure);
   line-height: 1.1;
@@ -1219,22 +1219,22 @@ a {
 
 /* Description */
 .pricing-card__desc {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   color: var(--gray-light);
   line-height: 1.65;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 /* Notes */
 .pricing-card__notes {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 20px;
+  gap: 6px;
+  margin-bottom: 18px;
 }
 
 .pricing-card__notes span {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   color: var(--gray);
@@ -1249,7 +1249,7 @@ a {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   padding: 14px 16px;
   background: var(--dark-3);
   border: 1px solid rgba(255,255,255,0.04);
@@ -1270,13 +1270,24 @@ a {
   color: var(--gray-light);
 }
 
+/* Section label for option groups inside cards */
+.pricing-options-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+  padding-left: 2px;
+}
+
 /* Pricing options */
 .pricing-options {
   display: flex;
   flex-direction: column;
   gap: 1px;
   background: rgba(255,255,255,0.03);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   flex: 1;
 }
 
@@ -1297,18 +1308,19 @@ a {
 .pricing-option__info {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
   min-width: 0;
 }
 
 .pricing-option__info strong {
-  font-size: 0.85rem;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--white-pure);
+  letter-spacing: 0.01em;
 }
 
 .pricing-option__info span {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   color: var(--gray);
   line-height: 1.4;
 }
@@ -1320,11 +1332,13 @@ a {
   border: 1px solid rgba(212, 168, 83, 0.3);
   color: var(--accent-light);
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 800;
   padding: 6px 14px;
   border-radius: 2px;
   white-space: nowrap;
+  text-align: center;
+  min-width: 80px;
 }
 
 /* Plans note */
@@ -1348,14 +1362,36 @@ a {
 @media (max-width: 600px) {
   .plans__grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+    background: transparent;
+  }
+  .pricing-card {
+    border: 1px solid rgba(255,255,255,0.04);
+    padding: 24px 20px;
+  }
+  .pricing-card--premium {
+    border-color: var(--accent-border);
   }
   .pricing-option {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
+    padding: 12px 14px;
+  }
+  .pricing-option__info strong {
+    font-size: 0.8rem;
+  }
+  .pricing-option__info span {
+    font-size: 0.72rem;
   }
   .price-pill {
-    align-self: flex-start;
+    font-size: 0.85rem;
+    padding: 5px 12px;
+    min-width: 72px;
+  }
+  .pricing-card__notes {
+    gap: 5px;
+  }
+  .pricing-card__notes span {
+    font-size: 0.64rem;
+    padding: 4px 8px;
   }
 }
 
@@ -1729,12 +1765,42 @@ a {
   background: rgba(255,255,255,0.03);
 }
 
+/* Section-level disclaimer */
+.coaches__disclaimer {
+  font-size: 0.72rem;
+  color: var(--gray);
+  font-style: italic;
+  margin-top: 12px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+}
+
 .coach-card {
   background: var(--dark);
   padding: clamp(28px, 3vw, 40px);
   transition: all 0.4s var(--ease);
   position: relative;
   overflow: hidden;
+}
+
+/* Subtle top accent on hover */
+.coach-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.coach-card:hover::before {
+  transform: scaleX(1);
 }
 
 .coach-card:hover {
@@ -1753,8 +1819,8 @@ a {
 
 /* Coach portrait / initial */
 .coach-card__portrait {
-  width: 64px;
-  height: 64px;
+  width: 68px;
+  height: 68px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1767,16 +1833,24 @@ a {
 
 .coach-card__initial {
   font-family: var(--font-display);
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 800;
   color: var(--accent);
   line-height: 1;
+  opacity: 0.7;
 }
 
 /* Gold shimmer on founder portrait */
 .coach-card--founder .coach-card__portrait {
   border-color: var(--accent-border);
   background: linear-gradient(135deg, var(--dark-3) 0%, rgba(212,168,83,0.08) 100%);
+  width: 76px;
+  height: 76px;
+}
+
+.coach-card--founder .coach-card__initial {
+  font-size: 1.9rem;
+  opacity: 0.85;
 }
 
 .coach-card__role {
@@ -1878,23 +1952,23 @@ a {
 }
 
 .coach-availability__title {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 600;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--gray);
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .coach-availability__days {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .coach-availability__day {
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1906,7 +1980,7 @@ a {
 }
 
 .coach-availability__note {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   color: var(--gray);
   font-style: italic;
 }
@@ -1999,11 +2073,15 @@ a {
 /* Steps */
 .pathfinder__step {
   display: none;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);
 }
 
 .pathfinder__step--active {
   display: block;
-  animation: fadeUp 0.4s var(--ease-out) forwards;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .pathfinder__step-title {
@@ -2026,6 +2104,7 @@ a {
   display: block;
   width: 100%;
   padding: 18px 24px;
+  padding-left: 32px;
   background: var(--dark-2);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 2px;
@@ -2038,6 +2117,7 @@ a {
   transition: all 0.3s var(--ease);
   position: relative;
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .process-option:hover {
@@ -2063,23 +2143,49 @@ a {
 .process-option--active::before {
   content: '';
   position: absolute;
-  left: 12px;
+  left: 14px;
   top: 50%;
   transform: translateY(-50%);
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: var(--accent);
+  box-shadow: 0 0 8px rgba(212, 168, 83, 0.4);
 }
 
 /* Result block */
 .pathfinder__result {
   display: none;
   margin-top: 40px;
-  background: var(--dark-2);
+  background: linear-gradient(160deg, var(--dark-2) 0%, rgba(212,168,83,0.04) 100%);
   border: 1px solid var(--accent-border);
   padding: clamp(28px, 4vw, 40px);
-  animation: fadeUp 0.5s var(--ease-out) forwards;
+  animation: resultReveal 0.6s var(--ease-out) forwards;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle gold corner accent on result */
+.pathfinder__result::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(225deg, rgba(212,168,83,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+@keyframes resultReveal {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .pathfinder__result--visible {
@@ -2087,7 +2193,9 @@ a {
 }
 
 .pathfinder__result-header {
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 
 .pathfinder__result-experience {
@@ -2099,22 +2207,27 @@ a {
 }
 
 .pathfinder__result-coach {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--accent);
   margin-bottom: 6px;
   font-weight: 600;
 }
 
 .pathfinder__result-plan {
-  font-size: 0.88rem;
+  font-size: 0.85rem;
   color: var(--gray-light);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  padding: 8px 14px;
+  background: var(--dark-3);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 2px;
+  display: inline-block;
 }
 
 .pathfinder__result-text {
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   color: var(--gray-light);
-  line-height: 1.7;
+  line-height: 1.75;
   margin-bottom: 28px;
   max-width: 520px;
 }
@@ -2126,21 +2239,24 @@ a {
 /* Restart */
 .pathfinder__restart {
   display: block;
-  margin: 16px auto 0;
+  margin: 20px auto 0;
   background: none;
-  border: none;
+  border: 1px solid rgba(255,255,255,0.06);
   color: var(--gray);
   font-family: var(--font-body);
-  font-size: 0.78rem;
-  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: color 0.3s;
-  padding: 8px;
+  transition: all 0.3s var(--ease);
+  padding: 10px 20px;
+  border-radius: 2px;
 }
 
 .pathfinder__restart:hover {
   color: var(--accent);
+  border-color: rgba(212, 168, 83, 0.3);
+  background: rgba(212, 168, 83, 0.06);
 }
 
 @media (max-width: 480px) {
@@ -2149,6 +2265,18 @@ a {
   }
   .coach-stat {
     grid-template-columns: 72px 1fr 28px;
+    gap: 8px;
+  }
+  .process-option {
+    padding: 16px 20px;
+    padding-left: 28px;
+    font-size: 0.88rem;
+  }
+  .pathfinder__step-title {
+    font-size: 1.05rem;
+    margin-bottom: 20px;
+  }
+  .pathfinder__options {
     gap: 8px;
   }
 }

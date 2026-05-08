@@ -223,11 +223,26 @@
   }
 
   function showStep(step) {
-    document.querySelectorAll('.pathfinder__step').forEach(function(el) {
-      el.classList.remove('pathfinder__step--active');
-    });
+    var currentStep = document.querySelector('.pathfinder__step--active');
+    if (currentStep) {
+      currentStep.style.opacity = '0';
+      currentStep.style.transform = 'translateY(8px)';
+      setTimeout(function() {
+        currentStep.classList.remove('pathfinder__step--active');
+        currentStep.style.opacity = '';
+        currentStep.style.transform = '';
+        activateStep(step);
+      }, 250);
+    } else {
+      activateStep(step);
+    }
+  }
+
+  function activateStep(step) {
     var target = document.querySelector('.pathfinder__step[data-step="' + step + '"]');
-    if (target) target.classList.add('pathfinder__step--active');
+    if (target) {
+      target.classList.add('pathfinder__step--active');
+    }
     pathfinderState.step = step;
     updateProgress();
   }
@@ -339,7 +354,6 @@
         '<div class="coach-stats">' +
           '<div class="coach-stats__header"><span class="coach-stats__title">Especialidades</span></div>' +
           statsHtml +
-          '<p class="coach-stats__disclaimer">Indicadores visuales de especialidad. Perfiles finales se actualizarán con el equipo oficial.</p>' +
         '</div>' +
         socialsHtml +
         '<div class="coach-availability">' +
