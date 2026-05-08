@@ -193,8 +193,7 @@
     } else if (style === 'tecnico') {
       if (!rec.note) rec.note = 'Prioridad en técnica, control del movimiento y progresión.';
     } else if (style === 'personalizado') {
-      rec.plan = 'Plan Power Plate';
-      if (!rec.note) rec.note = 'Atención personalizada con sesiones enfocadas en tu objetivo.';
+      if (!rec.note) rec.note = 'Orientación más personalizada para ajustar el entrenamiento a tu meta, nivel y disponibilidad.';
     }
 
     // Build WhatsApp message
