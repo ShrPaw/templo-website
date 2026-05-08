@@ -1589,6 +1589,412 @@ a {
 }
 
 /* ========================================
+   COACHES
+   ======================================== */
+.coaches {
+  padding: var(--section-pad) 0;
+  position: relative;
+}
+
+.coaches::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+}
+
+.coaches__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2px;
+  background: rgba(255,255,255,0.03);
+}
+
+.coach-card {
+  background: var(--dark);
+  padding: clamp(28px, 3vw, 40px);
+  transition: all 0.4s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.coach-card:hover {
+  background: var(--dark-2);
+}
+
+/* Founder card gets gold border */
+.coach-card--founder {
+  border: 1px solid var(--accent-border);
+}
+
+.coach-card--founder:hover {
+  border-color: rgba(212,168,83,0.3);
+  box-shadow: 0 0 60px var(--accent-subtle);
+}
+
+/* Coach portrait / initial */
+.coach-card__portrait {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-3);
+  border: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.coach-card__initial {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+/* Gold shimmer on founder portrait */
+.coach-card--founder .coach-card__portrait {
+  border-color: var(--accent-border);
+  background: linear-gradient(135deg, var(--dark-3) 0%, rgba(212,168,83,0.08) 100%);
+}
+
+.coach-card__role {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.coach-card__name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  color: var(--white-pure);
+}
+
+.coach-card__specialty {
+  font-size: 0.82rem;
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+
+/* Stats */
+.coach-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.coach-stat {
+  display: grid;
+  grid-template-columns: 90px 1fr 32px;
+  align-items: center;
+  gap: 10px;
+}
+
+.coach-stat__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--gray-light);
+  text-transform: uppercase;
+}
+
+.coach-stat__bar {
+  height: 4px;
+  background: var(--dark-3);
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.coach-stat__fill {
+  display: block;
+  height: 100%;
+  width: var(--value, 0%);
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+  border-radius: 2px;
+  transition: width 1s var(--ease-out);
+}
+
+.coach-stat__value {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Availability */
+.coach-availability {
+  margin-bottom: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.coach-availability__title {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 10px;
+}
+
+.coach-availability__days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.coach-availability__day {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  padding: 4px 10px;
+  background: var(--dark-3);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 2px;
+}
+
+.coach-availability__note {
+  font-size: 0.75rem;
+  color: var(--gray);
+  font-style: italic;
+}
+
+/* Coach CTA */
+.coach-card__cta {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+/* ========================================
+   PATHFINDER / DECISION TREE
+   ======================================== */
+.pathfinder {
+  padding: var(--section-pad) 0;
+  background: var(--dark);
+  position: relative;
+}
+
+.pathfinder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+}
+
+.pathfinder__tool {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+/* Progress bar */
+.pathfinder__progress {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.pathfinder__progress-bar {
+  height: 3px;
+  background: var(--dark-3);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.pathfinder__progress-fill {
+  display: block;
+  height: 100%;
+  width: 33.33%;
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+  border-radius: 2px;
+  transition: width 0.5s var(--ease-out);
+}
+
+.pathfinder__progress-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+/* Steps */
+.pathfinder__step {
+  display: none;
+}
+
+.pathfinder__step--active {
+  display: block;
+  animation: fadeUp 0.4s var(--ease-out) forwards;
+}
+
+.pathfinder__step-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 700;
+  color: var(--white-pure);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Option chips */
+.pathfinder__options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.process-option {
+  display: block;
+  width: 100%;
+  padding: 18px 24px;
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 2px;
+  color: var(--gray-light);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.process-option:hover {
+  background: var(--dark-3);
+  border-color: rgba(255,255,255,0.12);
+  color: var(--white);
+}
+
+/* Active / selected state — translucent gold */
+.process-option--active {
+  background: rgba(212, 168, 83, 0.12);
+  border-color: rgba(212, 168, 83, 0.55);
+  box-shadow: 0 0 32px rgba(212, 168, 83, 0.12);
+  color: var(--accent-light);
+}
+
+.process-option--active:hover {
+  background: rgba(212, 168, 83, 0.18);
+  border-color: rgba(212, 168, 83, 0.65);
+}
+
+/* Gold indicator dot for active */
+.process-option--active::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Result block */
+.pathfinder__result {
+  display: none;
+  margin-top: 40px;
+  background: var(--dark-2);
+  border: 1px solid var(--accent-border);
+  padding: clamp(28px, 4vw, 40px);
+  animation: fadeUp 0.5s var(--ease-out) forwards;
+}
+
+.pathfinder__result--visible {
+  display: block;
+}
+
+.pathfinder__result-header {
+  margin-bottom: 20px;
+}
+
+.pathfinder__result-experience {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 800;
+  color: var(--white-pure);
+  margin-bottom: 8px;
+}
+
+.pathfinder__result-coach {
+  font-size: 0.92rem;
+  color: var(--accent);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.pathfinder__result-plan {
+  font-size: 0.88rem;
+  color: var(--gray-light);
+  margin-bottom: 20px;
+}
+
+.pathfinder__result-text {
+  font-size: 0.95rem;
+  color: var(--gray-light);
+  line-height: 1.7;
+  margin-bottom: 28px;
+  max-width: 520px;
+}
+
+.pathfinder__result .btn {
+  width: 100%;
+}
+
+/* Restart */
+.pathfinder__restart {
+  display: block;
+  margin: 16px auto 0;
+  background: none;
+  border: none;
+  color: var(--gray);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s;
+  padding: 8px;
+}
+
+.pathfinder__restart:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 480px) {
+  .coaches__grid {
+    grid-template-columns: 1fr;
+  }
+  .coach-stat {
+    grid-template-columns: 72px 1fr 28px;
+    gap: 8px;
+  }
+}
+
+/* ========================================
    PLACEHOLDER IMAGES
    ======================================== */
 .hero__img[src="assets/hero-buddha-placeholder.svg"] {
