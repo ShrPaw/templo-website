@@ -71,11 +71,13 @@
     });
   }, observerOptions);
 
+  // Updated selectors for new boutique structure
   document.querySelectorAll(
-    '.positioning, .method__card, .service-card, .audience__card, ' +
-    '.experience__item, .results__content, .results__proof-card, ' +
-    '.plan-card, .founder__grid, .community__item, ' +
-    '.location__grid, .location__social, .faq__item, .final-cta__content'
+    '.positioning, .exp-card, .method__card, ' +
+    '.lifestyle__content, .lifestyle__img, ' +
+    '.founder__grid, .plan-card, ' +
+    '.location__grid, .location__social, ' +
+    '.faq__item, .final-cta__content'
   ).forEach(function(el) {
     el.classList.add('fade-in');
     observer.observe(el);
