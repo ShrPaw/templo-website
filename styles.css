@@ -44,6 +44,24 @@
 
   --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Motion system */
+  --motion-fast: 180ms;
+  --motion-med: 320ms;
+  --motion-slow: 700ms;
+  --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 html {
@@ -380,6 +398,8 @@ a {
   position: absolute;
   inset: 0;
   z-index: 0;
+  /* Subtle parallax container */
+  will-change: transform;
 }
 
 .hero__bg picture {
@@ -396,6 +416,15 @@ a {
   object-position: 62% center;
   filter: saturate(0.8) contrast(1.15);
   background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 50%, #1a1a1a 100%);
+  /* Cinematic scale settle on load */
+  transform: scale(1.04);
+  animation: heroSettle 3s 0.5s var(--motion-ease) forwards;
+}
+
+@keyframes heroSettle {
+  to {
+    transform: scale(1);
+  }
 }
 
 /* Gold-tinted overlay for cinematic warmth */
@@ -406,6 +435,17 @@ a {
     linear-gradient(90deg, rgba(5,5,5,0.94) 0%, rgba(5,5,5,0.55) 40%, rgba(5,5,5,0.1) 70%, rgba(5,5,5,0.6) 100%),
     linear-gradient(to bottom, rgba(10,10,10,0.1) 0%, rgba(10,10,10,0.35) 50%, rgba(10,10,10,0.95) 100%),
     linear-gradient(135deg, rgba(212,168,83,0.06) 0%, transparent 50%);
+  /* Subtle atmospheric drift */
+  animation: overlayDrift 12s ease-in-out infinite alternate;
+}
+
+@keyframes overlayDrift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 2% 1%;
+  }
 }
 
 .hero__content {
@@ -593,6 +633,7 @@ a {
 
 .exp-card:hover {
   background: var(--dark-2);
+  border-color: rgba(212,168,83,0.12);
 }
 
 .exp-card__visual {
@@ -758,7 +799,7 @@ a {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
-  transition: opacity 0.25s ease, transform 0.25s ease, color 0.25s ease;
+  transition: opacity var(--motion-fast) ease, transform var(--motion-fast) ease, color var(--motion-fast) ease;
 }
 
 .exp-card__learn:hover {
@@ -766,11 +807,17 @@ a {
   color: var(--accent-light);
 }
 
+.exp-card__learn:hover .exp-card__learn-icon {
+  opacity: 1;
+  filter: brightness(1.3);
+}
+
 .exp-card__learn-icon {
   width: 16px;
   height: 16px;
   object-fit: contain;
   opacity: 0.9;
+  transition: opacity var(--motion-fast) ease, filter var(--motion-fast) ease;
 }
 
 /* Premium card treatment */
@@ -919,11 +966,27 @@ a {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: all 0.5s var(--ease);
+  transition: all var(--motion-med) var(--ease);
   position: relative;
   overflow: hidden;
   padding: 0;
+  /* Staggered reveal base */
+  opacity: 0;
+  transform: translateY(18px);
 }
+
+.method__pillar.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--motion-slow) var(--motion-ease), transform var(--motion-slow) var(--motion-ease), background var(--motion-med) var(--ease);
+}
+
+/* Stagger delays applied via JS inline style or nth-child */
+.method__pillar:nth-child(1).is-visible { transition-delay: 0ms; }
+.method__pillar:nth-child(2).is-visible { transition-delay: 80ms; }
+.method__pillar:nth-child(3).is-visible { transition-delay: 160ms; }
+.method__pillar:nth-child(4).is-visible { transition-delay: 240ms; }
+.method__pillar:nth-child(5).is-visible { transition-delay: 320ms; }
 
 .method__pillar:hover {
   background: var(--dark-2);
@@ -939,7 +1002,11 @@ a {
   height: 2px;
   background: linear-gradient(90deg, var(--accent-dark), var(--accent), var(--accent-dark));
   transform: scaleX(0);
-  transition: transform 0.5s var(--ease-out);
+  transition: transform var(--motion-slow) var(--motion-ease);
+}
+
+.method__pillar.is-visible::before {
+  transform: scaleX(1);
 }
 
 .method__pillar:hover::before {
@@ -994,10 +1061,14 @@ a {
   color: var(--accent);
   line-height: 1;
   letter-spacing: -0.02em;
-  opacity: 0.6;
+  opacity: 0.2;
   position: relative;
   z-index: 1;
-  transition: opacity 0.4s var(--ease);
+  transition: opacity var(--motion-slow) var(--motion-ease);
+}
+
+.method__pillar.is-visible .method__pillar-num {
+  opacity: 0.7;
 }
 
 .method__pillar:hover .method__pillar-num {
@@ -1354,12 +1425,14 @@ a {
   display: flex;
   flex-direction: column;
   position: relative;
-  transition: all 0.35s var(--ease);
+  transition: all var(--motion-med) var(--ease);
   border: 1px solid transparent;
 }
 
 .pricing-card:hover {
   background: var(--dark-2);
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.06);
 }
 
 .pricing-card--premium {
@@ -1553,6 +1626,13 @@ a {
   white-space: nowrap;
   text-align: center;
   min-width: 80px;
+  transition: background var(--motion-fast) ease, border-color var(--motion-fast) ease, box-shadow var(--motion-fast) ease;
+}
+
+.pricing-option:hover .price-pill {
+  background: rgba(212, 168, 83, 0.22);
+  border-color: rgba(212, 168, 83, 0.5);
+  box-shadow: 0 0 16px rgba(212, 168, 83, 0.1);
 }
 
 .plans__note {
@@ -2034,7 +2114,14 @@ a {
   font-weight: 800;
   color: var(--accent);
   line-height: 1;
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity var(--motion-slow) var(--motion-ease), transform var(--motion-slow) var(--motion-ease);
+}
+
+.coach-card.is-visible .coach-card__initial {
   opacity: 0.7;
+  transform: scale(1);
 }
 
 .coach-card--founder .coach-card__portrait {
@@ -2096,6 +2183,15 @@ a {
   padding-left: 14px;
   border-left: 2px solid var(--accent);
   font-style: italic;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity var(--motion-slow) var(--motion-ease), transform var(--motion-slow) var(--motion-ease);
+}
+
+.coach-card.is-visible .coach-card__quote {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 200ms;
 }
 
 /* Founder fields */
@@ -2213,8 +2309,8 @@ a {
 .pathfinder__step {
   display: none;
   opacity: 0;
-  transform: translateY(8px);
-  transition: opacity 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+  transform: translateY(12px);
+  transition: opacity var(--motion-med) var(--motion-ease), transform var(--motion-med) var(--motion-ease);
 }
 
 .pathfinder__step--active {

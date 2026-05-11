@@ -392,7 +392,7 @@
     });
   });
 
-  // ---- Scroll reveal ----
+  // ---- Scroll reveal (general fade-in) ----
   var observerOpts = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
@@ -404,15 +404,58 @@
   }, observerOpts);
 
   document.querySelectorAll(
-    '.positioning, .exp-card, .method__pillar, ' +
-    '.pathfinder__tool, .coach-card, ' +
+    '.positioning, .exp-card, ' +
+    '.pathfinder__tool, ' +
     '.lifestyle__content, .lifestyle__img, ' +
-    '.pricing-card, .guia-detalle__item, .objectives__item, ' +
+    '.guia-detalle__item, .objectives__item, ' +
     '.location__grid, .location__social, ' +
     '.faq__item, .final-cta__content'
   ).forEach(function(el) {
     el.classList.add('fade-in');
     observer.observe(el);
+  });
+
+  // ---- Pillar staggered reveal ----
+  var pillarObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        pillarObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.method__pillar').forEach(function(pillar) {
+    pillarObserver.observe(pillar);
+  });
+
+  // ---- Pricing card reveal ----
+  var pricingObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        pricingObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.pricing-card').forEach(function(card) {
+    card.classList.add('fade-in');
+    pricingObserver.observe(card);
+  });
+
+  // ---- Coach card reveal (portrait + quote) ----
+  var coachObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        coachObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.coach-card').forEach(function(card) {
+    coachObserver.observe(card);
   });
 
   // ---- Active nav link ----
