@@ -30,6 +30,11 @@
   --accent-gradient: linear-gradient(135deg, rgba(212,168,83,0.22), rgba(10,10,10,0.72));
   --accent-border: rgba(212, 168, 83, 0.15);
 
+  /* Typography system:
+     Dharma = display / titles / important words
+     Montserrat = body / supporting text / descriptions
+     NOTE: Dharma font requires licensed file or import.
+     Fallback: Montserrat at heavy weight for display. */
   --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 
@@ -166,7 +171,7 @@ a {
 }
 
 /* ========================================
-   NAVIGATION
+   NAVIGATION — text-only brand
    ======================================== */
 .nav {
   position: fixed;
@@ -195,22 +200,19 @@ a {
   justify-content: space-between;
 }
 
-.nav__logo {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
+/* Text-only TEMPLO brand */
+.nav__brand {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white-pure);
+  transition: color 0.3s var(--ease);
 }
 
-.nav__logo-symbol {
-  display: block;
-  height: 28px;
-  width: auto;
-}
-
-.nav__logo-img {
-  display: block;
-  height: 34px;
-  width: auto;
+.nav__brand:hover {
+  color: var(--accent);
 }
 
 .nav__links {
@@ -353,11 +355,8 @@ a {
   .nav__toggle {
     display: flex;
   }
-  .nav__logo-symbol {
-    height: 22px;
-  }
-  .nav__logo-img {
-    height: 28px;
+  .nav__brand {
+    font-size: 1.2rem;
   }
   .mobile-menu {
     display: flex;
@@ -549,7 +548,7 @@ a {
 }
 
 /* ========================================
-   TRAINING EXPERIENCES (BOUTIQUE CARDS)
+   TRAINING EXPERIENCES — horizontal grid
    ======================================== */
 .experiencias {
   padding: var(--section-pad) 0;
@@ -566,39 +565,40 @@ a {
   background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
 }
 
+/* 3-column grid, 2 rows: 3 + 2 */
 .experiencias__grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2px;
   margin-bottom: 48px;
 }
 
-/* Each experience card: horizontal layout on desktop, stacked on mobile */
+/* Row 2: center 2 cards */
+.experiencias__grid .exp-card:nth-child(4) {
+  grid-column: 1 / 2;
+}
+.experiencias__grid .exp-card:nth-child(5) {
+  grid-column: 2 / 3;
+}
+
+/* Card: vertical layout in grid */
 .exp-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
   background: var(--dark);
   overflow: hidden;
   transition: all 0.5s var(--ease);
   position: relative;
-  min-height: 280px;
+  display: flex;
+  flex-direction: column;
 }
 
 .exp-card:hover {
   background: var(--dark-2);
 }
 
-.exp-card:nth-child(even) {
-  direction: rtl;
-}
-.exp-card:nth-child(even) > * {
-  direction: ltr;
-}
-
 .exp-card__visual {
   position: relative;
   overflow: hidden;
-  min-height: 240px;
+  min-height: 180px;
 }
 
 .exp-card__visual img {
@@ -612,14 +612,14 @@ a {
   transform: scale(1.06);
 }
 
-/* Editorial placeholder panels (used until real photos are available) */
+/* Editorial placeholder panels */
 .exp-panel {
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: clamp(24px, 3vw, 40px);
+  padding: clamp(20px, 2.5vw, 32px);
   position: relative;
   background:
     linear-gradient(135deg, rgba(212,168,83,0.08) 0%, rgba(10,10,10,0.95) 100%),
@@ -627,7 +627,6 @@ a {
   overflow: hidden;
 }
 
-/* Subtle diagonal texture */
 .exp-panel::before {
   content: '';
   position: absolute;
@@ -642,7 +641,6 @@ a {
   pointer-events: none;
 }
 
-/* Gold corner accent */
 .exp-panel::after {
   content: '';
   position: absolute;
@@ -656,19 +654,19 @@ a {
 
 .exp-panel__number {
   font-family: var(--font-display);
-  font-size: clamp(3rem, 6vw, 5rem);
+  font-size: clamp(2.5rem, 4vw, 4rem);
   font-weight: 900;
   color: rgba(212, 168, 83, 0.08);
   line-height: 1;
   position: absolute;
-  top: clamp(16px, 2vw, 24px);
-  left: clamp(16px, 2vw, 24px);
+  top: clamp(12px, 2vw, 20px);
+  left: clamp(12px, 2vw, 20px);
   letter-spacing: -0.04em;
 }
 
 .exp-panel__label {
   font-family: var(--font-display);
-  font-size: clamp(0.65rem, 1vw, 0.75rem);
+  font-size: clamp(0.6rem, 0.9vw, 0.72rem);
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -685,7 +683,7 @@ a {
   opacity: 0.4;
 }
 
-/* Power Plate panel: slightly more dominant gold glow */
+/* Power Plate panel */
 .exp-card--premium .exp-panel {
   background:
     linear-gradient(135deg, rgba(212,168,83,0.14) 0%, rgba(10,10,10,0.92) 100%),
@@ -698,7 +696,6 @@ a {
   background: linear-gradient(225deg, rgba(212,168,83,0.18) 0%, transparent 60%);
 }
 
-/* Gold filter overlay on images */
 .exp-card__filter {
   position: absolute;
   inset: 0;
@@ -706,49 +703,87 @@ a {
   pointer-events: none;
 }
 
-.exp-card:nth-child(even) .exp-card__filter {
-  background: linear-gradient(225deg, rgba(212,168,83,0.18) 0%, rgba(10,10,10,0.65) 100%);
-}
-
 .exp-card__body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(32px, 4vw, 56px);
+  padding: clamp(24px, 3vw, 40px);
   position: relative;
+  flex: 1;
 }
 
 .exp-card__badge {
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 16px;
+  right: 16px;
   background: var(--accent);
   color: var(--black);
-  font-size: 0.6rem;
+  font-size: 0.58rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  padding: 5px 12px;
+  padding: 4px 10px;
   border-radius: 1px;
 }
 
 .exp-card__name {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   color: var(--white-pure);
   line-height: 1.1;
 }
 
 .exp-card__desc {
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   color: var(--gray-light);
-  line-height: 1.7;
-  margin-bottom: 24px;
-  max-width: 340px;
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+/* Card micro-actions */
+.exp-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+.exp-card__symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: var(--accent);
+  font-size: 0.9rem;
+  transition: all 0.3s var(--ease);
+  border: 1px solid var(--accent-border);
+  border-radius: 2px;
+}
+
+.exp-card__symbol:hover {
+  background: var(--accent-subtle);
+  border-color: var(--accent);
+  transform: scale(1.1);
+}
+
+.exp-card__more {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  transition: color 0.3s var(--ease);
+}
+
+.exp-card__more:hover {
+  color: var(--accent);
 }
 
 /* Premium card treatment */
@@ -765,51 +800,68 @@ a {
   text-align: center;
 }
 
-/* Mobile: stack vertically */
-@media (max-width: 768px) {
-  .exp-card {
-    grid-template-columns: 1fr;
-    min-height: auto;
+/* Mobile: 1 column */
+@media (max-width: 900px) {
+  .experiencias__grid {
+    grid-template-columns: 1fr 1fr;
   }
-  .exp-card:nth-child(even) {
-    direction: ltr;
+  .experiencias__grid .exp-card:nth-child(4),
+  .experiencias__grid .exp-card:nth-child(5) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .experiencias__grid {
+    grid-template-columns: 1fr;
   }
   .exp-card__visual {
-    min-height: 200px;
-    max-height: 240px;
+    min-height: 160px;
+    max-height: 200px;
   }
   .exp-card__name {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
   .exp-card__body {
-    padding: 28px 24px;
+    padding: 24px 20px;
   }
 }
 
 /* ========================================
-   METHOD
+   SERVICE DETAIL / "CONOCER MÁS" SECTION
    ======================================== */
-.method {
+.guia-detalle {
   padding: var(--section-pad) 0;
   background: var(--dark);
+  position: relative;
 }
 
-.method__grid {
+.guia-detalle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+}
+
+.guia-detalle__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2px;
   background: rgba(255,255,255,0.03);
 }
 
-.method__card {
+.guia-detalle__item {
   background: var(--dark);
-  padding: clamp(32px, 4vw, 48px);
+  padding: clamp(28px, 3vw, 40px);
   transition: all 0.4s var(--ease);
   position: relative;
   overflow: hidden;
 }
 
-.method__card::before {
+.guia-detalle__item::before {
   content: '';
   position: absolute;
   top: 0;
@@ -822,35 +874,278 @@ a {
   transition: transform 0.5s var(--ease-out);
 }
 
-.method__card:hover::before {
+.guia-detalle__item:hover::before {
   transform: scaleX(1);
 }
 
-.method__card:hover {
+.guia-detalle__item:hover {
   background: var(--dark-2);
 }
 
-.method__number {
+.guia-detalle__name {
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  color: rgba(212, 168, 83, 0.12);
+  color: var(--white-pure);
+  margin-bottom: 12px;
+}
+
+.guia-detalle__text {
+  font-size: 0.9rem;
+  color: var(--gray-light);
+  line-height: 1.75;
   margin-bottom: 20px;
+}
+
+.guia-detalle__link {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: color 0.3s var(--ease);
+}
+
+.guia-detalle__link:hover {
+  color: var(--accent-light);
+}
+
+/* ========================================
+   METHOD — Stoic Pillars
+   ======================================== */
+.method {
+  padding: var(--section-pad) 0;
+  background: var(--dark);
+}
+
+.method__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,0.03);
+}
+
+/* Pillar — vertical stone column */
+.method__pillar {
+  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.5s var(--ease);
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.method__pillar:hover {
+  background: var(--dark-2);
+}
+
+/* Gold top line on hover */
+.method__pillar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent), var(--accent-dark));
+  transform: scaleX(0);
+  transition: transform 0.5s var(--ease-out);
+}
+
+.method__pillar:hover::before {
+  transform: scaleX(1);
+}
+
+/* Shaft — the vertical "stone" column */
+.method__pillar-shaft {
+  width: 100%;
+  padding: clamp(32px, 4vw, 48px) clamp(16px, 2vw, 24px) clamp(20px, 3vw, 32px);
+  background:
+    linear-gradient(180deg, rgba(212,168,83,0.06) 0%, rgba(10,10,10,0.95) 100%),
+    linear-gradient(to bottom, var(--dark-2) 0%, var(--dark-3) 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Subtle vertical lines texture */
+.method__pillar-shaft::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 20px,
+    rgba(212,168,83,0.015) 20px,
+    rgba(212,168,83,0.015) 21px
+  );
+  pointer-events: none;
+}
+
+/* Gold corner accent */
+.method__pillar-shaft::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(225deg, rgba(212,168,83,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.method__pillar-num {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  color: var(--accent);
   line-height: 1;
+  letter-spacing: -0.02em;
+  opacity: 0.6;
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.4s var(--ease);
+}
+
+.method__pillar:hover .method__pillar-num {
+  opacity: 0.9;
+}
+
+.method__pillar-content {
+  padding: clamp(20px, 3vw, 32px) clamp(16px, 2vw, 24px) clamp(28px, 4vw, 40px);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .method__name {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1.05rem;
   font-weight: 700;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   color: var(--white-pure);
+  letter-spacing: 0.02em;
 }
 
 .method__desc {
+  font-size: 0.85rem;
+  color: var(--gray-light);
+  line-height: 1.7;
+}
+
+/* Mobile: stack to 3+2 or 2+2+1 */
+@media (max-width: 900px) {
+  .method__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .method__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .method__pillar:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ========================================
+   OBJECTIVES / COMMON QUESTIONS
+   ======================================== */
+.objectives {
+  padding: var(--section-pad) 0;
+  position: relative;
+}
+
+.objectives::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+}
+
+.objectives__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2px;
+  background: rgba(255,255,255,0.03);
+}
+
+.objectives__item {
+  background: var(--dark);
+  padding: clamp(28px, 3vw, 40px);
+  transition: all 0.4s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.objectives__item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.objectives__item:hover::before {
+  transform: scaleX(1);
+}
+
+.objectives__item:hover {
+  background: var(--dark-2);
+}
+
+.objectives__question {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white-pure);
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.objectives__answer {
   font-size: 0.9rem;
   color: var(--gray-light);
   line-height: 1.75;
+  margin-bottom: 20px;
+}
+
+.objectives__routes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.objectives__route {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 6px 14px;
+  border: 1px solid var(--accent-border);
+  border-radius: 2px;
+  transition: all 0.3s var(--ease);
+}
+
+.objectives__route:hover {
+  background: var(--accent-subtle);
+  border-color: var(--accent);
 }
 
 /* ========================================
@@ -933,7 +1228,6 @@ a {
   transform: scale(1.06);
 }
 
-/* Gold filter on lifestyle images */
 .lifestyle__filter {
   position: absolute;
   inset: 0;
@@ -941,7 +1235,6 @@ a {
   pointer-events: none;
 }
 
-/* Lifestyle editorial panels */
 .lifestyle-panel {
   width: 100%;
   height: 100%;
@@ -955,7 +1248,6 @@ a {
   position: relative;
 }
 
-/* Subtle noise texture */
 .lifestyle-panel::before {
   content: '';
   position: absolute;
@@ -996,7 +1288,6 @@ a {
   position: relative;
 }
 
-/* Diagonal texture */
 .founder-panel::before {
   content: '';
   position: absolute;
@@ -1056,86 +1347,6 @@ a {
 }
 
 /* ========================================
-   FOUNDER / COACH
-   ======================================== */
-.founder {
-  padding: var(--section-pad) 0;
-  background: var(--dark);
-}
-
-.founder__grid {
-  display: grid;
-  grid-template-columns: 1fr 1.3fr;
-  gap: clamp(40px, 6vw, 80px);
-  align-items: center;
-}
-
-.founder__image {
-  aspect-ratio: 3/4;
-  overflow: hidden;
-  background: var(--dark-3);
-  position: relative;
-}
-
-.founder__image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border: 1px solid var(--accent-border);
-  pointer-events: none;
-}
-
-.founder__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* Gold filter on founder image */
-.founder__filter {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(212,168,83,0.1) 0%, rgba(10,10,10,0.4) 100%);
-  pointer-events: none;
-}
-
-.founder__name {
-  font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 800;
-  margin-bottom: 24px;
-  margin-top: 12px;
-}
-
-.founder__text {
-  font-size: 0.95rem;
-  color: var(--gray-light);
-  line-height: 1.75;
-  margin-bottom: 16px;
-}
-
-.founder__quote {
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--accent);
-  margin-top: 24px;
-  margin-bottom: 32px;
-  padding-left: 20px;
-  border-left: 2px solid var(--accent);
-  line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  .founder__grid {
-    grid-template-columns: 1fr;
-  }
-  .founder__image {
-    aspect-ratio: 16/9;
-  }
-}
-
-/* ========================================
    PLANS / PRICING
    ======================================== */
 .plans {
@@ -1150,7 +1361,6 @@ a {
   margin-bottom: 40px;
 }
 
-/* Pricing card */
 .pricing-card {
   background: var(--dark);
   padding: clamp(24px, 3vw, 40px);
@@ -1165,7 +1375,6 @@ a {
   background: var(--dark-2);
 }
 
-/* Premium card (Power Plate) */
 .pricing-card--premium {
   border: 1px solid var(--accent-border);
   background: linear-gradient(160deg, var(--dark) 0%, rgba(212,168,83,0.04) 100%);
@@ -1176,7 +1385,6 @@ a {
   box-shadow: 0 0 60px var(--accent-subtle);
 }
 
-/* Header */
 .pricing-card__header {
   margin-bottom: 14px;
   display: flex;
@@ -1217,7 +1425,6 @@ a {
   background: var(--accent-light);
 }
 
-/* Description */
 .pricing-card__desc {
   font-size: 0.88rem;
   color: var(--gray-light);
@@ -1225,7 +1432,31 @@ a {
   margin-bottom: 14px;
 }
 
-/* Notes */
+/* Guide level block */
+.pricing-card__guide {
+  padding: 12px 16px;
+  background: var(--dark-3);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+
+.pricing-card__guide-label {
+  display: block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.pricing-card__guide-text {
+  font-size: 0.82rem;
+  color: var(--gray-light);
+  line-height: 1.55;
+}
+
 .pricing-card__notes {
   display: flex;
   flex-wrap: wrap;
@@ -1244,7 +1475,6 @@ a {
   border-radius: 2px;
 }
 
-/* Schedule (Seniors) */
 .pricing-card__schedule {
   display: flex;
   flex-direction: column;
@@ -1270,7 +1500,6 @@ a {
   color: var(--gray-light);
 }
 
-/* Section label for option groups inside cards */
 .pricing-options-label {
   font-size: 0.62rem;
   font-weight: 700;
@@ -1281,7 +1510,6 @@ a {
   padding-left: 2px;
 }
 
-/* Pricing options */
 .pricing-options {
   display: flex;
   flex-direction: column;
@@ -1325,7 +1553,6 @@ a {
   line-height: 1.4;
 }
 
-/* Price pill */
 .price-pill {
   flex-shrink: 0;
   background: rgba(212, 168, 83, 0.14);
@@ -1341,7 +1568,6 @@ a {
   min-width: 80px;
 }
 
-/* Plans note */
 .plans__note {
   text-align: center;
   font-size: 0.9rem;
@@ -1593,7 +1819,6 @@ a {
   background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
 }
 
-/* Subtle gold glow behind CTA */
 .final-cta::after {
   content: '';
   position: absolute;
@@ -1760,21 +1985,9 @@ a {
 
 .coaches__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2px;
   background: rgba(255,255,255,0.03);
-}
-
-/* Section-level disclaimer */
-.coaches__disclaimer {
-  font-size: 0.72rem;
-  color: var(--gray);
-  font-style: italic;
-  margin-top: 12px;
-  max-width: 480px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.5;
 }
 
 .coach-card {
@@ -1785,7 +1998,6 @@ a {
   overflow: hidden;
 }
 
-/* Subtle top accent on hover */
 .coach-card::before {
   content: '';
   position: absolute;
@@ -1807,7 +2019,6 @@ a {
   background: var(--dark-2);
 }
 
-/* Founder card gets gold border */
 .coach-card--founder {
   border: 1px solid var(--accent-border);
 }
@@ -1817,7 +2028,6 @@ a {
   box-shadow: 0 0 60px var(--accent-subtle);
 }
 
-/* Coach portrait / initial */
 .coach-card__portrait {
   width: 68px;
   height: 68px;
@@ -1840,7 +2050,6 @@ a {
   opacity: 0.7;
 }
 
-/* Gold shimmer on founder portrait */
 .coach-card--founder .coach-card__portrait {
   border-color: var(--accent-border);
   background: linear-gradient(135deg, var(--dark-3) 0%, rgba(212,168,83,0.08) 100%);
@@ -1851,6 +2060,15 @@ a {
 .coach-card--founder .coach-card__initial {
   font-size: 1.9rem;
   opacity: 0.85;
+}
+
+.coach-card__alias {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 4px;
 }
 
 .coach-card__role {
@@ -1866,133 +2084,57 @@ a {
   font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 800;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
   color: var(--white-pure);
 }
 
-.coach-card__specialty {
-  font-size: 0.82rem;
-  color: var(--gray);
-  margin-bottom: 20px;
+/* Coach ability */
+.coach-card__ability {
+  font-size: 0.85rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
 }
 
-/* Stats */
-.coach-stats {
+/* Coach quote */
+.coach-card__quote {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--accent);
+  line-height: 1.55;
+  margin-bottom: 16px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accent);
+  font-style: italic;
+}
+
+/* Founder fields */
+.coach-card__fields {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 16px;
 }
 
-.coach-stats__header {
+.coach-card__field-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
   margin-bottom: 4px;
 }
 
-.coach-stats__title {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--accent);
-}
-
-.coach-stats__disclaimer {
-  font-size: 0.65rem;
-  color: var(--gray);
-  line-height: 1.5;
-  font-style: italic;
-  margin-top: 6px;
-}
-
-.coach-stat {
-  display: grid;
-  grid-template-columns: 90px 1fr 32px;
-  align-items: center;
-  gap: 10px;
-}
-
-.coach-stat__label {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+.coach-card__field-text {
+  font-size: 0.85rem;
   color: var(--gray-light);
-  text-transform: uppercase;
+  line-height: 1.6;
 }
 
-.coach-stat__bar {
-  height: 4px;
-  background: var(--dark-3);
-  border-radius: 2px;
-  overflow: hidden;
-  position: relative;
-}
-
-.coach-stat__fill {
-  display: block;
-  height: 100%;
-  width: var(--value, 0%);
-  background: linear-gradient(90deg, var(--accent-dark), var(--accent));
-  border-radius: 2px;
-  transition: width 1s var(--ease-out);
-}
-
-.coach-stat__value {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--accent);
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-/* Availability */
-.coach-availability {
-  margin-bottom: 20px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(255,255,255,0.04);
-}
-
-.coach-availability__title {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--gray);
-  margin-bottom: 8px;
-}
-
-.coach-availability__days {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 6px;
-}
-
-.coach-availability__day {
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--gray-light);
-  padding: 4px 10px;
-  background: var(--dark-3);
-  border: 1px solid rgba(255,255,255,0.04);
-  border-radius: 2px;
-}
-
-.coach-availability__note {
-  font-size: 0.72rem;
-  color: var(--gray);
-  font-style: italic;
-}
-
-/* Coach CTA */
-.coach-card__cta {
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-
-/* Coach social links */
+/* Coach socials */
 .coach-socials {
   display: flex;
   gap: 12px;
@@ -2013,6 +2155,18 @@ a {
 
 .coach-socials__link:hover {
   color: var(--accent);
+}
+
+.coach-card__cta {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .coaches__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ========================================
@@ -2039,7 +2193,6 @@ a {
   margin: 0 auto;
 }
 
-/* Progress bar */
 .pathfinder__progress {
   margin-bottom: 40px;
   text-align: center;
@@ -2070,7 +2223,6 @@ a {
   color: var(--gray);
 }
 
-/* Steps */
 .pathfinder__step {
   display: none;
   opacity: 0;
@@ -2093,7 +2245,6 @@ a {
   text-align: center;
 }
 
-/* Option chips */
 .pathfinder__options {
   display: flex;
   flex-direction: column;
@@ -2126,7 +2277,6 @@ a {
   color: var(--white);
 }
 
-/* Active / selected state — translucent gold */
 .process-option--active {
   background: rgba(212, 168, 83, 0.12);
   border-color: rgba(212, 168, 83, 0.55);
@@ -2139,7 +2289,6 @@ a {
   border-color: rgba(212, 168, 83, 0.65);
 }
 
-/* Gold indicator dot for active */
 .process-option--active::before {
   content: '';
   position: absolute;
@@ -2153,7 +2302,6 @@ a {
   box-shadow: 0 0 8px rgba(212, 168, 83, 0.4);
 }
 
-/* Result block */
 .pathfinder__result {
   display: none;
   margin-top: 40px;
@@ -2165,7 +2313,6 @@ a {
   overflow: hidden;
 }
 
-/* Subtle gold corner accent on result */
 .pathfinder__result::before {
   content: '';
   position: absolute;
@@ -2236,7 +2383,6 @@ a {
   width: 100%;
 }
 
-/* Restart */
 .pathfinder__restart {
   display: block;
   margin: 20px auto 0;
@@ -2260,13 +2406,6 @@ a {
 }
 
 @media (max-width: 480px) {
-  .coaches__grid {
-    grid-template-columns: 1fr;
-  }
-  .coach-stat {
-    grid-template-columns: 72px 1fr 28px;
-    gap: 8px;
-  }
   .process-option {
     padding: 16px 20px;
     padding-left: 28px;

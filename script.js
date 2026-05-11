@@ -7,148 +7,123 @@
   'use strict';
 
   // ============================================================
-  // COACH DATA
-  // Replace placeholder names/photos/specialties/socials when available.
-  // Stats are visual specialty indicators, NOT medical credentials or ratings.
+  // COACH DATA — rebuilt per brand direction
+  // Order: Lucas (founder) first, then 7 coaches.
+  // Lucas has mission, vision, ability, quote.
+  // Others have ability + quote only.
+  // Instagram links: structure exists, no fake URLs invented.
   // ============================================================
   var coaches = [
     {
       id: 'lucas',
-      name: 'Lucas',
-      role: 'Fundador / Dirección del Método',
-      specialty: 'Estrategia de entrenamiento',
+      name: 'Lucas Bustamante',
+      alias: 'Lucoach',
+      role: 'Fundador',
       isFounder: true,
       initial: 'L',
-      stats: {
-        'Fuerza': 90,
-        'Técnica': 95,
-        'Power Plate': 90,
-        'Progresión': 95,
-        'Seguimiento': 90
-      },
-      availability: ['Consultar disponibilidad'],
-      availabilityNote: 'Agenda por confirmar',
-      whatsappMessage: 'Hola, me interesa recibir orientación en TEMPLO. ¿Me pueden ayudar con la disponibilidad de Lucas o del coach adecuado?',
-      socials: {} // Add real links when available: { instagram: '', facebook: '' }
+      // NOTE: Mission, vision and ability are provisional draft copy.
+      // Should be confirmed/approved by Lucas before final deployment.
+      mission: 'Guiar a las personas a entrenar con intención, técnica y disciplina.',
+      vision: 'Construir un estudio donde cada meta tenga método, dirección y carácter.',
+      ability: 'Leer el cuerpo en movimiento y corregir el detalle que cambia el entrenamiento.',
+      quote: 'Entrenar no es repetir. Es construirte con intención.',
+      whatsappMessage: 'Hola, me interesa recibir orientación en TEMPLO. ¿Me pueden ayudar con la disponibilidad de Lucas?',
+      socials: {} // Add real Instagram URL when available
     },
     {
-      id: 'coach-fuerza',
-      name: 'Coach TEMPLO',
-      role: 'Fuerza y técnica',
-      specialty: 'Construcción de fuerza y técnica de levantamiento',
-      initial: 'FT',
-      stats: {
-        'Fuerza': 90,
-        'Técnica': 85,
-        'Intensidad': 80,
-        'Progresión': 85
-      },
-      availability: ['Consultar disponibilidad'],
-      availabilityNote: 'Agenda por confirmar',
-      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con el coach de fuerza y técnica. ¿Me pueden ayudar con su disponibilidad?',
+      id: 'nicolas-zegarra',
+      name: 'Nicolas Zegarra',
+      initial: 'NZ',
+      ability: 'Precisión técnica y progresión estructurada para cada nivel.',
+      quote: 'La técnica bien aplicada es el atajo que todos ignoran.',
+      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con Nicolas Zegarra. ¿Me pueden ayudar con su disponibilidad?',
       socials: {}
     },
     {
-      id: 'coach-calistenia',
-      name: 'Coach TEMPLO',
-      role: 'Calistenia y control corporal',
-      specialty: 'Progresiones de calistenia y dominio corporal',
-      initial: 'CC',
-      stats: {
-        'Calistenia': 95,
-        'Control corporal': 90,
-        'Movilidad': 80,
-        'Técnica': 85
-      },
-      availability: ['Consultar disponibilidad'],
-      availabilityNote: 'Agenda por confirmar',
-      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con el coach de calistenia. ¿Me pueden ayudar con su disponibilidad?',
+      id: 'andres-balderrama',
+      name: 'Andres Balderrama',
+      initial: 'AB',
+      ability: 'Intensidad controlada y capacidad de llevar al límite sin perder forma.',
+      quote: 'El esfuerzo sin técnica se pierde. La técnica sin esfuerzo no avanza.',
+      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con Andres Balderrama. ¿Me pueden ayudar con su disponibilidad?',
       socials: {}
     },
     {
-      id: 'coach-funcional',
-      name: 'Coach TEMPLO',
-      role: 'Funcional y acondicionamiento',
-      specialty: 'Entrenamiento funcional y capacidad física',
-      initial: 'FA',
-      stats: {
-        'Funcional': 90,
-        'Intensidad': 88,
-        'Resistencia': 85,
-        'Coordinación': 82
-      },
-      availability: ['Consultar disponibilidad'],
-      availabilityNote: 'Agenda por confirmar',
-      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con el coach de funcional y acondicionamiento. ¿Me pueden ayudar con su disponibilidad?',
+      id: 'nicolas-aranibar',
+      name: 'Nicolas Aranibar',
+      initial: 'NA',
+      ability: 'Dominio corporal y progresiones de calistenia desde cero hasta avanzado.',
+      quote: 'Tu cuerpo es la máquina. Aprende a usarla.',
+      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con Nicolas Aranibar. ¿Me pueden ayudar con su disponibilidad?',
       socials: {}
     },
     {
-      id: 'coach-powerplate',
-      name: 'Coach TEMPLO',
-      role: 'Power Plate',
-      specialty: 'Tecnología Power Plate para activación y fuerza',
-      initial: 'PP',
-      stats: {
-        'Power Plate': 95,
-        'Activación': 90,
-        'Control': 85,
-        'Progresión': 82
-      },
-      availability: ['Consultar disponibilidad'],
-      availabilityNote: 'Agenda por confirmar',
-      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con el coach de Power Plate. ¿Me pueden ayudar con su disponibilidad?',
+      id: 'andrea-sejas',
+      name: 'Andrea Sejas',
+      initial: 'AS',
+      ability: 'Entrenamiento enfocado en fuerza, tonificación y confianza corporal.',
+      quote: 'Fuerte no es un físico. Es una decisión que se entrena.',
+      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con Andrea Sejas. ¿Me pueden ayudar con su disponibilidad?',
       socials: {}
     },
     {
-      id: 'coach-seguimiento',
-      name: 'Coach TEMPLO',
-      role: 'Seguimiento y progresión',
-      specialty: 'Acompañamiento continuo y ajuste de rutinas',
-      initial: 'SP',
-      stats: {
-        'Seguimiento': 95,
-        'Técnica': 85,
-        'Progresión': 90,
-        'Constancia': 85
-      },
-      availability: ['Consultar disponibilidad'],
-      availabilityNote: 'Agenda por confirmar',
-      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con el coach de seguimiento y progresión. ¿Me pueden ayudar con su disponibilidad?',
+      id: 'santiago-lavayen',
+      name: 'Santiago Lavayen',
+      initial: 'SL',
+      ability: 'Funcional, resistencia y acondicionamiento desde múltiples ángulos.',
+      quote: 'El cuerpo se adapta. Tu trabajo es exigirle que lo haga bien.',
+      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con Santiago Lavayen. ¿Me pueden ayudar con su disponibilidad?',
+      socials: {}
+    },
+    {
+      id: 'oscar-encinas',
+      name: 'Oscar Encinas',
+      initial: 'OE',
+      ability: 'Fuerza aplicada y técnica de levantamiento con atención al detalle.',
+      quote: 'Cada repetición cuenta si la haces con intención.',
+      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con Oscar Encinas. ¿Me pueden ayudar con su disponibilidad?',
+      socials: {}
+    },
+    {
+      id: 'santiago-rojas',
+      name: 'Santiago Rojas',
+      initial: 'SR',
+      ability: 'Acompañamiento, seguimiento y motivación constante durante el proceso.',
+      quote: 'Aparecer es la mitad. Sostenerlo es lo que construye.',
+      whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con Santiago Rojas. ¿Me pueden ayudar con su disponibilidad?',
       socials: {}
     }
   ];
 
   // ============================================================
-  // DECISION TREE — uses goal + level + style for smarter results
+  // DECISION TREE — updated for new service categories
   // ============================================================
   function getRecommendation(goal, level, style) {
-    // Base recommendation by goal
     var base = {
-      fuerza:       { experience: 'Fuerza y Máquinas',    coach: 'Coach de fuerza y técnica',    plan: 'Plan Híbrido' },
-      composicion:  { experience: 'Funcional y Acondicionamiento', coach: 'Coach de intensidad y progresión', plan: 'Plan Híbrido' },
-      guia:         { experience: 'Entrenamiento Guiado',  coach: 'Coach de seguimiento y progresión', plan: 'Plan Calistenia' },
-      calistenia:   { experience: 'Calistenia',            coach: 'Coach de control corporal',    plan: 'Plan Calistenia' },
-      funcional:    { experience: 'Funcional y Acondicionamiento', coach: 'Coach funcional y acondicionamiento', plan: 'Plan Híbrido' },
-      adaptado:     { experience: 'Entrenamiento Adaptado', coach: 'Coach de control y progresión', plan: 'Plan Seniors' },
-      powerplate:   { experience: 'Power Plate',           coach: 'Coach Power Plate',            plan: 'Plan Power Plate' }
+      fuerza:        { experience: 'Híbrido — Fuerza y Funcional', plan: 'Plan Híbrido', coach: 'Coach de fuerza y técnica' },
+      tonificacion:  { experience: 'Mujeres / Híbrido',           plan: 'Plan Mujeres',  coach: 'Coach de tonificación y fuerza' },
+      calistenia:    { experience: 'Calistenia',                   plan: 'Plan Calistenia', coach: 'Coach de control corporal' },
+      'menor-impacto': { experience: 'Seniors / Entrenamiento Adaptado', plan: 'Plan Seniors', coach: 'Coach de control y adaptación' },
+      premium:       { experience: 'Power Plate',                  plan: 'Plan Power Plate', coach: 'Lucas — guía casi personalizada' },
+      general:       { experience: 'Entrenamiento Guiado',         plan: 'Plan Calistenia', coach: 'Coach de seguimiento' }
     };
 
-    var rec = base[goal] || base.guia;
+    var rec = base[goal] || base.general;
 
     // Level adjustments
     if (level === 'principiante') {
       if (goal === 'fuerza') {
         rec.plan = 'Plan Calistenia';
-        rec.note = 'Empezamos con técnica y progresión para construir una base sólida.';
-      } else if (goal === 'composicion') {
+        rec.note = 'Empezamos con técnica y progresión para construir una base sólida. Cuando estés listo, pasamos a Híbrido.';
+      } else if (goal === 'tonificacion') {
         rec.plan = 'Plan Calistenia';
         rec.note = 'Arrancamos con rutinas accesibles y aumentamos la intensidad con el tiempo.';
       } else if (goal === 'calistenia') {
         rec.note = 'Aprendes las bases con técnica correcta desde el primer día.';
-      } else if (goal === 'adaptado') {
+      } else if (goal === 'menor-impacto') {
         rec.note = 'Rutinas seguras y adaptadas a tu ritmo, con guía constante.';
-      } else if (goal === 'powerplate') {
-        rec.note = 'Sesiones guiadas para que conozcas la tecnología y sus beneficios.';
+      } else if (goal === 'premium') {
+        rec.note = 'Sesiones guiadas para que conozcas la tecnología y sus beneficios. Máximo 3 personas por sesión.';
       } else {
         rec.note = 'Empezamos con guía, técnica y estructura para que avances con seguridad.';
       }
@@ -156,10 +131,10 @@
       if (goal === 'fuerza') {
         rec.plan = 'Plan Híbrido';
         rec.note = 'Combinamos fuerza y funcional para llevar tu progresión al siguiente nivel.';
-      } else if (goal === 'composicion') {
+      } else if (goal === 'tonificacion') {
         rec.plan = 'Plan Híbrido';
         rec.note = 'Entrenamiento variado para mejorar composición y rendimiento.';
-      } else if (goal === 'powerplate') {
+      } else if (goal === 'premium') {
         rec.plan = 'Plan Power Plate';
         rec.note = 'Potenciamos tu entrenamiento con sesiones de Power Plate complementarias.';
       } else {
@@ -170,7 +145,7 @@
         rec.plan = 'Plan Híbrido';
         rec.experience = 'Híbrido — Fuerza y Funcional';
         rec.note = 'Alta intensidad, progresión avanzada y combinación de metodologías.';
-      } else if (goal === 'composicion') {
+      } else if (goal === 'tonificacion') {
         rec.plan = 'Plan Híbrido';
         rec.note = 'Intensidad alta con variedad de estímulos para resultados superiores.';
       } else if (goal === 'calistenia') {
@@ -183,10 +158,12 @@
 
     // Style adjustments
     if (style === 'guiado') {
-      rec.coach = rec.coach.replace('Coach de ', 'Coach de seguimiento y ');
+      if (goal !== 'premium') {
+        rec.coach = 'Coach de seguimiento y guía';
+      }
       if (!rec.note) rec.note = 'Enfoque en guía personalizada, seguimiento y técnica.';
     } else if (style === 'intenso') {
-      if (goal !== 'adaptado') {
+      if (goal !== 'menor-impacto' && goal !== 'premium') {
         rec.plan = 'Plan Híbrido';
       }
       if (!rec.note) rec.note = 'Entrenamiento intenso con enfoque en resultados y constancia.';
@@ -198,13 +175,12 @@
 
     // Build WhatsApp message
     var goalLabels = {
-      fuerza: 'ganar fuerza',
-      composicion: 'mejorar mi físico',
-      guia: 'empezar a entrenar con guía',
+      fuerza: 'ganar músculo y fuerza',
+      tonificacion: 'tonificarme y mejorar mi composición',
       calistenia: 'entrenar calistenia',
-      funcional: 'entrenamiento funcional',
-      adaptado: 'entrenar con menor impacto',
-      powerplate: 'conocer Power Plate'
+      'menor-impacto': 'entrenar con menor impacto',
+      premium: 'una experiencia premium con más guía',
+      general: 'empezar a entrenar con dirección'
     };
 
     rec.message = 'Hola, me interesa entrenar en TEMPLO. Mi objetivo es ' + (goalLabels[goal] || 'entrenar') + '. ¿Me pueden orientar?';
@@ -306,7 +282,7 @@
   }
 
   // ============================================================
-  // RENDER COACHES
+  // RENDER COACHES — rebuilt for new structure
   // ============================================================
   function renderCoaches() {
     var grid = document.getElementById('coachesGrid');
@@ -314,20 +290,6 @@
 
     var html = '';
     coaches.forEach(function(coach) {
-      var statsHtml = '';
-      Object.keys(coach.stats).forEach(function(key) {
-        statsHtml += '<div class="coach-stat">' +
-          '<span class="coach-stat__label">' + key + '</span>' +
-          '<div class="coach-stat__bar"><span class="coach-stat__fill" style="--value: ' + coach.stats[key] + '%"></span></div>' +
-          '</div>';
-      });
-
-      var availHtml = '';
-      coach.availability.forEach(function(day) {
-        availHtml += '<span class="coach-availability__day">' + day + '</span>';
-      });
-
-      // Social links — only render if URLs are provided
       var socialsHtml = '';
       var socialLabels = { instagram: 'Instagram', facebook: 'Facebook' };
       var socialKeys = ['instagram', 'facebook'];
@@ -343,50 +305,41 @@
         socialsHtml = '<div class="coach-socials">' + socialItems + '</div>';
       }
 
+      var bodyHtml = '';
+
+      if (coach.isFounder) {
+        // Founder: mission, vision, ability, quote
+        bodyHtml =
+          (coach.alias ? '<div class="coach-card__alias">' + coach.alias + '</div>' : '') +
+          '<div class="coach-card__role">' + coach.role + '</div>' +
+          '<h3 class="coach-card__name">' + coach.name + '</h3>' +
+          '<div class="coach-card__fields">' +
+            '<div><div class="coach-card__field-label">Misión</div><p class="coach-card__field-text">' + coach.mission + '</p></div>' +
+            '<div><div class="coach-card__field-label">Visión</div><p class="coach-card__field-text">' + coach.vision + '</p></div>' +
+            '<div><div class="coach-card__field-label">Habilidad distintiva</div><p class="coach-card__field-text">' + coach.ability + '</p></div>' +
+          '</div>' +
+          '<div class="coach-card__quote">"' + coach.quote + '"</div>' +
+          socialsHtml;
+      } else {
+        // Other coaches: ability + quote
+        bodyHtml =
+          '<h3 class="coach-card__name">' + coach.name + '</h3>' +
+          '<p class="coach-card__ability">' + coach.ability + '</p>' +
+          '<div class="coach-card__quote">"' + coach.quote + '"</div>' +
+          socialsHtml;
+      }
+
       var ctaLabel = coach.isFounder ? 'Consultar disponibilidad' : 'Consultar con este coach';
       var ctaClass = coach.isFounder ? 'btn btn--primary' : 'btn btn--ghost';
 
       html += '<article class="coach-card' + (coach.isFounder ? ' coach-card--founder' : '') + '">' +
         '<div class="coach-card__portrait"><span class="coach-card__initial">' + coach.initial + '</span></div>' +
-        '<div class="coach-card__role">' + coach.role + '</div>' +
-        '<h3 class="coach-card__name">' + coach.name + '</h3>' +
-        '<p class="coach-card__specialty">' + coach.specialty + '</p>' +
-        '<div class="coach-stats">' +
-          '<div class="coach-stats__header"><span class="coach-stats__title">Especialidades</span></div>' +
-          statsHtml +
-        '</div>' +
-        socialsHtml +
-        '<div class="coach-availability">' +
-          '<div class="coach-availability__title">Disponibilidad</div>' +
-          '<div class="coach-availability__days">' + availHtml + '</div>' +
-          '<p class="coach-availability__note">' + coach.availabilityNote + '</p>' +
-        '</div>' +
+        bodyHtml +
         '<a href="https://wa.me/59172001680?text=' + encodeURIComponent(coach.whatsappMessage) + '" class="' + ctaClass + ' coach-card__cta" target="_blank" rel="noopener" data-cta="coach-' + coach.id + '-whatsapp">' + ctaLabel + '</a>' +
         '</article>';
     });
 
     grid.innerHTML = html;
-
-    // Animate stat bars on scroll
-    setTimeout(function() {
-      var obs = new IntersectionObserver(function(entries) {
-        entries.forEach(function(entry) {
-          if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.coach-stat__fill').forEach(function(fill) {
-              fill.style.width = fill.style.getPropertyValue('--value');
-            });
-            obs.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.2 });
-
-      grid.querySelectorAll('.coach-card').forEach(function(card) {
-        card.querySelectorAll('.coach-stat__fill').forEach(function(fill) {
-          fill.style.width = '0%';
-        });
-        obs.observe(card);
-      });
-    }, 100);
   }
 
   // ============================================================
@@ -422,6 +375,7 @@
     });
   }
 
+  // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
     anchor.addEventListener('click', function(e) {
       var href = this.getAttribute('href');
@@ -447,10 +401,10 @@
   }, observerOpts);
 
   document.querySelectorAll(
-    '.positioning, .exp-card, .method__card, ' +
+    '.positioning, .exp-card, .method__pillar, ' +
     '.pathfinder__tool, .coach-card, ' +
     '.lifestyle__content, .lifestyle__img, ' +
-    '.pricing-card, ' +
+    '.pricing-card, .guia-detalle__item, .objectives__item, ' +
     '.location__grid, .location__social, ' +
     '.faq__item, .final-cta__content'
   ).forEach(function(el) {
