@@ -12,6 +12,9 @@
   // Lucas has mission, vision, ability, quote.
   // Others have ability + quote only.
   // Instagram links: structure exists, no fake URLs invented.
+  //
+  // NOTE: Coach abilities and quotes are draft copy and should
+  // be approved by the team before final public launch.
   // ============================================================
   var coaches = [
     {

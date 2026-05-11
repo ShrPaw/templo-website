@@ -744,46 +744,33 @@ a {
   margin-bottom: 20px;
 }
 
-/* Card micro-actions */
-.exp-card__actions {
-  display: flex;
+/* Unified branded "Conocer más" action */
+.exp-card__learn {
+  display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
   margin-top: auto;
   padding-top: 16px;
   border-top: 1px solid rgba(255,255,255,0.04);
-}
-
-.exp-card__symbol {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  color: var(--accent);
-  font-size: 0.9rem;
-  transition: all 0.3s var(--ease);
-  border: 1px solid var(--accent-border);
-  border-radius: 2px;
-}
-
-.exp-card__symbol:hover {
-  background: var(--accent-subtle);
-  border-color: var(--accent);
-  transform: scale(1.1);
-}
-
-.exp-card__more {
+  font-family: var(--font-body);
   font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--gray-light);
-  transition: color 0.3s var(--ease);
+  color: var(--accent);
+  transition: opacity 0.25s ease, transform 0.25s ease, color 0.25s ease;
 }
 
-.exp-card__more:hover {
-  color: var(--accent);
+.exp-card__learn:hover {
+  transform: translateX(3px);
+  color: var(--accent-light);
+}
+
+.exp-card__learn-icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  opacity: 0.9;
 }
 
 /* Premium card treatment */
