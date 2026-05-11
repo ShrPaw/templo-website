@@ -1,134 +1,215 @@
 # TEMPLO — Deliverables & QA Report
 
-## 1. Diagnosis: What Was Wrong
-
-| Issue | Severity | Status |
-|-------|----------|--------|
-| Fake testimonials with `[Nombre del cliente]` placeholders | Critical | ✅ Fixed |
-| Missing services/training section (5 core offerings not shown) | Critical | ✅ Fixed |
-| `[Consultar]` price placeholders breaking trust | High | ✅ Removed |
-| Soft/victim-framing audience cards ("Estás empezando desde cero", "Estás cansado de improvisar") | High | ✅ Reframed |
-| Gold palette too muted/harsh | Medium | ✅ Warmer (#d4a853) |
-| Typography weight too soft for gym brand | Medium | ✅ Bolder (600-700) |
-| No Power Plate differentiation | High | ✅ Added as premium service + FAQ |
-| Founder copy lacked specific credibility | Medium | ✅ Rewritten |
-| Mobile menu toggle had no visual feedback | Low | ✅ Added X animation |
-| No medical disclaimer on adapted training | Medium | ✅ Added |
-| Hours were placeholder `[Consultar]` | Medium | ✅ Set real hours |
-| No `aria-expanded` on menu toggle | Low | ✅ Added |
-| No `fetchpriority` on hero image | Low | ✅ Added |
-| Final CTA was generic | Medium | ✅ Stronger copy |
-
-## 2. Strategic Changes
-
-- **Services section added**: 5 premium training cards (Power Plate, Calistenia, Fuerza y Máquinas, Funcional, Adaptado) with individual WhatsApp CTA
-- **Audience reframed**: From "you are lost" to "you have a goal" — aspirational, not therapeutic
-- **Lucas positioning**: Grounded in practical expertise across multiple modalities, no guru framing
-- **Copy strategy**: Identity-based selling, aspiration over insecurity, goal-oriented language
-- **Proof section**: Removed fake testimonials, replaced with honest "historias autorizadas próximamente" placeholder
-- **Plans**: Removed fake `[Consultar]` pricing, now clean WhatsApp-only inquiry buttons
-
-## 3. Visual Changes
-
-- **Gold palette warmed**: `--accent: #d4a96e` → `#d4a853` (richer, more vibrant)
-- **Accent glow added**: `rgba(212, 168, 83, 0.12)` for hover depth
-- **Card hover states**: Accent border-left on audience cards, bottom accent line on service cards
-- **Featured plan**: Added subtle gold glow shadow
-- **Section separators**: Subtle gradient lines between major sections
-- **Typography weight**: Bolder headings (600-700) for stronger gym identity
-- **Button hover**: Added `box-shadow` glow on primary buttons
-- **Community gaps**: Reduced to 1px with subtle background
-- **Proof card**: Dashed border treatment for placeholder state
-
-## 4. Copy Changes
-
-- **Hero subtitle**: Updated to "Guía, técnica y disciplina en un entorno diseñado para elevar tu cuerpo, tu constancia y tu estándar."
-- **Audience cards**: Reframed from "Estás empezando desde cero" → "Quieres un cuerpo más fuerte" etc.
-- **Founder**: Rewritten with specific modality expertise and grounded quote
-- **Final CTA**: "Si tienes una meta, entrenar al azar no es suficiente."
-- **FAQ**: Added Power Plate question
-- **All copy in Spanish** ✅
-
-## 5. Service-Positioning Changes
-
-Each service card communicates:
-- **Power Plate Premium**: International recognition, advanced training experience
-- **Calistenia**: Bodyweight mastery, progression, control
-- **Fuerza y Máquinas**: Guided resistance, technique, targeted muscle work
-- **Funcional**: Multi-angle movement, coordination, real-world capability
-- **Entrenamiento Adaptado**: Smart, controlled, low-impact — with medical disclaimer
-
-CTA: "Quiero saber qué entrenamiento me conviene" → contextual WhatsApp message
-
-## 6. Files Modified
+## 1. Files Changed
 
 | File | Changes |
 |------|---------|
-| `index.html` | +Services section, reframed audience, removed fake testimonials, updated founder copy, updated hours, added Power Plate FAQ, improved accessibility |
-| `styles.css` | Warmer palette, service card styles, better hover states, accent glows, improved typography weight, section gradient separators |
-| `script.js` | Added `.service-card` to observer, improved mobile toggle animation with aria support |
-| `README.md` | Updated structure, sections list, TODOs |
+| `index.html` | Header branding, services grid restructure, new sections (service detail, objectives), method pillars, coaches rebuild, plan anchors, guide levels |
+| `styles.css` | Typography system, nav text-brand, horizontal service grid, pillar visuals, objectives cards, guide blocks, mobile responsive |
+| `script.js` | Coach data rebuild (8 coaches, correct order), updated pathfinder logic for new categories, new render structure |
 
-## 7. Confirmation: Spanish Copy
+## 2. Header Branding Change
 
-✅ All user-facing copy is in elegant Latin American Spanish.
-✅ No English text in UI (only code comments and README in English).
+- **Before**: Logo image + wordmark image in navbar
+- **After**: Text-only `TEMPLO` using `nav__brand` class
+- Font: `var(--font-display)` at 800 weight, 0.18em letter-spacing
+- Logo assets preserved in repo for footer/favicon/decorative use
+- Mobile: font-size reduces to 1.2rem
 
-## 8. Confirmation: No `591XXXXXXXX`
+## 3. Services / Focused Market Restructure
 
-✅ No instance of `591XXXXXXXX` in any source file.
+**Layout change**: Alternating vertical blocks → 3+2 horizontal grid
 
-## 9. Confirmation: HTML/CSS Valid & Clean
+Desktop:
+- Row 1: Power Plate, Calistenia, Mujeres (3 columns)
+- Row 2: Seniors, Entrenamiento Adaptado (2 columns, centered)
 
-✅ Semantic HTML5 structure
-✅ Single `<title>`, single `meta description`, single OG title/description
-✅ No duplicate sections
-✅ Proper heading hierarchy (h1 → h2 → h3)
-✅ Clean CSS with no dead rules
-✅ CSS variables used consistently
-✅ No layout overflow issues
+Mobile:
+- 900px: 2-column grid
+- 600px: 1-column stack
 
-## 10. Confirmation: Mobile Menu
+**Card replacement**:
+- ~~Fuerza y Máquinas~~ → **Mujeres**
+- ~~Funcional y Acondicionamiento~~ → **Seniors**
 
-✅ Toggle button with `aria-label` and `aria-expanded`
-✅ X animation on open state
-✅ Body scroll lock when open
-✅ Auto-close on link click
-✅ Keyboard accessible
+## 4. New Service Card List
 
-## 11. Confirmation: WhatsApp CTAs
+1. Power Plate (Premium badge, 30 min noted)
+2. Calistenia
+3. Mujeres
+4. Seniors
+5. Entrenamiento Adaptado
 
-✅ All WhatsApp links use `+59172001680`
-✅ Contextual messages by section (hero, plans, services, training, final)
-✅ `target="_blank" rel="noopener"` on all external links
+Each card includes:
+- Service name
+- Short description
+- TEMPLO symbol (◆) → links to plan anchor
+- "Conocer más" → links to detail section anchor
 
-## 12. Confirmation: Fake Testimonials
+## 5. Plan Anchor Mapping
 
-✅ Removed all `[Nombre del cliente]` quote blocks
-✅ Replaced with "Transformaciones reales. Historias autorizadas próximamente." placeholder
+| Service Card | Symbol Link | Plan Anchor ID |
+|-------------|-------------|----------------|
+| Power Plate | ◆ | `#plan-power-plate` |
+| Calistenia | ◆ | `#plan-calistenia` |
+| Mujeres | ◆ | `#plan-mujeres` |
+| Seniors | ◆ | `#plan-seniors` |
+| Adaptado | ◆ | `#pathfinder` (routes to pathfinder) |
 
-## 13. Remaining Real-World TODOs
+Additional plan anchors added:
+- `id="plan-hibrido"` — Híbrido plan card
+- `id="plan-open-gym"` — Open Gym plan card
+
+## 6. "Conocer más" Behavior
+
+Each "Conocer más" link scrolls to the corresponding item in the new **"Más sobre cada experiencia"** detail section (`#guia-detalle`). This section explains coaching personalization differences per service.
+
+Detail targets:
+- `#guia-power-plate` — Max 3 people, close constant guidance
+- `#guia-calistenia` — Large group format, coach present
+- `#guia-mujeres` — Focused training with supervision
+- `#guia-seniors` — Reduced group, specific schedule windows
+- `#guia-adaptado` — Controlled, low-impact, WhatsApp consultation
+
+## 7. Objectives / Common Questions Implementation
+
+New section: **"Lo que realmente estás buscando"** (`#objectives`)
+
+Four items:
+1. "Quiero ganar músculo y fuerza" → Routes to Híbrido / Power Plate
+2. "Quiero tonificarme" → Routes to Mujeres / Híbrido / Calistenia
+3. "¿En cuánto tiempo puedo ver resultados?" → Honest answer about consistency + WhatsApp CTA
+4. "¿Es con coach o sin coach?" → Explains guide levels across plans
+
+Each item has plan route buttons or WhatsApp CTA.
+
+## 8. Coaching Personalization Explanation
+
+Added to both:
+- **Plan cards**: `pricing-card__guide` blocks with "Nivel de guía" label
+- **Service detail section**: Full explanation per service
+
+Business logic implemented:
+- **Power Plate**: "Máximo 3 personas. Guía cercana y constante durante la sesión."
+- **Calistenia**: "Formato grupal amplio. Un coach guía, corrige y acompaña el trabajo del grupo."
+- **Híbrido**: "Grupo más reducido (aprox. 7 personas). El coach acompaña técnica, postura, intensidad y esfuerzo."
+- **Seniors**: "Grupo reducido. El coach acompaña técnica, postura, intensidad y esfuerzo. Horarios específicos."
+
+## 9. Final TEMPLO Pillars Chosen
+
+Five pillars using Roman numeral system:
+
+| # | Pillar | Core Concept |
+|---|--------|-------------|
+| I | Disciplina | Base of everything. Training by choice, not reminder. |
+| II | Técnica | Technique orders effort. Every movement has intention. |
+| III | Constancia | Consistency sustains progress when motivation fluctuates. |
+| IV | Progresión | Load, volume, complexity advance with structure. |
+| V | Carácter | Training forges character. Stronger body, more disciplined version. |
+
+## 10. Pillar Visual Upgrade
+
+- Vertical "stone column" design with `method__pillar-shaft`
+- Gold Roman numerals (I–V) with subtle opacity
+- Dark stone texture (repeating-linear-gradient)
+- Gold corner accent on hover
+- Top gold line animates on hover (scaleX transform)
+- Responsive: 5-col → 3-col → 2-col+1
+
+## 11. Coaches Section Restructure
+
+**Order** (exact as specified):
+1. **Lucas Bustamante** — Alias: Lucoach, Role: Fundador
+2. Nicolas Zegarra
+3. Andres Balderrama
+4. Nicolas Aranibar
+5. Andrea Sejas
+6. Santiago Lavayen
+7. Oscar Encinas
+8. Santiago Rojas
+
+**Lucas card includes**:
+- Alias (Lucoach)
+- Role (Fundador)
+- Misión (draft — marked for approval)
+- Visión (draft — marked for approval)
+- Habilidad distintiva
+- Quote
+- Instagram structure (empty — no fake URL)
+
+**Other coaches include**:
+- Name
+- Distinguishing ability
+- Quote
+- Instagram structure (empty — no fake URLs)
+
+No stats bars, no availability blocks, no fake credentials.
+
+## 12. Dharma / Montserrat Enforcement Summary
+
+- `--font-display` variable set to `'Montserrat'` as fallback
+- CSS comment documents that Dharma requires licensed file/import
+- All section titles, headings, important words use `var(--font-display)`
+- All body text, descriptions, metadata use `var(--font-body)`
+- **ACTION REQUIRED**: Lucas needs to provide licensed Dharma font file or authorized import URL
+
+## 13. QA Result
+
+### WhatsApp ✅
+- All links use `59172001680`
+- No instance of `5917201680`, `591XXXXXXXX`, or `72209791`
+- 19 WhatsApp links in HTML, all verified
+
+### Anchors ✅
+- All 6 plan anchor IDs present and correct
+- Service card symbols link to correct plan anchors
+- "Conocer más" links to detail section anchors
+- No broken `#` links found
+
+### Pricing ✅
+- All prices unchanged (Bs. 230–550 range)
+- All plan names unchanged
+- No invented prices
+
+### Mobile ✅
+- Service grid: 3-col → 2-col → 1-col responsive
+- Method pillars: 5-col → 3-col → 2-col+1
+- Coaches: single column on mobile
+- Nav brand scales down on mobile
+- No horizontal overflow expected
+
+### Fake Data Check ✅
+- No fake testimonials
+- No fake Instagram URLs
+- No invented credentials
+- No invented schedules
+- Coach quotes marked as draft copy
+
+## 14. Remaining TODOs
 
 | TODO | Priority | Owner |
 |------|----------|-------|
-| Final 4K Buddha hero asset (dark stone, cinematic, negative space left) | Critical | Lucas/Photographer |
-| Real gym photography (interior, weights, calistenia, community) | Critical | Lucas/Photographer |
+| Confirm/approve Lucas mission & vision draft copy | High | Lucas |
+| Confirm/approve all coach quotes | High | Lucas |
+| Provide coach Instagram URLs | Medium | Lucas/Coaches |
+| Provide licensed Dharma font file or import | High | Lucas/Brand |
+| Final 4K Buddha hero asset | Critical | Lucas/Photographer |
+| Real gym photography | Critical | Lucas/Photographer |
 | Exact opening hours confirmation | High | Lucas |
 | Exact Google Maps embed coordinates | High | Lucas |
-| Final pricing decision (WhatsApp-only vs. published) | Medium | Lucas |
-| Authorized real testimonials with names | High | Lucas/Clients |
-| Real transformation proof (before/after, stories) | High | Lucas/Clients |
+| Authorized real testimonials | High | Lucas/Clients |
 | Real founder photo of Lucas | High | Lucas/Photographer |
+| Confirm whether 72209791 should ever replace website WhatsApp number | Medium | Lucas |
+| Real transformation proof (before/after) | High | Lucas/Clients |
 
-## 14. Recommended Next Phase
+## 15. Confirmation
 
-1. **Photography**: Commission or shoot premium gym photography — this is the single biggest visual upgrade available
-2. **Buddha hero**: Source or generate the 4K cinematic Buddha statue image per brand direction
-3. **Testimonials**: Collect 3-5 authorized real testimonials with client photos
-4. **Pricing**: Finalize WhatsApp-only or published pricing strategy
-5. **Google Maps**: Embed real coordinates with proper API key
-6. **Analytics**: Add WhatsApp click tracking (event-based, no heavy JS)
-7. **SEO**: Consider structured data (LocalBusiness schema)
-8. **Performance audit**: Run Lighthouse after real images are in place
-9. **Social proof**: Before/after gallery with authorization
-10. **A/B testing**: Test hero copy variations for conversion
+✅ All user-facing copy is in elegant Latin American Spanish
+✅ No English text in UI
+✅ No instance of wrong WhatsApp numbers
+✅ Semantic HTML5 structure
+✅ CSS variables used consistently
+✅ Pricing values unchanged
+✅ WhatsApp conversion flow preserved
+✅ Dark/gold premium identity maintained
+✅ Mobile-first layout preserved
