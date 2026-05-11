@@ -445,18 +445,20 @@
   });
 
   // ---- Coach card reveal (portrait + quote) ----
-  var coachObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        coachObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+  function initCoachObserver() {
+    var coachObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          coachObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
 
-  document.querySelectorAll('.coach-card').forEach(function(card) {
-    coachObserver.observe(card);
-  });
+    document.querySelectorAll('.coach-card').forEach(function(card) {
+      coachObserver.observe(card);
+    });
+  }
 
   // ---- Active nav link ----
   var sections = document.querySelectorAll('section[id]');
@@ -483,6 +485,7 @@
   // INIT
   // ============================================================
   renderCoaches();
+  initCoachObserver();
 
   var pathfinderTool = document.querySelector('.pathfinder__tool');
   if (pathfinderTool) {
