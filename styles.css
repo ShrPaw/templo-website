@@ -1512,15 +1512,29 @@ a {
   line-height: 1.7;
 }
 
+/* 3-pillar compressed variant */
+.method__grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.method__cta {
+  text-align: center;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
 /* Mobile: stack to 3+2 or 2+2+1 */
 @media (max-width: 900px) {
-  .method__grid {
+  .method__grid:not(.method__grid--3) {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .method__grid--3 {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
 
 @media (max-width: 600px) {
-  .method__grid {
+  .method__grid:not(.method__grid--3) {
     grid-template-columns: 1fr 1fr;
   }
   .method__pillar:last-child {
@@ -2824,6 +2838,167 @@ a {
 @media (max-width: 480px) {
   .coaches__grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ========================================
+   COACHES — COMPRESSED PREVIEW LAYOUT
+   ======================================== */
+
+/* Founder: full-width featured card */
+.coaches__founder {
+  margin-bottom: clamp(24px, 3vw, 40px);
+}
+
+.coaches__founder .coach-card {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.coaches__founder .coach-card__portrait {
+  margin: 0 auto 20px;
+}
+
+.coaches__founder .coach-card__quote {
+  border-left: none;
+  padding-left: 0;
+  text-align: center;
+}
+
+.coaches__founder .coach-card__fields {
+  text-align: left;
+}
+
+/* Team strip: horizontal scroll of compact cards */
+.coaches__team-strip {
+  display: flex;
+  gap: 2px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  margin-bottom: clamp(24px, 3vw, 40px);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-border) transparent;
+  mask-image: linear-gradient(to right, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, black 90%, transparent 100%);
+}
+
+.coaches__team-strip::-webkit-scrollbar {
+  height: 4px;
+}
+
+.coaches__team-strip::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.coaches__team-strip::-webkit-scrollbar-thumb {
+  background: var(--accent-border);
+  border-radius: 2px;
+}
+
+.team-card {
+  flex-shrink: 0;
+  width: 180px;
+  background: var(--dark);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all var(--motion-med) var(--ease);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+
+.team-card:hover {
+  background: var(--dark-2);
+  border-color: rgba(212,168,83,0.15);
+  transform: translateY(-2px);
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  transform: scaleX(0);
+  transition: transform 0.4s var(--ease-out);
+}
+
+.team-card:hover::before {
+  transform: scaleX(1);
+}
+
+.team-card__portrait {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-3);
+  border: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: border-color var(--motion-med) var(--ease), box-shadow var(--motion-med) var(--ease);
+}
+
+.team-card__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: saturate(0.8) contrast(1.1);
+}
+
+.team-card:hover .team-card__portrait {
+  border-color: rgba(212,168,83,0.3);
+  box-shadow: 0 0 16px rgba(212,168,83,0.1);
+}
+
+.team-card__initial {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--accent);
+  opacity: 0.6;
+}
+
+.team-card__name {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--white-pure);
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.team-card__specialty {
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.7;
+}
+
+.coaches__cta {
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .team-card {
+    width: 150px;
+    padding: 16px;
+  }
+  .team-card__portrait {
+    width: 40px;
+    height: 40px;
   }
 }
 

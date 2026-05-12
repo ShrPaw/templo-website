@@ -320,67 +320,88 @@
   }
 
   function renderCoaches() {
-    var grid = document.getElementById('coachesGrid');
-    if (!grid) return;
+    // --- Founder: full card ---
+    var founderEl = document.getElementById('coachesFounder');
+    var stripEl = document.getElementById('coachesTeamStrip');
 
-    var html = '';
-    coaches.forEach(function(coach) {
-      var socialsHtml = '';
-      var socialItems = '';
-
-      // Instagram — only render if real URL exists
-      if (coach.socials && coach.socials.instagram) {
-        socialItems += '<a href="' + coach.socials.instagram + '" class="coach-card__social-link" target="_blank" rel="noopener" aria-label="Instagram de ' + coach.name + '">' + getInstagramSvg() + '</a>';
+    if (founderEl) {
+      var founder = coaches[0]; // Lucas
+      var founderSocialsHtml = '';
+      var founderSocialItems = '';
+      if (founder.socials && founder.socials.instagram) {
+        founderSocialItems += '<a href="' + founder.socials.instagram + '" class="coach-card__social-link" target="_blank" rel="noopener" aria-label="Instagram de ' + founder.name + '">' + getInstagramSvg() + '</a>';
       }
-      // Facebook
-      if (coach.socials && coach.socials.facebook) {
-        socialItems += '<a href="' + coach.socials.facebook + '" class="coach-card__social-link" target="_blank" rel="noopener" aria-label="Facebook de ' + coach.name + '">Facebook</a>';
-      }
-      if (socialItems) {
-        socialsHtml = '<div class="coach-card__socials">' + socialItems + '</div>';
+      if (founderSocialItems) {
+        founderSocialsHtml = '<div class="coach-card__socials">' + founderSocialItems + '</div>';
       }
 
-      var specialtyHtml = '<div class="coach-card__specialty-icon">' + getSpecialtyIcon(coach.specialtyIcon) + '</div>';
+      var founderPortraitHtml = founder.photo
+        ? '<div class="coach-card__portrait"><img src="' + founder.photo + '" alt="' + founder.name + ' - Fundador de TEMPLO" loading="lazy" width="76" height="76"></div>'
+        : '<div class="coach-card__portrait"><span class="coach-card__initial">' + founder.initial + '</span></div>';
 
-      var bodyHtml = '';
-
-      if (coach.isFounder) {
-        bodyHtml =
-          specialtyHtml +
-          (coach.alias ? '<div class="coach-card__alias">' + coach.alias + '</div>' : '') +
-          '<div class="coach-card__role">' + coach.role + '</div>' +
-          '<h3 class="coach-card__name">' + coach.name + '</h3>' +
+      founderEl.innerHTML =
+        '<article class="coach-card coach-card--founder">' +
+          founderPortraitHtml +
+          '<div class="coach-card__specialty-icon">' + getSpecialtyIcon(founder.specialtyIcon) + '</div>' +
+          (founder.alias ? '<div class="coach-card__alias">' + founder.alias + '</div>' : '') +
+          '<div class="coach-card__role">' + founder.role + '</div>' +
+          '<h3 class="coach-card__name">' + founder.name + '</h3>' +
           '<div class="coach-card__fields">' +
-            '<div><div class="coach-card__field-label">Misión</div><p class="coach-card__field-text">' + coach.mission + '</p></div>' +
-            '<div><div class="coach-card__field-label">Visión</div><p class="coach-card__field-text">' + coach.vision + '</p></div>' +
-            '<div><div class="coach-card__field-label">Habilidad distintiva</div><p class="coach-card__field-text">' + coach.ability + '</p></div>' +
+            '<div><div class="coach-card__field-label">Misión</div><p class="coach-card__field-text">' + founder.mission + '</p></div>' +
+            '<div><div class="coach-card__field-label">Visión</div><p class="coach-card__field-text">' + founder.vision + '</p></div>' +
+            '<div><div class="coach-card__field-label">Habilidad distintiva</div><p class="coach-card__field-text">' + founder.ability + '</p></div>' +
           '</div>' +
-          '<div class="coach-card__quote">"' + coach.quote + '"</div>' +
-          socialsHtml;
-      } else {
-        bodyHtml =
-          specialtyHtml +
-          '<h3 class="coach-card__name">' + coach.name + '</h3>' +
-          '<p class="coach-card__ability">' + coach.ability + '</p>' +
-          '<div class="coach-card__quote">"' + coach.quote + '"</div>' +
-          socialsHtml;
+          '<div class="coach-card__quote">"' + founder.quote + '"</div>' +
+          founderSocialsHtml +
+          '<a href="https://wa.me/59172001680?text=' + encodeURIComponent(founder.whatsappMessage) + '" class="btn btn--primary coach-card__cta" target="_blank" rel="noopener" data-cta="coach-' + founder.id + '-whatsapp">Consultar disponibilidad de Lucas</a>' +
+        '</article>';
+    }
+
+    // --- Team strip: compact cards ---
+    if (stripEl) {
+      var stripHtml = '';
+      var teamSpecialties = {
+        'nicolas-zegarra': 'Precisión',
+        'andres-balderrama': 'Intensidad',
+        'nicolas-aranibar': 'Calistenia',
+        'andrea-sejas': 'Fuerza',
+        'santiago-lavayen': 'Funcional',
+        'oscar-encinas': 'Potencia',
+        'santiago-rojas': 'Acompañamiento'
+      };
+
+      for (var i = 1; i < coaches.length; i++) {
+        var c = coaches[i];
+        var portraitHtml = c.photo
+          ? '<div class="team-card__portrait"><img src="' + c.photo + '" alt="' + c.name + '" loading="lazy" width="48" height="48"></div>'
+          : '<div class="team-card__portrait"><span class="team-card__initial">' + c.initial + '</span></div>';
+
+        stripHtml +=
+          '<article class="team-card">' +
+            portraitHtml +
+            '<h4 class="team-card__name">' + c.name + '</h4>' +
+            '<span class="team-card__specialty">' + (teamSpecialties[c.id] || 'Coach') + '</span>' +
+          '</article>';
       }
 
-      var ctaLabel = coach.isFounder ? 'Consultar disponibilidad de Lucas' : 'Consultar con ' + coach.name.split(' ')[0];
-      var ctaClass = coach.isFounder ? 'btn btn--primary' : 'btn btn--ghost';
+      stripEl.innerHTML = stripHtml;
+    }
 
-      var portraitHtml = coach.photo
-        ? '<div class="coach-card__portrait"><img src="' + coach.photo + '" alt="' + coach.name + ' - Coach en TEMPLO" loading="lazy" width="68" height="68"></div>'
-        : '<div class="coach-card__portrait"><span class="coach-card__initial">' + coach.initial + '</span></div>';
-
-      html += '<article class="coach-card' + (coach.isFounder ? ' coach-card--founder' : '') + '">' +
-        portraitHtml +
-        bodyHtml +
-        '<a href="https://wa.me/59172001680?text=' + encodeURIComponent(coach.whatsappMessage) + '" class="' + ctaClass + ' coach-card__cta" target="_blank" rel="noopener" data-cta="coach-' + coach.id + '-whatsapp">' + ctaLabel + '</a>' +
-        '</article>';
-    });
-
-    grid.innerHTML = html;
+    // Init founder observer
+    if (founderEl) {
+      var founderCard = founderEl.querySelector('.coach-card');
+      if (founderCard) {
+        var founderObserver = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              founderObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+        founderObserver.observe(founderCard);
+      }
+    }
   }
 
   // ============================================================
