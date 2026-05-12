@@ -744,6 +744,40 @@ a {
   pointer-events: none;
 }
 
+/* ===== TEMPORARY PLACEHOLDER IMAGES — pending real TEMPLO photography ===== */
+/* Service card panels: background images with dark/gold overlay integration */
+.exp-panel[data-exp="01"] {
+  background:
+    linear-gradient(135deg, rgba(212,168,83,0.10) 0%, rgba(10,10,10,0.88) 100%),
+    linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.85) 100%),
+    url('assets/placeholders/powerplate.webp') center/cover no-repeat;
+}
+.exp-panel[data-exp="02"] {
+  background:
+    linear-gradient(135deg, rgba(212,168,83,0.08) 0%, rgba(10,10,10,0.88) 100%),
+    linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.85) 100%),
+    url('assets/placeholders/calistenia.webp') center/cover no-repeat;
+}
+.exp-panel[data-exp="03"] {
+  background:
+    linear-gradient(135deg, rgba(212,168,83,0.08) 0%, rgba(10,10,10,0.88) 100%),
+    linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.85) 100%),
+    url('assets/placeholders/mujeres.webp') center/cover no-repeat;
+}
+.exp-panel[data-exp="04"] {
+  background:
+    linear-gradient(135deg, rgba(212,168,83,0.08) 0%, rgba(10,10,10,0.88) 100%),
+    linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.85) 100%),
+    url('assets/placeholders/seniors.webp') center/cover no-repeat;
+}
+.exp-panel[data-exp="05"] {
+  background:
+    linear-gradient(135deg, rgba(212,168,83,0.08) 0%, rgba(10,10,10,0.88) 100%),
+    linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.85) 100%),
+    url('assets/placeholders/adaptado.webp') center/cover no-repeat;
+}
+/* ===== END TEMPORARY PLACEHOLDER IMAGES ===== */
+
 .exp-card__body {
   display: flex;
   flex-direction: column;
@@ -1319,6 +1353,33 @@ a {
   );
   pointer-events: none;
 }
+
+/* ===== TEMPORARY PLACEHOLDER IMAGES — lifestyle section ===== */
+.lifestyle-panel[data-panel="01"] {
+  background:
+    linear-gradient(135deg, rgba(212,168,83,0.08) 0%, rgba(10,10,10,0.85) 100%),
+    linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.8) 100%),
+    url('assets/placeholders/lifestyle-01.webp') center/cover no-repeat;
+}
+.lifestyle-panel[data-panel="02"] {
+  background:
+    linear-gradient(135deg, rgba(212,168,83,0.08) 0%, rgba(10,10,10,0.85) 100%),
+    linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.8) 100%),
+    url('assets/placeholders/lifestyle-02.webp') center/cover no-repeat;
+}
+.lifestyle-panel[data-panel="03"] {
+  background:
+    linear-gradient(135deg, rgba(212,168,83,0.08) 0%, rgba(10,10,10,0.85) 100%),
+    linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.8) 100%),
+    url('assets/placeholders/lifestyle-03.webp') center/cover no-repeat;
+}
+.lifestyle-panel[data-panel="04"] {
+  background:
+    linear-gradient(135deg, rgba(212,168,83,0.08) 0%, rgba(10,10,10,0.85) 100%),
+    linear-gradient(to bottom, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.8) 100%),
+    url('assets/placeholders/lifestyle-04.webp') center/cover no-repeat;
+}
+/* ===== END TEMPORARY PLACEHOLDER IMAGES ===== */
 
 .lifestyle-panel__label {
   font-family: var(--font-display);

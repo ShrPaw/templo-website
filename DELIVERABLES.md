@@ -1,6 +1,100 @@
 # TEMPLO — Deliverables & QA Report
 
-## 0. Graphic Design Refinement Pass (2026-05-12)
+## 0. Visual Completion Pass — Placeholder Images & Favicon (2026-05-12)
+
+### Summary
+Two improvements: (1) temporary example photos added to all visual placeholder areas, (2) favicon regenerated with tighter crop for better browser-tab visibility.
+
+### Files Changed
+
+| File | Changes |
+|------|---------|
+| `styles.css` | Background-image rules added to 5 service card panels + 4 lifestyle panels |
+| `index.html` | Favicon cache-busting updated from `?v=2` → `?v=3` |
+| `assets/placeholders/*.webp` | 9 new placeholder images (see below) |
+| `assets/favicon-16.png` | Regenerated — tighter crop |
+| `assets/favicon-32.png` | Regenerated — tighter crop |
+| `assets/favicon.ico` | Regenerated — tighter crop |
+| `assets/apple-touch-icon.png` | Regenerated — tighter crop |
+| `assets/favicon.svg` | Regenerated — embedded PNG, tighter crop |
+
+### Temporary Placeholder Images Added
+
+**⚠️ These are TEMPORARY EXAMPLE VISUALS — pending real TEMPLO photography.**
+
+All images sourced from Unsplash (royalty-free, no attribution required). Optimized to WebP format.
+
+| Asset | Section | File Size |
+|-------|---------|-----------|
+| `assets/placeholders/powerplate.webp` | Service card — Power Plate | 39KB |
+| `assets/placeholders/calistenia.webp` | Service card — Calistenia | 77KB |
+| `assets/placeholders/mujeres.webp` | Service card — Mujeres | 37KB |
+| `assets/placeholders/seniors.webp` | Service card — Seniors | 23KB |
+| `assets/placeholders/adaptado.webp` | Service card — Entrenamiento Adaptado | 31KB |
+| `assets/placeholders/lifestyle-01.webp` | Lifestyle grid — "Fuerza" | 42KB |
+| `assets/placeholders/lifestyle-02.webp` | Lifestyle grid — "Disciplina" | 59KB |
+| `assets/placeholders/lifestyle-03.webp` | Lifestyle grid — "Técnica" | 30KB |
+| `assets/placeholders/lifestyle-04.webp` | Lifestyle grid — "Comunidad" | 19KB |
+
+Total placeholder payload: ~357KB (all WebP, compressed)
+
+### Image Implementation Details
+- Images applied via CSS `background` property on `.exp-panel[data-exp]` and `.lifestyle-panel[data-panel]`
+- Layered under existing dark gradient overlays (preserves TEMPLO dark/gold aesthetic)
+- Images use `center/cover no-repeat` for consistent cropping
+- Gold-tinted gradient overlays ensure brand coherence
+- No `<img>` tags added — pure CSS background approach, no layout impact
+
+### Favicon Improvements
+
+**Problem**: Original TEMPLO symbol used only 64% of the icon canvas, making it appear small in browser tabs.
+
+**Solution**: Cropped symbol to content bounds + 6% margin, then regenerated all favicon sizes.
+
+| Before | After |
+|--------|-------|
+| Symbol used 64% of canvas | Symbol uses ~88% of canvas |
+| `?v=2` cache-busting | `?v=3` cache-busting |
+
+Favicon assets regenerated:
+- `favicon-16.png` (16×16)
+- `favicon-32.png` (32×32)
+- `favicon.ico` (multi-size: 16+32)
+- `apple-touch-icon.png` (180×180)
+- `favicon.svg` (embedded 32×32 PNG)
+
+### QA Summary
+
+| Check | Status |
+|-------|--------|
+| All WhatsApp links use `59172001680` | ✅ 20 links verified |
+| No `5917201680` | ✅ None found |
+| No `591XXXXXXXX` | ✅ None found |
+| No `72209791` | ✅ None found |
+| Pricing unchanged | ✅ Bs. 230–550 range intact |
+| Plan names unchanged | ✅ All intact |
+| All anchors intact | ✅ 12 anchors verified |
+| No broken image paths | ✅ All 9 placeholder files exist |
+| No layout shifts | ✅ CSS backgrounds, no new DOM elements |
+| No horizontal overflow | ✅ No new width constraints |
+| Service cards unchanged | ✅ Only visual panels updated |
+| Pathfinder logic unchanged | ✅ Not touched |
+| Coach order unchanged | ✅ Not touched |
+| Hero/Buddha unchanged | ✅ Not touched |
+| Favicon shows TEMPLO symbol | ✅ Not a plain "T" |
+| Favicon tighter crop | ✅ Symbol fills more of icon canvas |
+| Cache-busting applied | ✅ `?v=3` on all favicon refs |
+| Mobile layout clean | ✅ CSS backgrounds responsive by nature |
+
+### Remaining TODOs
+- Replace ALL placeholder images with real TEMPLO photography when available
+- Confirm final photography direction with Lucas
+- Confirm whether more image optimization is needed after real photos
+- Coach photos still pending (editorial placeholders kept — no fake coach images)
+
+---
+
+## 0b. Graphic Design Refinement Pass (2026-05-12)
 
 ### Files Changed
 
