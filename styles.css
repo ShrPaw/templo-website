@@ -1806,6 +1806,8 @@ a {
   aspect-ratio: 1;
   background: var(--dark-3);
 }
+
+@media (max-width: 900px) {
   .lifestyle .container {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -3082,4 +3084,371 @@ a {
 .hero__img[src="assets/hero-buddha-placeholder.svg"] {
   background: linear-gradient(135deg, var(--dark-2) 0%, var(--dark-3) 100%);
   min-height: 200px;
+}
+
+/* ========================================
+   SERVICE CARD SYMBOLS — Geometric icons
+   ======================================== */
+.exp-card__icon-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.exp-card__symbol {
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+  opacity: 0.7;
+  transition: opacity var(--motion-med) var(--ease), transform var(--motion-med) var(--ease);
+}
+
+.exp-card:hover .exp-card__symbol {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* ========================================
+   PATHFINDER OPTION ICONS
+   ======================================== */
+.process-option__icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--gray);
+  transition: color var(--motion-med) var(--ease), transform var(--motion-med) var(--ease);
+  margin-right: 14px;
+  vertical-align: middle;
+}
+
+.process-option:hover .process-option__icon {
+  color: var(--accent);
+  transform: scale(1.06);
+}
+
+.process-option--active .process-option__icon {
+  color: var(--accent-light);
+}
+
+.process-option {
+  display: flex;
+  align-items: center;
+}
+
+.process-option--active::before {
+  left: auto;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* ========================================
+   OBJECTIVE SECTION ICONS
+   ======================================== */
+.objectives__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: var(--accent);
+  opacity: 0.6;
+  transition: opacity var(--motion-med) var(--ease);
+}
+
+.objectives__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.objectives__item:hover .objectives__icon {
+  opacity: 1;
+}
+
+/* ========================================
+   PILLAR SYMBOLS — Mythic SVG illustrations
+   ======================================== */
+.method__pillar-symbol {
+  width: 48px;
+  height: 48px;
+  color: var(--accent);
+  opacity: 0;
+  transition: opacity var(--motion-slow) var(--motion-ease);
+  position: relative;
+  z-index: 1;
+}
+
+.method__pillar.is-visible .method__pillar-symbol {
+  opacity: 0.5;
+  animation: symbolGlow 4s ease-in-out infinite alternate;
+}
+
+.method__pillar:hover .method__pillar-symbol {
+  opacity: 0.85;
+}
+
+@keyframes symbolGlow {
+  0% { opacity: 0.4; filter: drop-shadow(0 0 0 transparent); }
+  100% { opacity: 0.6; filter: drop-shadow(0 0 6px rgba(212,168,83,0.15)); }
+}
+
+/* Subtle float for pillar symbols */
+.method__pillar.is-visible .method__pillar-symbol {
+  animation: symbolFloat 6s ease-in-out infinite alternate, symbolGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes symbolFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-3px); }
+}
+
+/* ========================================
+   SUGGESTED QUESTIONS BOX
+   ======================================== */
+.suggested-questions {
+  max-width: 640px;
+  margin: 0 auto clamp(40px, 5vw, 60px);
+  padding: clamp(24px, 3vw, 36px);
+  background: linear-gradient(160deg, var(--dark-2) 0%, rgba(212,168,83,0.04) 100%);
+  border: 1px solid var(--accent-border);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+.suggested-questions::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(225deg, rgba(212,168,83,0.1) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.suggested-questions__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.suggested-questions__icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.suggested-questions__title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white-pure);
+}
+
+.suggested-questions__sub {
+  font-size: 0.88rem;
+  color: var(--gray-light);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.suggested-questions__list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.suggested-question {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--dark-3);
+  border: 1px solid rgba(255,255,255,0.04);
+  border-radius: 2px;
+  font-size: 0.9rem;
+  color: var(--gray-light);
+  transition: all var(--motion-med) var(--ease);
+}
+
+.suggested-question:hover {
+  background: rgba(212,168,83,0.08);
+  border-color: rgba(212,168,83,0.25);
+  color: var(--accent-light);
+  transform: translateX(4px);
+}
+
+.suggested-question__marker {
+  color: var(--accent);
+  font-size: 0.85rem;
+  opacity: 0.6;
+  transition: opacity var(--motion-med) var(--ease), transform var(--motion-med) var(--ease);
+  flex-shrink: 0;
+}
+
+.suggested-question:hover .suggested-question__marker {
+  opacity: 1;
+  transform: translateX(2px);
+}
+
+@media (max-width: 600px) {
+  .suggested-questions {
+    padding: 20px;
+  }
+  .suggested-question {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ========================================
+   COACH CARDS — Symbolic Icon + Instagram
+   ======================================== */
+.coach-card__specialty-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--accent);
+  opacity: 0.5;
+  transition: opacity var(--motion-med) var(--ease);
+  margin-bottom: 8px;
+}
+
+.coach-card:hover .coach-card__specialty-icon {
+  opacity: 0.8;
+}
+
+.coach-card__socials {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.coach-card__socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  transition: color var(--motion-med) var(--ease);
+}
+
+.coach-card__socials a:hover {
+  color: var(--accent);
+}
+
+.coach-card__socials svg {
+  width: 16px;
+  height: 16px;
+}
+
+.coach-card__consult {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--gray);
+  margin-bottom: 12px;
+  opacity: 0.6;
+}
+
+.coach-card__social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 2px;
+  color: var(--gray);
+  transition: all var(--motion-med) var(--ease);
+}
+
+.coach-card__social-link:hover {
+  color: var(--accent);
+  border-color: rgba(212,168,83,0.35);
+  background: var(--accent-subtle);
+}
+
+.coach-card__social-link svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Coach CTA refinement */
+.coach-card__cta {
+  transition: all var(--motion-med) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.coach-card__cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(212,168,83,0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity var(--motion-med) var(--ease);
+}
+
+.coach-card__cta:hover::before {
+  opacity: 1;
+}
+
+/* ========================================
+   CTA ENERGY — Pulse effect on primary buttons
+   ======================================== */
+.btn--primary::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: var(--accent);
+  border-radius: 2px;
+  opacity: 0;
+  z-index: -1;
+  animation: ctaPulse 3s ease-in-out infinite;
+}
+
+@keyframes ctaPulse {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.12; transform: scale(1.02); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn--primary::after {
+    animation: none;
+  }
+}
+
+/* ========================================
+   LIFESTYLE — mobile responsive fix
+   ======================================== */
+@media (max-width: 900px) {
+  .lifestyle .container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .lifestyle__content {
+    padding-right: 0;
+    text-align: center;
+  }
+  .lifestyle__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .lifestyle__img--tall {
+    grid-row: auto;
+    aspect-ratio: 1;
+  }
+  .lifestyle__img--wide {
+    grid-column: 1 / -1;
+    aspect-ratio: 2/1;
+  }
 }
