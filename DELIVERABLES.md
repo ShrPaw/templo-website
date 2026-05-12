@@ -1,12 +1,80 @@
 # TEMPLO — Deliverables & QA Report
 
-## 1. Files Changed
+## 0. Graphic Design Refinement Pass (2026-05-12)
+
+### Files Changed
 
 | File | Changes |
 |------|---------|
-| `index.html` | Header branding, services grid restructure, new sections (service detail, objectives), method pillars, coaches rebuild, plan anchors, guide levels |
-| `styles.css` | Typography system, nav text-brand, horizontal service grid, pillar visuals, objectives cards, guide blocks, mobile responsive |
-| `script.js` | Coach data rebuild (8 coaches, correct order), updated pathfinder logic for new categories, new render structure |
+| `index.html` | Services subtitle, Entrenamiento Adaptado copy, Method pillar descriptions (×5) |
+| `styles.css` | Dharma font status comment updated |
+
+### Copy Refinements Made
+
+**1. Services Subtitle** — replaced misaligned "fuerza" wording:
+- Old: "Power Plate, calistenia, fuerza y entrenamiento especializado se integran para construir un cuerpo más fuerte, capaz y disciplinado."
+- New: "Power Plate, calistenia y programas enfocados se integran para construir un cuerpo más fuerte, capaz y disciplinado."
+- Section title unchanged: "Cada meta necesita una herramienta."
+
+**2. Entrenamiento Adaptado Detail** — softened medical-sounding copy:
+- Old: "Entrenamiento con mayor control cuando tu cuerpo necesita avanzar de forma inteligente. Ideal para recuperación, bajo impacto o condiciones específicas."
+- New: "Pensado para quienes necesitan entrenar con más control, menor impacto y una progresión más cuidadosa."
+- No medical claims. No recovery/treatment promises.
+
+**3. Method Pillar Text Refinements** — reduced ~20-30%, sharper tone:
+
+| Pillar | Before | After |
+|--------|--------|-------|
+| Disciplina | "La base de todo. Sin disciplina, no hay progreso. Entrenas porque elegiste hacerlo, no porque te lo recuerden." | "Entrenas porque elegiste hacerlo. No porque alguien te recuerde." |
+| Técnica | "La técnica ordena el esfuerzo. Cada movimiento tiene intención, posición y control. Sin técnica, el esfuerzo se pierde." | "Cada movimiento tiene intención, posición y control. Sin técnica, el esfuerzo se pierde." |
+| Constancia | "El progreso no es lineal. La constancia sostiene el proceso cuando la motivación fluctúa. Aparecer es la mitad de la batalla." | "El progreso no es lineal. Aparecer sostenidamente es lo que construye." |
+| Progresión | "Carga, volumen, complejidad — todo avanza con estructura. Progresas porque el método lo permite, no por azar." | "Carga, volumen, complejidad — todo avanza con estructura. No por azar." |
+| Carácter | "El entrenamiento forja carácter. No solo construyes un cuerpo más fuerte — construyes una versión más disciplinada de ti." | "No solo construyes un cuerpo más fuerte — construyes una versión más disciplinada de ti." |
+
+### Coach Observer Fix Summary
+
+- **Status**: Already correct — no fix needed
+- `renderCoaches()` is called before `initCoachObserver()` in the IIFE init block
+- Coach cards are in DOM before the observer is created
+
+### Dharma Font Status
+
+**Dharma font file/import is still pending.**
+- No `.woff2`, `.woff`, `.ttf`, or `.otf` file exists in the repo
+- No `@font-face` declaration exists
+- `--font-display` falls back to `'Montserrat'` at 800/900 weight
+- CSS comment updated to reflect pending status
+- Action: Lucas needs to provide a licensed Dharma font file or authorized import URL
+
+### Graphic Design QA Summary
+
+| Check | Status |
+|-------|--------|
+| Spacing consistency | ✅ Section padding uses `clamp(80px, 12vw, 160px)` consistently |
+| Section rhythm | ✅ Alternating dark/dark-2 backgrounds with accent border separators |
+| Title hierarchy | ✅ `.section-label` → `.section-title` → `.section-sub` consistent |
+| Mobile readability | ✅ Font sizes use clamp(), line-height 1.6-1.75 |
+| Button tap targets | ✅ `.btn` padding 16px+ (≈48px height), `.process-option` 18px+ |
+| No visual clutter | ✅ Clean grid layouts, minimal borders, gold accents used sparingly |
+| No excessive motion | ✅ `prefers-reduced-motion` respected, animations are subtle |
+| No horizontal overflow | ✅ `overflow-x: hidden` on body, grids use fractional units |
+
+### WhatsApp / Link QA Confirmation
+
+| Check | Status |
+|-------|--------|
+| All WhatsApp links use `59172001680` | ✅ 19 links verified |
+| No `5917201680` | ✅ None found |
+| No `591XXXXXXXX` | ✅ None found |
+| No `72209791` | ✅ None found |
+| Pricing unchanged | ✅ Bs. 230–550 range intact |
+| Service cards unchanged except subtitle | ✅ Only subtitle text updated |
+| Unified "Conocer más" intact | ✅ All 5 cards link to `#guia-*` anchors |
+| Coach observer works after renderCoaches() | ✅ Order is correct |
+| No fake social links | ✅ Instagram/Facebook structure exists but empty for coaches |
+| No fake schedules | ✅ Only "Consultar por WhatsApp" for hours |
+| Dharma status reported | ✅ Pending — documented above |
+| Mobile layout clean | ✅ Responsive breakpoints verified |
 
 ## 2. Header Branding Change
 

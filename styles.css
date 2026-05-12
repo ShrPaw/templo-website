@@ -31,10 +31,10 @@
   --accent-border: rgba(212, 168, 83, 0.15);
 
   /* Typography system:
-     Dharma = display / titles / important words
-     Montserrat = body / supporting text / descriptions
-     NOTE: Dharma font requires licensed file or import.
-     Fallback: Montserrat at heavy weight for display. */
+     Montserrat = display + body (unified)
+     NOTE: Dharma font file/import is still pending.
+     If a licensed Dharma .woff2 is added later,
+     wire it via @font-face and update --font-display. */
   --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
 
