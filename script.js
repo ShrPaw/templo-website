@@ -24,6 +24,7 @@
       role: 'Fundador',
       isFounder: true,
       initial: 'L',
+      photo: 'assets/placeholders/coach-lucas.webp',
       // NOTE: Mission, vision and ability are provisional draft copy.
       // Should be confirmed/approved by Lucas before final deployment.
       mission: 'Guiar a las personas a entrenar con intención, técnica y disciplina.',
@@ -37,6 +38,7 @@
       id: 'nicolas-zegarra',
       name: 'Nicolas Zegarra',
       initial: 'NZ',
+      photo: 'assets/placeholders/coach-nicolas-z.webp',
       ability: 'Precisión técnica y progresión estructurada para cada nivel.',
       quote: 'La técnica bien aplicada es el atajo que todos ignoran.',
       whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con Nicolas Zegarra. ¿Me pueden ayudar con su disponibilidad?',
@@ -46,6 +48,7 @@
       id: 'andres-balderrama',
       name: 'Andres Balderrama',
       initial: 'AB',
+      photo: 'assets/placeholders/coach-andres.webp',
       ability: 'Intensidad controlada y capacidad de llevar al límite sin perder forma.',
       quote: 'El esfuerzo sin técnica se pierde. La técnica sin esfuerzo no avanza.',
       whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con Andres Balderrama. ¿Me pueden ayudar con su disponibilidad?',
@@ -55,6 +58,7 @@
       id: 'nicolas-aranibar',
       name: 'Nicolas Aranibar',
       initial: 'NA',
+      photo: 'assets/placeholders/coach-nicolas-a.webp',
       ability: 'Dominio corporal y progresiones de calistenia desde cero hasta avanzado.',
       quote: 'Tu cuerpo es la máquina. Aprende a usarla.',
       whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con Nicolas Aranibar. ¿Me pueden ayudar con su disponibilidad?',
@@ -64,6 +68,7 @@
       id: 'andrea-sejas',
       name: 'Andrea Sejas',
       initial: 'AS',
+      photo: 'assets/placeholders/coach-andrea.webp',
       ability: 'Entrenamiento enfocado en fuerza, tonificación y confianza corporal.',
       quote: 'Fuerte no es un físico. Es una decisión que se entrena.',
       whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con Andrea Sejas. ¿Me pueden ayudar con su disponibilidad?',
@@ -73,6 +78,7 @@
       id: 'santiago-lavayen',
       name: 'Santiago Lavayen',
       initial: 'SL',
+      photo: 'assets/placeholders/coach-santiago-l.webp',
       ability: 'Funcional, resistencia y acondicionamiento desde múltiples ángulos.',
       quote: 'El cuerpo se adapta. Tu trabajo es exigirle que lo haga bien.',
       whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con Santiago Lavayen. ¿Me pueden ayudar con su disponibilidad?',
@@ -82,6 +88,7 @@
       id: 'oscar-encinas',
       name: 'Oscar Encinas',
       initial: 'OE',
+      photo: 'assets/placeholders/coach-oscar.webp',
       ability: 'Fuerza aplicada y técnica de levantamiento con atención al detalle.',
       quote: 'Cada repetición cuenta si la haces con intención.',
       whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con Oscar Encinas. ¿Me pueden ayudar con su disponibilidad?',
@@ -91,6 +98,7 @@
       id: 'santiago-rojas',
       name: 'Santiago Rojas',
       initial: 'SR',
+      photo: 'assets/placeholders/coach-santiago-r.webp',
       ability: 'Acompañamiento, seguimiento y motivación constante durante el proceso.',
       quote: 'Aparecer es la mitad. Sostenerlo es lo que construye.',
       whatsappMessage: 'Hola, me interesa entrenar en TEMPLO con Santiago Rojas. ¿Me pueden ayudar con su disponibilidad?',
@@ -335,8 +343,12 @@
       var ctaLabel = coach.isFounder ? 'Consultar disponibilidad' : 'Consultar con este coach';
       var ctaClass = coach.isFounder ? 'btn btn--primary' : 'btn btn--ghost';
 
+      var portraitHtml = coach.photo
+        ? '<div class="coach-card__portrait"><img src="' + coach.photo + '" alt="' + coach.name + ' - Coach en TEMPLO" loading="lazy" width="68" height="68"></div>'
+        : '<div class="coach-card__portrait"><span class="coach-card__initial">' + coach.initial + '</span></div>';
+
       html += '<article class="coach-card' + (coach.isFounder ? ' coach-card--founder' : '') + '">' +
-        '<div class="coach-card__portrait"><span class="coach-card__initial">' + coach.initial + '</span></div>' +
+        portraitHtml +
         bodyHtml +
         '<a href="https://wa.me/59172001680?text=' + encodeURIComponent(coach.whatsappMessage) + '" class="' + ctaClass + ' coach-card__cta" target="_blank" rel="noopener" data-cta="coach-' + coach.id + '-whatsapp">' + ctaLabel + '</a>' +
         '</article>';
@@ -411,7 +423,8 @@
     '.location__grid, .location__social, ' +
     '.faq__item, .final-cta__content, ' +
     '.energy-strip__header, ' +
-    '.activity-reel__content'
+    '.activity-reel__content, ' +
+    '.metrics__item'
   ).forEach(function(el) {
     el.classList.add('fade-in');
     observer.observe(el);
@@ -499,6 +512,46 @@
   window.addEventListener('scroll', highlightNav, { passive: true });
 
   // ============================================================
+  // METRICS COUNTER ANIMATION
+  // ============================================================
+  function initMetricsCounter() {
+    var counters = document.querySelectorAll('.metrics__number[data-target]');
+    if (!counters.length) return;
+
+    var counterObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var target = parseInt(el.getAttribute('data-target'), 10);
+          var duration = 1500;
+          var start = 0;
+          var startTime = null;
+
+          function animate(currentTime) {
+            if (!startTime) startTime = currentTime;
+            var progress = Math.min((currentTime - startTime) / duration, 1);
+            var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+            var current = Math.floor(eased * target);
+            el.textContent = current;
+            if (progress < 1) {
+              requestAnimationFrame(animate);
+            } else {
+              el.textContent = target;
+            }
+          }
+
+          requestAnimationFrame(animate);
+          counterObserver.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    counters.forEach(function(counter) {
+      counterObserver.observe(counter);
+    });
+  }
+
+  // ============================================================
   // ACTIVITY REEL — Infinite horizontal marquee
   // ============================================================
   function initActivityReel() {
@@ -583,6 +636,7 @@
   renderCoaches();
   initCoachObserver();
   initActivityReel();
+  initMetricsCounter();
 
   var pathfinderTool = document.querySelector('.pathfinder__tool');
   if (pathfinderTool) {

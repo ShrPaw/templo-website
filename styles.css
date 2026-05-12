@@ -588,6 +588,86 @@ a {
 }
 
 /* ========================================
+   COMMUNITY METRICS — Social Proof
+   ======================================== */
+.metrics {
+  padding: clamp(40px, 6vw, 80px) 0;
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.metrics::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+}
+
+.metrics__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  text-align: center;
+}
+
+.metrics__item {
+  padding: clamp(24px, 3vw, 40px);
+  background: var(--dark-2);
+  transition: all var(--motion-med) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.metrics__item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent));
+  transform: scaleX(0);
+  transition: transform var(--motion-slow) var(--ease-out);
+}
+
+.metrics__item:hover::before {
+  transform: scaleX(1);
+}
+
+.metrics__item:hover {
+  background: var(--dark-3);
+}
+
+.metrics__number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+
+.metrics__label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+}
+
+@media (max-width: 600px) {
+  .metrics__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ========================================
    ACTIVITY REEL — "Así se vive TEMPLO"
    Premium horizontal photo marquee
    ======================================== */
@@ -978,39 +1058,20 @@ a {
   pointer-events: none;
 }
 
-/* ===== TEMPORARY PLACEHOLDER IMAGES — pending real TEMPLO photography ===== */
-/* Service card panels: background images with dark/gold overlay integration */
-.exp-panel[data-exp="01"] {
-  background:
-    linear-gradient(135deg, rgba(212,168,83,0.10) 0%, rgba(10,10,10,0.88) 100%),
-    linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.85) 100%),
-    url('assets/placeholders/powerplate.webp') center/cover no-repeat;
+/* ===== Service card panels: background images with dark/gold overlay ===== */
+.exp-card__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-out), filter 0.6s var(--ease);
+  filter: saturate(0.85) contrast(1.1);
 }
-.exp-panel[data-exp="02"] {
-  background:
-    linear-gradient(135deg, rgba(212,168,83,0.08) 0%, rgba(10,10,10,0.88) 100%),
-    linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.85) 100%),
-    url('assets/placeholders/calistenia.webp') center/cover no-repeat;
+
+.exp-card:hover .exp-card__visual img {
+  transform: scale(1.06);
+  filter: saturate(1) contrast(1.15);
 }
-.exp-panel[data-exp="03"] {
-  background:
-    linear-gradient(135deg, rgba(212,168,83,0.08) 0%, rgba(10,10,10,0.88) 100%),
-    linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.85) 100%),
-    url('assets/placeholders/mujeres.webp') center/cover no-repeat;
-}
-.exp-panel[data-exp="04"] {
-  background:
-    linear-gradient(135deg, rgba(212,168,83,0.08) 0%, rgba(10,10,10,0.88) 100%),
-    linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.85) 100%),
-    url('assets/placeholders/seniors.webp') center/cover no-repeat;
-}
-.exp-panel[data-exp="05"] {
-  background:
-    linear-gradient(135deg, rgba(212,168,83,0.08) 0%, rgba(10,10,10,0.88) 100%),
-    linear-gradient(to bottom, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.85) 100%),
-    url('assets/placeholders/adaptado.webp') center/cover no-repeat;
-}
-/* ===== END TEMPORARY PLACEHOLDER IMAGES ===== */
+/* ===== END Service card panels ===== */
 
 .exp-card__body {
   display: flex;
@@ -1609,10 +1670,31 @@ a {
   height: 100%;
   object-fit: cover;
   transition: transform 0.7s var(--ease-out);
+  filter: saturate(0.85) contrast(1.1);
 }
 
 .lifestyle__img:hover img {
   transform: scale(1.06);
+  filter: saturate(1) contrast(1.15);
+}
+
+.lifestyle__label {
+  position: absolute;
+  bottom: clamp(14px, 2vw, 20px);
+  left: clamp(14px, 2vw, 20px);
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  z-index: 2;
+  opacity: 0.7;
+  transition: opacity var(--motion-med) var(--ease);
+}
+
+.lifestyle__img:hover .lifestyle__label {
+  opacity: 1;
 }
 
 .lifestyle__filter {
@@ -1687,58 +1769,13 @@ a {
   z-index: 1;
 }
 
-/* Founder editorial panel */
-.founder-panel {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-  background:
-    linear-gradient(160deg, rgba(212,168,83,0.1) 0%, rgba(10,10,10,0.95) 100%),
-    linear-gradient(to bottom, var(--dark-2) 0%, var(--dark-3) 100%);
+/* Lifestyle images with labels */
+.lifestyle__img {
   position: relative;
+  overflow: hidden;
+  aspect-ratio: 1;
+  background: var(--dark-3);
 }
-
-.founder-panel::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 50px,
-    rgba(212,168,83,0.02) 50px,
-    rgba(212,168,83,0.02) 51px
-  );
-  pointer-events: none;
-}
-
-.founder-panel__initial {
-  font-family: var(--font-display);
-  font-size: clamp(4rem, 8vw, 6rem);
-  font-weight: 900;
-  color: rgba(212, 168, 83, 0.12);
-  line-height: 1;
-  letter-spacing: -0.04em;
-  position: relative;
-  z-index: 1;
-}
-
-.founder-panel__label {
-  font-family: var(--font-display);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--accent);
-  position: relative;
-  z-index: 1;
-}
-
-@media (max-width: 768px) {
   .lifestyle .container {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -2592,6 +2629,21 @@ a {
   position: relative;
   overflow: hidden;
   transition: border-color var(--motion-med) var(--ease), box-shadow var(--motion-med) var(--ease);
+  border-radius: 50%;
+}
+
+.coach-card__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: saturate(0.8) contrast(1.1);
+  transition: filter var(--motion-med) var(--ease), transform var(--motion-med) var(--ease);
+}
+
+.coach-card:hover .coach-card__portrait img {
+  filter: saturate(1) contrast(1.15);
+  transform: scale(1.05);
 }
 /* Gold glow on coach card hover */
 .coach-card:hover .coach-card__portrait {
