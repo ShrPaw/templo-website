@@ -410,7 +410,8 @@
     '.guia-detalle__item, .guia-detalle__photo, .objectives__item, ' +
     '.location__grid, .location__social, ' +
     '.faq__item, .final-cta__content, ' +
-    '.energy-strip__header'
+    '.energy-strip__header, ' +
+    '.activity-reel__content'
   ).forEach(function(el) {
     el.classList.add('fade-in');
     observer.observe(el);
@@ -498,10 +499,90 @@
   window.addEventListener('scroll', highlightNav, { passive: true });
 
   // ============================================================
+  // ACTIVITY REEL — Infinite horizontal marquee
+  // ============================================================
+  function initActivityReel() {
+    var track = document.querySelector('.activity-reel__track');
+    var viewport = document.querySelector('.activity-reel__viewport');
+    if (!track || !viewport) return;
+
+    // Check for reduced motion preference
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+      // Remove animation, show all cards in a wrapped layout
+      track.style.animation = 'none';
+      track.style.flexWrap = 'wrap';
+      track.style.justifyContent = 'center';
+      return;
+    }
+
+    // Touch/drag support for mobile
+    var isDragging = false;
+    var startX = 0;
+    var scrollLeft = 0;
+    var currentTranslate = 0;
+    var animationPaused = false;
+
+    // Get current transform value
+    function getTranslateX() {
+      var style = window.getComputedStyle(track);
+      var matrix = new DOMMatrixReadOnly(style.transform);
+      return matrix.m41;
+    }
+
+    // Pause/resume animation on hover (CSS handles this, but we need it for touch)
+    viewport.addEventListener('mouseenter', function() {
+      track.style.animationPlayState = 'paused';
+    });
+
+    viewport.addEventListener('mouseleave', function() {
+      if (!isDragging) {
+        track.style.animationPlayState = 'running';
+      }
+    });
+
+    // Touch events for mobile swipe
+    viewport.addEventListener('touchstart', function(e) {
+      isDragging = true;
+      startX = e.touches[0].pageX;
+      currentTranslate = getTranslateX();
+      track.style.animationPlayState = 'paused';
+      track.style.transition = 'none';
+    }, { passive: true });
+
+    viewport.addEventListener('touchmove', function(e) {
+      if (!isDragging) return;
+      var x = e.touches[0].pageX;
+      var walk = x - startX;
+      track.style.transform = 'translateX(' + (currentTranslate + walk) + 'px)';
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', function() {
+      isDragging = false;
+      track.style.transition = '';
+      track.style.transform = '';
+      // Resume animation after a short delay
+      setTimeout(function() {
+        track.style.animationPlayState = 'running';
+      }, 300);
+    });
+
+    // Focus accessibility: pause on focus within
+    viewport.addEventListener('focusin', function() {
+      track.style.animationPlayState = 'paused';
+    });
+
+    viewport.addEventListener('focusout', function() {
+      track.style.animationPlayState = 'running';
+    });
+  }
+
+  // ============================================================
   // INIT
   // ============================================================
   renderCoaches();
   initCoachObserver();
+  initActivityReel();
 
   var pathfinderTool = document.querySelector('.pathfinder__tool');
   if (pathfinderTool) {
