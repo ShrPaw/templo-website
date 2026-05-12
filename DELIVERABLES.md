@@ -1,5 +1,145 @@
 # TEMPLO — Deliverables & QA Report
 
+## 0. Energy / Vibe Consolidation Pass (2026-05-12)
+
+### Summary
+Visual energy pass to make TEMPLO feel more vibrant, active, and alive — while preserving its premium dark/gold identity. No redesign. Controlled additions only.
+
+### Files Changed
+
+| File | Changes |
+|------|---------|
+| `index.html` | Photo accents added to 5 detail items; "Dentro de TEMPLO" energy strip section added |
+| `styles.css` | Service card hover micro-interactions; detail photo accents; energy strip section; coach portrait glow |
+| `script.js` | Energy strip tile staggered reveal observer; detail photo fade-in support |
+| `assets/placeholders/energy-*.webp` | 6 new energy strip images |
+
+### 1. Service Card Hover Micro-interactions
+
+Added controlled hover effects to `.exp-card`:
+- **Panel background zoom**: `background-size` scales to 108% on card hover
+- **Gold overlay shift**: filter overlay warms on hover (more gold, less dark)
+- **Text nudge**: `.exp-card__name` and `.exp-card__desc` shift 2px right on hover
+- **Icon brighten**: already existed, preserved
+- No layout shift. All transitions use existing motion system vars.
+
+### 2. "Más sobre cada experiencia" Detail Section — Photo Accents
+
+Each `.guia-detalle__item` now includes a small photo strip above the text:
+- `guia-detalle__photo` — 36% aspect-ratio container with cover image
+- Photo zooms subtly on item hover (`scale(1.06)`)
+- Dark/gold overlay integrated
+- Images reuse the same service placeholder photos (consistency)
+- Lazy-loaded for performance
+
+### 3. "Dentro de TEMPLO" Energy Strip Section (NEW)
+
+**Section ID**: `energy-strip`
+**Position**: Between Lifestyle and Plans sections
+
+Design:
+- 6 image tiles in a 3-column grid (2-col on tablet, 2-col on mobile)
+- Each tile: background-image, dark overlay, gold label, corner accent on hover
+- Labels: Fuerza, Técnica, Control, Comunidad, Intensidad, Disciplina
+- Staggered reveal: tiles fade in with 80ms delay between each
+- Image zoom on hover (`scale(1.08)`)
+- Gold overlay warms on hover
+- `aspect-ratio: 1` desktop, `4/3` mobile
+
+Image tiles use 6 new placeholder images (`energy-01` through `energy-06`).
+
+### 4. Coach Card Hover Enhancement
+
+- Portrait area now glows gold on card hover (`border-color`, `box-shadow`)
+- Transition uses existing motion system
+
+### 5. Motion / Animation Summary
+
+| Element | Effect | Type |
+|---------|--------|------|
+| Service card panel | Background zoom 108% | CSS transition |
+| Service card overlay | Gold warmth shift | CSS transition |
+| Service card text | 2px horizontal nudge | CSS transition |
+| Detail photo | Image zoom 1.06 | CSS transition |
+| Energy tiles | Staggered fade-in + slide up | CSS + IntersectionObserver |
+| Energy tile hover | Image zoom 1.08 + overlay shift | CSS transition |
+| Energy tile corner | Gold accent reveal | CSS transition |
+| Coach portrait | Gold glow on hover | CSS transition |
+
+All motion:
+- Uses `prefers-reduced-motion` media query (respected)
+- No external libraries (GSAP, Three.js, Framer Motion — none used)
+- No scroll hijacking
+- No auto-play/carousel
+- Pure CSS transitions + vanilla JS IntersectionObserver
+
+### 6. Favicon Status
+
+No changes this pass. Favicon was regenerated in previous pass with tighter crop (`?v=3`).
+
+### QA Summary
+
+| Check | Status |
+|-------|--------|
+| All WhatsApp links use `59172001680` | ✅ 20 links verified |
+| No `5917201680` | ✅ None found |
+| No `591XXXXXXXX` | ✅ None found |
+| No `72209791` | ✅ None found |
+| Pricing unchanged | ✅ Bs. 230–550 range intact |
+| Plan names unchanged | ✅ All intact |
+| All anchors intact | ✅ 13 anchors verified (including new `energy-strip`) |
+| No broken image paths | ✅ All 15 placeholder files exist |
+| No layout shifts | ✅ CSS-only changes, no new width constraints |
+| No horizontal overflow | ✅ Grid/flex layouts, fractional units |
+| Service cards unchanged | ✅ Structure preserved, hover effects only |
+| Pathfinder logic unchanged | ✅ Not touched |
+| Coach order unchanged | ✅ Not touched |
+| Hero/Buddha unchanged | ✅ Not touched |
+| Detail section anchors preserved | ✅ All `#guia-*` and `#plan-*` intact |
+| CSS braces balanced | ✅ 399/399 |
+| JS braces balanced | ✅ 117/117 |
+| No Commando assets copied | ✅ Unsplash royalty-free only |
+| No fake coach photos | ✅ Editorial initials preserved |
+| No fake testimonials | ✅ None added |
+| No fake metrics | ✅ None added |
+| Reduced motion respected | ✅ `prefers-reduced-motion` media query active |
+
+### Image Assets Summary
+
+**15 placeholder images** in `assets/placeholders/`:
+
+| File | Size | Section |
+|------|------|---------|
+| powerplate.webp | 39KB | Service card + Detail |
+| calistenia.webp | 77KB | Service card + Detail |
+| mujeres.webp | 37KB | Service card + Detail |
+| seniors.webp | 23KB | Service card + Detail |
+| adaptado.webp | 31KB | Service card + Detail |
+| lifestyle-01.webp | 42KB | Lifestyle grid |
+| lifestyle-02.webp | 59KB | Lifestyle grid |
+| lifestyle-03.webp | 30KB | Lifestyle grid |
+| lifestyle-04.webp | 19KB | Lifestyle grid |
+| energy-01.webp | 16KB | Energy strip |
+| energy-02.webp | 24KB | Energy strip |
+| energy-03.webp | 21KB | Energy strip |
+| energy-04.webp | 13KB | Energy strip |
+| energy-05.webp | 29KB | Energy strip |
+| energy-06.webp | 26KB | Energy strip |
+
+**Total placeholder payload**: ~466KB (all WebP, compressed)
+
+**⚠️ ALL images are temporary placeholders from Unsplash (royalty-free) — pending real TEMPLO photography.**
+
+### Remaining TODOs
+- Replace ALL placeholder images with real TEMPLO photography
+- Add real coach photos (editorial initials kept for now)
+- Add real coach Instagram links
+- Confirm Dharma font file
+- Final mobile visual review across all breakpoints
+- Confirm whether energy strip section should remain long-term or merge with lifestyle
+
+---
+
 ## 0. Visual Completion Pass — Placeholder Images & Favicon (2026-05-12)
 
 ### Summary

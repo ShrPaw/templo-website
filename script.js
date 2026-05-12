@@ -407,9 +407,10 @@
     '.positioning, .exp-card, ' +
     '.pathfinder__tool, ' +
     '.lifestyle__content, .lifestyle__img, ' +
-    '.guia-detalle__item, .objectives__item, ' +
+    '.guia-detalle__item, .guia-detalle__photo, .objectives__item, ' +
     '.location__grid, .location__social, ' +
-    '.faq__item, .final-cta__content'
+    '.faq__item, .final-cta__content, ' +
+    '.energy-strip__header'
   ).forEach(function(el) {
     el.classList.add('fade-in');
     observer.observe(el);
@@ -429,6 +430,21 @@
     pillarObserver.observe(pillar);
   });
 
+  // ---- Energy strip tile staggered reveal ----
+  var energyTileObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        energyTileObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.energy-tile').forEach(function(tile) {
+    energyTileObserver.observe(tile);
+  });
+
+  // ---- Detail section photo accent fade-in ----
   // ---- Pricing card reveal ----
   var pricingObserver = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
