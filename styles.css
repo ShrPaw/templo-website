@@ -51,8 +51,8 @@
   --text: var(--white);
 
   /* Display typography system — Dharma-specific tuning */
-  --display-ls: 0.02em;        /* letter-spacing for large display */
-  --display-lh: 0.92;          /* line-height for hero/display titles */
+  --display-ls: 0.03em;        /* letter-spacing for large display */
+  --display-lh: 0.98;          /* line-height for hero/display titles */
   --display-lh-sm: 0.98;       /* line-height for smaller display headings */
   --display-ls-tight: 0.01em;  /* letter-spacing for very large hero titles */
 
@@ -304,7 +304,7 @@ button:focus-visible {
   font-family: var(--font-body);
   font-weight: 900;
   letter-spacing: -0.01em;
-  line-height: 1.05;
+  line-height: 1.08;
 }
 
 .section-sub {
@@ -2357,11 +2357,11 @@ button:focus-visible {
 }
 
 .final-cta__title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-  font-weight: 800;
-  line-height: var(--display-lh);
-  letter-spacing: var(--display-ls);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
   max-width: 680px;
   margin: 0 auto 16px;
 }
