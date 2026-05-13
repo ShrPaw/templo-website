@@ -2240,13 +2240,14 @@ a {
 .coaches-teaser__founder {
   display: flex;
   align-items: center;
-  gap: 28px;
-  padding: clamp(24px, 3vw, 40px);
+  gap: 32px;
+  padding: clamp(28px, 3.5vw, 44px);
   background: var(--dark-2);
   border: 1px solid var(--accent-border);
-  margin-bottom: 24px;
+  margin-bottom: 28px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.2);
 }
 
 .coaches-teaser__founder::before {
@@ -2260,20 +2261,21 @@ a {
 }
 
 .coaches-teaser__founder-portrait {
-  width: 72px;
-  height: 72px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  background: var(--dark-3);
+  background: linear-gradient(135deg, var(--dark-3) 0%, rgba(212,168,83,0.06) 100%);
   border: 1px solid var(--accent-border);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  box-shadow: 0 0 24px var(--accent-subtle);
 }
 
 .coaches-teaser__founder-initial {
   font-family: var(--font);
-  font-size: 28px;
+  font-size: 30px;
   font-weight: 800;
   color: var(--accent);
   letter-spacing: -1px;
@@ -2319,15 +2321,16 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 2px;
-  margin-bottom: 28px;
+  margin-bottom: 32px;
+  padding-top: 4px;
 }
 
 .coaches-teaser__name {
   font-family: var(--font);
   font-size: 13px;
   font-weight: 500;
-  color: rgba(255,255,255,0.5);
-  padding: 10px 16px;
+  color: rgba(255,255,255,0.55);
+  padding: 12px 18px;
   background: var(--dark);
   text-decoration: none;
   transition: all var(--motion-med) var(--ease);
@@ -2337,6 +2340,7 @@ a {
 .coaches-teaser__name:hover {
   color: var(--accent);
   background: var(--dark-2);
+  border-color: rgba(212,168,83,0.15);
 }
 
 .coaches-teaser__actions {

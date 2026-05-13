@@ -10,6 +10,18 @@
   position: relative;
 }
 
+.coaches-hero::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212,168,83,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
 .coaches-hero__actions {
   display: flex;
   gap: 16px;
@@ -27,13 +39,14 @@
 .founder-card {
   display: grid;
   grid-template-columns: 280px 1fr;
-  gap: clamp(32px, 4vw, 60px);
+  gap: clamp(40px, 5vw, 72px);
   background: var(--dark-2);
   border: 1px solid var(--accent-border);
   border-radius: 2px;
-  padding: clamp(32px, 4vw, 56px);
+  padding: clamp(40px, 5vw, 64px);
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 40px rgba(0,0,0,0.25), 0 0 80px rgba(212,168,83,0.04);
 }
 
 .founder-card::before {
@@ -65,25 +78,26 @@
 }
 
 .founder-card__portrait-inner {
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
-  background: var(--dark-3);
+  background: linear-gradient(135deg, var(--dark-3) 0%, rgba(212,168,83,0.06) 100%);
   border: 2px solid var(--accent-border);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  box-shadow: 0 0 40px var(--accent-subtle);
+  box-shadow: 0 0 50px var(--accent-subtle), 0 8px 32px rgba(0,0,0,0.3);
 }
 
 .founder-card__initial {
   font-family: var(--font);
-  font-size: 64px;
+  font-size: 72px;
   font-weight: 800;
   color: var(--accent);
   line-height: 1;
   letter-spacing: -2px;
+  opacity: 0.85;
 }
 
 .founder-card__specialty-icon {
@@ -163,14 +177,14 @@
 
 .founder-card__quote {
   font-family: var(--font);
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 400;
   font-style: italic;
-  color: rgba(255,255,255,0.55);
-  border-left: 2px solid var(--accent-border);
-  padding-left: 16px;
-  margin: 0 0 28px;
-  line-height: 1.5;
+  color: rgba(255,255,255,0.6);
+  border-left: 2px solid var(--accent);
+  padding-left: 18px;
+  margin: 0 0 32px;
+  line-height: 1.55;
 }
 
 .founder-card__cta {
@@ -195,14 +209,14 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2px;
   background: rgba(255,255,255,0.03);
 }
 
 .team-card {
   background: var(--dark);
-  padding: clamp(28px, 3vw, 40px);
+  padding: clamp(32px, 3.5vw, 44px);
   transition: all 0.4s var(--ease);
   position: relative;
   overflow: hidden;
@@ -232,14 +246,14 @@
 }
 
 .team-card__portrait {
-  width: 68px;
-  height: 68px;
+  width: 76px;
+  height: 76px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--dark-3);
-  border: 1px solid rgba(255,255,255,0.06);
-  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--dark-3) 0%, rgba(212,168,83,0.05) 100%);
+  border: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 24px;
   position: relative;
   overflow: hidden;
   transition: border-color var(--motion-med) var(--ease), box-shadow var(--motion-med) var(--ease);
@@ -253,7 +267,7 @@
 
 .team-card__initial {
   font-family: var(--font);
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
   color: var(--accent);
   letter-spacing: 1px;
@@ -284,10 +298,11 @@
 
 .team-card__name {
   font-family: var(--font);
-  font-size: 18px;
+  font-size: 19px;
   font-weight: 700;
   color: var(--text);
-  margin: 0 0 8px;
+  margin: 0 0 10px;
+  letter-spacing: 0.01em;
 }
 
 .team-card__ability {
@@ -304,11 +319,11 @@
   font-size: 14px;
   font-weight: 400;
   font-style: italic;
-  color: rgba(255,255,255,0.4);
-  border-left: 1px solid rgba(212,168,83,0.2);
-  padding-left: 12px;
-  margin: 0 0 20px;
-  line-height: 1.5;
+  color: rgba(255,255,255,0.45);
+  border-left: 1px solid rgba(212,168,83,0.25);
+  padding-left: 14px;
+  margin: 0 0 24px;
+  line-height: 1.55;
   opacity: 0;
   transform: translateY(6px);
   transition: opacity 0.6s var(--ease) 0.15s, transform 0.6s var(--ease) 0.15s;
@@ -351,7 +366,15 @@
   margin-top: auto;
   text-align: center;
   font-size: 13px;
-  padding: 10px 20px;
+  padding: 12px 22px;
+  border-color: rgba(212,168,83,0.2);
+  color: var(--accent);
+}
+
+.team-card__cta:hover {
+  border-color: var(--accent);
+  background: rgba(212,168,83,0.08);
+  color: var(--accent-light);
 }
 
 /* ---------- GUIDANCE BLOCK ---------- */
@@ -374,6 +397,34 @@
   max-width: 640px;
   margin: 0 auto;
   text-align: center;
+  padding: clamp(32px, 4vw, 48px);
+  background: linear-gradient(160deg, var(--dark-2) 0%, rgba(212,168,83,0.04) 100%);
+  border: 1px solid var(--accent-border);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.guidance-block__inner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+}
+
+.guidance-block__inner::after {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, var(--accent-subtle) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .guidance-block__title {
@@ -382,6 +433,8 @@
   font-weight: 700;
   color: var(--text);
   margin: 0 0 16px;
+  position: relative;
+  z-index: 1;
 }
 
 .guidance-block__text {
@@ -391,6 +444,8 @@
   color: rgba(255,255,255,0.6);
   line-height: 1.7;
   margin: 0 0 28px;
+  position: relative;
+  z-index: 1;
 }
 
 /* ---------- MOBILE ---------- */
@@ -398,6 +453,7 @@
   .founder-card {
     grid-template-columns: 1fr;
     text-align: center;
+    gap: 32px;
   }
 
   .founder-card__portrait {
@@ -441,19 +497,32 @@
   }
 
   .founder-card {
-    padding: 24px;
+    padding: 28px;
   }
 
   .founder-card__portrait-inner {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
   }
 
   .founder-card__initial {
-    font-size: 48px;
+    font-size: 52px;
   }
 
   .team-card {
+    padding: 28px;
+  }
+
+  .team-card__portrait {
+    width: 68px;
+    height: 68px;
+  }
+
+  .team-card__name {
+    font-size: 18px;
+  }
+
+  .guidance-block__inner {
     padding: 24px;
   }
 }
