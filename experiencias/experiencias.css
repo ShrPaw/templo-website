@@ -210,13 +210,13 @@
 }
 
 .exp-comparison__name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 700;
   color: var(--white-pure);
   margin-bottom: 6px;
   letter-spacing: 0.02em;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 .exp-comparison__level {
   font-size: 0.72rem;

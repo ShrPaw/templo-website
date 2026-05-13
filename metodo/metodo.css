@@ -165,7 +165,7 @@
 }
 
 .metodo-pillar__num {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -208,13 +208,13 @@
 }
 
 .metodo-pillar__name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 18px;
   font-weight: 800;
   color: var(--text);
   margin: 0 0 12px;
   letter-spacing: 0.02em;
-  line-height: 1;
+  line-height: 1.15;
 }
 
 .metodo-pillar__desc {
@@ -286,13 +286,13 @@
 }
 
 .metodo-practice__title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 16px;
   font-weight: 800;
   color: var(--text);
   margin: 0 0 10px;
   letter-spacing: 0.02em;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .metodo-practice__text {
@@ -365,13 +365,13 @@
 }
 
 .metodo-exp-card__title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 15px;
   font-weight: 800;
   color: var(--accent);
   margin: 0 0 10px;
   letter-spacing: 0.02em;
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .metodo-exp-card__text {

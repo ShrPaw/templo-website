@@ -348,7 +348,7 @@ button:focus-visible {
 
 /* Text-only TEMPLO brand */
 .nav__brand {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -471,7 +471,7 @@ button:focus-visible {
 }
 
 .mobile-menu__link {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--white);
@@ -1098,7 +1098,7 @@ button:focus-visible {
   background: var(--accent);
 }
 
-/* 3-column grid, 2 rows: 3 + 2 */
+/* 3-column grid, 2 rows: 3 + 2 centered */
 .experiencias__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1109,9 +1109,11 @@ button:focus-visible {
 /* Row 2: center 2 cards */
 .experiencias__grid .exp-card:nth-child(4) {
   grid-column: 1 / 2;
+  justify-self: end;
 }
 .experiencias__grid .exp-card:nth-child(5) {
   grid-column: 2 / 3;
+  justify-self: start;
 }
 
 /* Card: vertical layout in grid */
@@ -1284,14 +1286,14 @@ button:focus-visible {
 }
 
 .exp-card__name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(1.2rem, 2vw, 1.6rem);
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: var(--display-ls);
+  letter-spacing: 0.04em;
   margin-bottom: 12px;
   color: var(--white-pure);
-  line-height: var(--display-lh-sm);
+  line-height: 1.15;
 }
 
 .exp-card__desc {
@@ -1498,13 +1500,13 @@ button:focus-visible {
 }
 
 .guia-detalle__name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--white-pure);
   margin-bottom: 12px;
-  letter-spacing: var(--display-ls);
-  line-height: var(--display-lh-sm);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
 }
 
 .guia-detalle__text {
@@ -1694,13 +1696,13 @@ button:focus-visible {
 }
 
 .method__name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 1.05rem;
   font-weight: 700;
   margin-bottom: 12px;
   color: var(--white-pure);
-  letter-spacing: var(--display-ls);
-  line-height: var(--display-lh-sm);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
 }
 }
 
@@ -1763,13 +1765,13 @@ button:focus-visible {
 }
 
 .pathfinder-cta__title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(1.2rem, 2.5vw, 1.6rem);
   font-weight: 700;
   color: var(--white-pure);
   margin-bottom: 12px;
-  letter-spacing: var(--display-ls);
-  line-height: var(--display-lh-sm);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
 }
 
 .pathfinder-cta__text {
@@ -1860,12 +1862,12 @@ button:focus-visible {
 }
 
 .pricing-card__name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
   font-weight: 800;
   color: var(--white-pure);
-  line-height: var(--display-lh-sm);
-  letter-spacing: var(--display-ls);
+  line-height: 1.15;
+  letter-spacing: 0.02em;
 }
 
 .pricing-card__badge {
@@ -2568,12 +2570,12 @@ button:focus-visible {
 }
 
 .coaches-teaser__founder-initial {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 30px;
   font-weight: 800;
   color: var(--accent);
   letter-spacing: 0.02em;
-  line-height: 0.9;
+  line-height: 1;
 }
 
 .coaches-teaser__founder-alias {
@@ -2596,13 +2598,13 @@ button:focus-visible {
 }
 
 .coaches-teaser__founder-name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(20px, 2.5vw, 26px);
   font-weight: 800;
   color: var(--text);
   margin: 0 0 8px;
   letter-spacing: 0.02em;
-  line-height: 1;
+  line-height: 1.15;
 }
 
 .coaches-teaser__founder-quote {
@@ -2755,11 +2757,11 @@ button:focus-visible {
 }
 
 .coach-card__initial {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 1.6rem;
   font-weight: 800;
   color: var(--accent);
-  line-height: 0.9;
+  line-height: 1;
   opacity: 0;
   transform: scale(0.9);
   transition: opacity var(--motion-slow) var(--motion-ease), transform var(--motion-slow) var(--motion-ease);
@@ -2801,11 +2803,13 @@ button:focus-visible {
 }
 
 .coach-card__name {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 1.4rem;
   font-weight: 800;
   margin-bottom: 12px;
   color: var(--white-pure);
+  letter-spacing: 0.02em;
+  line-height: 1.15;
 }
 
 /* Coach ability */
@@ -2977,14 +2981,14 @@ button:focus-visible {
 }
 
 .pathfinder__step-title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(1.1rem, 2.5vw, 1.4rem);
   font-weight: 700;
   color: var(--white-pure);
   margin-bottom: 24px;
   text-align: center;
-  letter-spacing: var(--display-ls);
-  line-height: var(--display-lh-sm);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
 }
 
 .pathfinder__options {
@@ -3099,13 +3103,13 @@ button:focus-visible {
 }
 
 .pathfinder__result-experience {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(1.3rem, 3vw, 1.8rem);
   font-weight: 800;
   color: var(--white-pure);
   margin-bottom: 8px;
-  letter-spacing: var(--display-ls);
-  line-height: var(--display-lh-sm);
+  letter-spacing: 0.02em;
+  line-height: 1.15;
 }
 
 .pathfinder__result-coach {
