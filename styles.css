@@ -1374,6 +1374,22 @@ a {
   background: rgba(255,255,255,0.03);
 }
 
+/* Homepage teaser: 3 pillars only */
+.method__grid--teaser {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.method__teaser-cta {
+  text-align: center;
+  margin-top: 32px;
+}
+
+@media (max-width: 600px) {
+  .method__grid--teaser {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Pillar — vertical stone column */
 .method__pillar {
   background: var(--dark);

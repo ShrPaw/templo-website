@@ -1,0 +1,457 @@
+/* ============================================================
+   METODO PAGE — /metodo/
+   Page-specific styles for TEMPLO training method
+   ============================================================ */
+
+/* ---------- HERO ---------- */
+.metodo-hero {
+  padding: calc(var(--nav-h, 80px) + 80px) 0 var(--section-pad);
+  text-align: center;
+  position: relative;
+}
+
+.metodo-hero__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+/* ---------- MANIFESTO ---------- */
+.metodo-manifesto {
+  padding: 0 0 var(--section-pad);
+  position: relative;
+}
+
+.metodo-manifesto__inner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.metodo-manifesto__lead {
+  font-family: var(--font);
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.4;
+  margin: 0 0 20px;
+}
+
+.metodo-manifesto__text {
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ---------- FIVE PILLARS ---------- */
+.metodo-pillars {
+  padding: var(--section-pad) 0;
+  position: relative;
+  background: var(--dark);
+}
+
+.metodo-pillars::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+}
+
+.metodo-pillars__grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2px;
+  background: rgba(255,255,255,0.03);
+}
+
+.metodo-pillar {
+  background: var(--dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: clamp(32px, 3vw, 48px) clamp(16px, 2vw, 28px);
+  transition: all var(--motion-med) var(--ease);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.metodo-pillar.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity var(--motion-slow) var(--motion-ease), transform var(--motion-slow) var(--motion-ease), background var(--motion-med) var(--ease);
+}
+
+.metodo-pillar:nth-child(1).is-visible { transition-delay: 0ms; }
+.metodo-pillar:nth-child(2).is-visible { transition-delay: 80ms; }
+.metodo-pillar:nth-child(3).is-visible { transition-delay: 160ms; }
+.metodo-pillar:nth-child(4).is-visible { transition-delay: 240ms; }
+.metodo-pillar:nth-child(5).is-visible { transition-delay: 320ms; }
+
+.metodo-pillar:hover {
+  background: var(--dark-2);
+}
+
+.metodo-pillar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-dark), var(--accent), var(--accent-dark));
+  transform: scaleX(0);
+  transition: transform var(--motion-slow) var(--motion-ease);
+}
+
+.metodo-pillar.is-visible::before {
+  transform: scaleX(1);
+}
+
+.metodo-pillar:hover::before {
+  transform: scaleX(1);
+}
+
+.metodo-pillar__shaft {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.metodo-pillar__shaft::before {
+  content: '';
+  position: absolute;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--accent-border), transparent);
+}
+
+.metodo-pillar__shaft::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0.4;
+}
+
+.metodo-pillar__num {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: var(--accent);
+  margin-bottom: 12px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+
+.metodo-pillar.is-visible .metodo-pillar__num {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.metodo-pillar:hover .metodo-pillar__num {
+  color: var(--accent-light);
+}
+
+.metodo-pillar__symbol {
+  width: 48px;
+  height: 48px;
+  color: var(--accent);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s var(--ease) 0.1s, transform 0.5s var(--ease) 0.1s;
+}
+
+.metodo-pillar.is-visible .metodo-pillar__symbol {
+  opacity: 0.7;
+  transform: scale(1);
+}
+
+.metodo-pillar:hover .metodo-pillar__symbol {
+  opacity: 1;
+}
+
+.metodo-pillar__content {
+  max-width: 240px;
+}
+
+.metodo-pillar__name {
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 12px;
+  letter-spacing: 0.5px;
+}
+
+.metodo-pillar__desc {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.6;
+  margin: 0 0 12px;
+}
+
+.metodo-pillar__detail {
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- METHOD IN PRACTICE ---------- */
+.metodo-practice {
+  padding: var(--section-pad) 0;
+  position: relative;
+}
+
+.metodo-practice::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+}
+
+.metodo-practice__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2px;
+  background: rgba(255,255,255,0.03);
+}
+
+.metodo-practice__item {
+  background: var(--dark);
+  padding: clamp(28px, 3vw, 40px);
+  transition: background var(--motion-med) var(--ease);
+}
+
+.metodo-practice__item:hover {
+  background: var(--dark-2);
+}
+
+.metodo-practice__icon {
+  width: 36px;
+  height: 36px;
+  color: var(--accent);
+  margin-bottom: 16px;
+  opacity: 0.7;
+}
+
+.metodo-practice__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.metodo-practice__title {
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 10px;
+}
+
+.metodo-practice__text {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ---------- CONNECTION TO EXPERIENCES ---------- */
+.metodo-experiencias {
+  padding: var(--section-pad) 0;
+  position: relative;
+  background: var(--dark);
+}
+
+.metodo-experiencias::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+}
+
+.metodo-experiencias__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2px;
+  background: rgba(255,255,255,0.03);
+  margin-bottom: 36px;
+}
+
+.metodo-exp-card {
+  background: var(--dark);
+  padding: clamp(24px, 2.5vw, 36px);
+  transition: background var(--motion-med) var(--ease);
+}
+
+.metodo-exp-card:hover {
+  background: var(--dark-2);
+}
+
+.metodo-exp-card__title {
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  margin: 0 0 10px;
+  letter-spacing: 0.5px;
+}
+
+.metodo-exp-card__text {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.metodo-experiencias__cta {
+  text-align: center;
+}
+
+/* ---------- CTA SECTION ---------- */
+.metodo-cta {
+  padding: var(--section-pad) 0;
+  position: relative;
+}
+
+.metodo-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+}
+
+.metodo-cta__inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.metodo-cta__title {
+  font-family: var(--font);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+
+.metodo-cta__text {
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin: 0 0 32px;
+}
+
+.metodo-cta__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 1024px) {
+  .metodo-pillars__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .metodo-pillars__grid .metodo-pillar:nth-child(4),
+  .metodo-pillars__grid .metodo-pillar:nth-child(5) {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .metodo-pillars__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .metodo-pillars__grid .metodo-pillar:nth-child(5) {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .metodo-pillars__grid {
+    grid-template-columns: 1fr;
+  }
+  .metodo-pillars__grid .metodo-pillar:nth-child(5) {
+    grid-column: span 1;
+  }
+  .metodo-pillar__content {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 430px) {
+  .metodo-hero {
+    padding-top: calc(var(--nav-h, 80px) + 48px);
+  }
+
+  .metodo-hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .metodo-hero__actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .metodo-practice__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metodo-experiencias__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metodo-cta__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .metodo-cta__actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
