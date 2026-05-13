@@ -296,6 +296,17 @@ button:focus-visible {
   color: var(--white-pure);
 }
 
+/* Functional question headings — Montserrat, not Dharma.
+   Pathfinder, FAQ, and similar UI prompts are functional text,
+   not high-impact brand display moments. */
+.pathfinder .section-title,
+.faq .section-title {
+  font-family: var(--font-body);
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
 .section-sub {
   font-size: 1rem;
   color: var(--gray-light);
