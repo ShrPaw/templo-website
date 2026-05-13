@@ -10,6 +10,14 @@
   position: relative;
 }
 
+.coaches-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+}
+
 .coaches-hero::after {
   content: '';
   position: absolute;
@@ -47,6 +55,12 @@
   position: relative;
   overflow: hidden;
   box-shadow: 0 4px 40px rgba(0,0,0,0.25), 0 0 80px rgba(212,168,83,0.04);
+  transition: box-shadow var(--motion-med) var(--ease), border-color var(--motion-med) var(--ease);
+}
+
+.founder-card:hover {
+  box-shadow: 0 8px 48px rgba(0,0,0,0.3), 0 0 100px rgba(212,168,83,0.06);
+  border-color: rgba(212, 168, 83, 0.25);
 }
 
 .founder-card::before {
@@ -222,6 +236,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(255,255,255,0.04);
 }
 
 .team-card::before {
@@ -243,6 +258,9 @@
 
 .team-card:hover {
   background: var(--dark-2);
+  border-color: rgba(212, 168, 83, 0.10);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
 }
 
 .team-card__portrait {
@@ -403,6 +421,11 @@
   border-radius: 2px;
   position: relative;
   overflow: hidden;
+  transition: box-shadow var(--motion-med) var(--ease);
+}
+
+.guidance-block__inner:hover {
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 0 60px rgba(212,168,83,0.04);
 }
 
 .guidance-block__inner::before {

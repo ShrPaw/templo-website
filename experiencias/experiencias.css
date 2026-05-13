@@ -32,6 +32,11 @@
   margin-top: 36px;
 }
 
+.exp-hero__actions .btn:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 3px;
+}
+
 /* ===== Experience Detail Blocks ===== */
 .exp-detail {
   padding: var(--section-pad) 0;
@@ -67,6 +72,12 @@
   border-radius: 3px;
   aspect-ratio: 4/3;
   background: var(--dark-3);
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: border-color var(--motion-med) var(--ease), box-shadow var(--motion-med) var(--ease);
+}
+.exp-detail__visual:hover {
+  border-color: rgba(212, 168, 83, 0.12);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
 }
 .exp-detail__visual img {
   width: 100%; height: 100%;
@@ -176,6 +187,7 @@
   transition: all 0.4s var(--ease);
   position: relative;
   overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.04);
 }
 .exp-comparison__item::before {
   content: '';
@@ -192,6 +204,9 @@
 }
 .exp-comparison__item:hover {
   background: var(--dark-2);
+  border-color: rgba(212, 168, 83, 0.10);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.15);
 }
 
 .exp-comparison__name {
