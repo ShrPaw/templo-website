@@ -125,10 +125,10 @@
   font-size: clamp(1.6rem, 3vw, 2.4rem);
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.02em;
   color: var(--white-pure);
   margin-bottom: 20px;
-  line-height: 1.1;
+  line-height: 1;
 }
 
 .exp-detail__text {
@@ -215,6 +215,8 @@
   font-weight: 700;
   color: var(--white-pure);
   margin-bottom: 6px;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
 }
 .exp-comparison__level {
   font-size: 0.72rem;
@@ -259,10 +261,11 @@
 .exp-cta__title {
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 3vw, 2rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  letter-spacing: 0.02em;
   max-width: 560px;
   margin: 0 auto 16px;
+  line-height: 1;
 }
 .exp-cta__sub {
   font-size: 1rem;

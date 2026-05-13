@@ -50,6 +50,12 @@
   --font: var(--font-body);
   --text: var(--white);
 
+  /* Display typography system — Dharma-specific tuning */
+  --display-ls: 0.02em;        /* letter-spacing for large display */
+  --display-lh: 0.92;          /* line-height for hero/display titles */
+  --display-lh-sm: 0.98;       /* line-height for smaller display headings */
+  --display-ls-tight: 0.01em;  /* letter-spacing for very large hero titles */
+
   --section-pad: clamp(80px, 12vw, 160px);
   --container-max: 1200px;
   --gap: clamp(16px, 2vw, 32px);
@@ -64,7 +70,12 @@
   --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ---------- DHARMA GOTHIC C — Display Font ---------- */
+/* ---------- DHARMA GOTHIC C — Display Font ----------
+   Dharma = blade, not wallpaper.
+   Use for: hero titles, section titles, metric numbers, large display moments.
+   Do NOT use for: body, paragraphs, FAQ, labels, small UI, buttons.
+   Weights: 700 (Bold), 900 (Heavy), 800+italic (ExBoldItalic accent only).
+   --------------------------------------------------- */
 @font-face {
   font-family: 'Dharma Gothic C';
   src: url('assets/fonts/DharmaGothicC-Bold.woff2') format('woff2'),
@@ -279,8 +290,8 @@ button:focus-visible {
   font-family: var(--font-display);
   font-size: clamp(2rem, 4.5vw, 3.2rem);
   font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
+  line-height: var(--display-lh);
+  letter-spacing: var(--display-ls);
   margin-bottom: 20px;
   color: var(--white-pure);
 }
@@ -340,7 +351,7 @@ button:focus-visible {
   font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--white-pure);
   transition: color 0.3s var(--ease);
@@ -611,8 +622,8 @@ button:focus-visible {
   font-family: var(--font-display);
   font-size: clamp(2.4rem, 6vw, 4.4rem);
   font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1.08;
+  letter-spacing: var(--display-ls-tight);
+  line-height: var(--display-lh);
   margin-bottom: 28px;
   opacity: 0;
   transform: translateY(30px);
@@ -733,12 +744,12 @@ button:focus-visible {
 }
 
 .positioning__quote p {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(1.4rem, 3.2vw, 2.2rem);
-  line-height: 1.4;
+  line-height: 1.5;
   font-weight: 600;
   color: var(--white);
-  letter-spacing: -0.01em;
+  letter-spacing: 0.01em;
 }
 
 /* ========================================
@@ -803,9 +814,9 @@ button:focus-visible {
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 900;
   color: var(--accent);
-  line-height: 1;
+  line-height: 0.85;
   margin-bottom: 8px;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.02em;
 }
 
 .metrics__label {
@@ -973,7 +984,7 @@ button:focus-visible {
   position: absolute;
   bottom: clamp(12px, 1.5vw, 18px);
   left: clamp(12px, 1.5vw, 18px);
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.22em;
@@ -1183,15 +1194,15 @@ button:focus-visible {
   font-size: clamp(2.5rem, 4vw, 4rem);
   font-weight: 900;
   color: rgba(212, 168, 83, 0.08);
-  line-height: 1;
+  line-height: 0.85;
   position: absolute;
   top: clamp(12px, 2vw, 20px);
   left: clamp(12px, 2vw, 20px);
-  letter-spacing: -0.04em;
+  letter-spacing: 0.02em;
 }
 
 .exp-panel__label {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(0.6rem, 0.9vw, 0.72rem);
   font-weight: 700;
   letter-spacing: 0.25em;
@@ -1277,10 +1288,10 @@ button:focus-visible {
   font-size: clamp(1.2rem, 2vw, 1.6rem);
   font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: var(--display-ls);
   margin-bottom: 12px;
   color: var(--white-pure);
-  line-height: 1.1;
+  line-height: var(--display-lh-sm);
 }
 
 .exp-card__desc {
@@ -1492,6 +1503,8 @@ button:focus-visible {
   font-weight: 700;
   color: var(--white-pure);
   margin-bottom: 12px;
+  letter-spacing: var(--display-ls);
+  line-height: var(--display-lh-sm);
 }
 
 .guia-detalle__text {
@@ -1657,8 +1670,8 @@ button:focus-visible {
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 900;
   color: var(--accent);
-  line-height: 1;
-  letter-spacing: -0.02em;
+  line-height: 0.85;
+  letter-spacing: 0.02em;
   opacity: 0.2;
   position: relative;
   z-index: 1;
@@ -1686,7 +1699,9 @@ button:focus-visible {
   font-weight: 700;
   margin-bottom: 12px;
   color: var(--white-pure);
-  letter-spacing: 0.02em;
+  letter-spacing: var(--display-ls);
+  line-height: var(--display-lh-sm);
+}
 }
 
 .method__desc {
@@ -1753,7 +1768,8 @@ button:focus-visible {
   font-weight: 700;
   color: var(--white-pure);
   margin-bottom: 12px;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--display-ls);
+  line-height: var(--display-lh-sm);
 }
 
 .pathfinder-cta__text {
@@ -1848,7 +1864,8 @@ button:focus-visible {
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
   font-weight: 800;
   color: var(--white-pure);
-  line-height: 1.1;
+  line-height: var(--display-lh-sm);
+  letter-spacing: var(--display-ls);
 }
 
 .pricing-card__badge {
@@ -2000,7 +2017,7 @@ button:focus-visible {
   background: rgba(212, 168, 83, 0.14);
   border: 1px solid rgba(212, 168, 83, 0.3);
   color: var(--accent-light);
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 0.92rem;
   font-weight: 800;
   padding: 6px 14px;
@@ -2241,7 +2258,7 @@ button:focus-visible {
 }
 
 .faq__question {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 1.05rem;
   font-weight: 700;
   padding: 24px 0;
@@ -2329,9 +2346,9 @@ button:focus-visible {
 .final-cta__title {
   font-family: var(--font-display);
   font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  line-height: var(--display-lh);
+  letter-spacing: var(--display-ls);
   max-width: 680px;
   margin: 0 auto 16px;
 }
@@ -2551,11 +2568,12 @@ button:focus-visible {
 }
 
 .coaches-teaser__founder-initial {
-  font-family: var(--font);
+  font-family: var(--font-display);
   font-size: 30px;
   font-weight: 800;
   color: var(--accent);
-  letter-spacing: -1px;
+  letter-spacing: 0.02em;
+  line-height: 0.9;
 }
 
 .coaches-teaser__founder-alias {
@@ -2578,11 +2596,13 @@ button:focus-visible {
 }
 
 .coaches-teaser__founder-name {
-  font-family: var(--font);
+  font-family: var(--font-display);
   font-size: clamp(20px, 2.5vw, 26px);
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text);
   margin: 0 0 8px;
+  letter-spacing: 0.02em;
+  line-height: 1;
 }
 
 .coaches-teaser__founder-quote {
@@ -2739,7 +2759,7 @@ button:focus-visible {
   font-size: 1.6rem;
   font-weight: 800;
   color: var(--accent);
-  line-height: 1;
+  line-height: 0.9;
   opacity: 0;
   transform: scale(0.9);
   transition: opacity var(--motion-slow) var(--motion-ease), transform var(--motion-slow) var(--motion-ease);
@@ -2800,7 +2820,7 @@ button:focus-visible {
 
 /* Coach quote */
 .coach-card__quote {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 0.88rem;
   font-weight: 500;
   color: var(--accent);
@@ -2963,6 +2983,8 @@ button:focus-visible {
   color: var(--white-pure);
   margin-bottom: 24px;
   text-align: center;
+  letter-spacing: var(--display-ls);
+  line-height: var(--display-lh-sm);
 }
 
 .pathfinder__options {
@@ -3082,6 +3104,8 @@ button:focus-visible {
   font-weight: 800;
   color: var(--white-pure);
   margin-bottom: 8px;
+  letter-spacing: var(--display-ls);
+  line-height: var(--display-lh-sm);
 }
 
 .pathfinder__result-coach {
@@ -3326,7 +3350,7 @@ button:focus-visible {
 }
 
 .suggested-questions__title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--white-pure);

@@ -39,12 +39,13 @@
 }
 
 .metodo-manifesto__lead {
-  font-family: var(--font);
+  font-family: var(--font-display);
   font-size: clamp(20px, 2.5vw, 28px);
-  font-weight: 600;
+  font-weight: 800;
   color: var(--text);
-  line-height: 1.4;
+  line-height: 1.15;
   margin: 0 0 20px;
+  letter-spacing: 0.02em;
 }
 
 .metodo-manifesto__text {
@@ -164,10 +165,10 @@
 }
 
 .metodo-pillar__num {
-  font-family: var(--font);
+  font-family: var(--font-display);
   font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 4px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   color: var(--accent);
   margin-bottom: 12px;
   opacity: 0;
@@ -207,12 +208,13 @@
 }
 
 .metodo-pillar__name {
-  font-family: var(--font);
+  font-family: var(--font-display);
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text);
   margin: 0 0 12px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.02em;
+  line-height: 1;
 }
 
 .metodo-pillar__desc {
@@ -284,11 +286,13 @@
 }
 
 .metodo-practice__title {
-  font-family: var(--font);
+  font-family: var(--font-display);
   font-size: 16px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text);
   margin: 0 0 10px;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
 }
 
 .metodo-practice__text {
@@ -361,12 +365,13 @@
 }
 
 .metodo-exp-card__title {
-  font-family: var(--font);
+  font-family: var(--font-display);
   font-size: 15px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--accent);
   margin: 0 0 10px;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
 }
 
 .metodo-exp-card__text {
@@ -405,11 +410,13 @@
 }
 
 .metodo-cta__title {
-  font-family: var(--font);
+  font-family: var(--font-display);
   font-size: clamp(24px, 3vw, 36px);
   font-weight: 800;
   color: var(--text);
   margin: 0 0 16px;
+  letter-spacing: 0.02em;
+  line-height: 1;
 }
 
 .metodo-cta__text {

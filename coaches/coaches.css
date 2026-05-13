@@ -105,12 +105,12 @@
 }
 
 .founder-card__initial {
-  font-family: var(--font);
+  font-family: var(--font-display);
   font-size: 72px;
   font-weight: 800;
   color: var(--accent);
-  line-height: 1;
-  letter-spacing: -2px;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
   opacity: 0.85;
 }
 
@@ -156,12 +156,13 @@
 }
 
 .founder-card__name {
-  font-family: var(--font);
+  font-family: var(--font-display);
   font-size: clamp(28px, 3vw, 40px);
   font-weight: 800;
   color: var(--text);
   margin: 0 0 24px;
-  letter-spacing: -0.5px;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
 }
 
 .founder-card__fields {
@@ -284,11 +285,11 @@
 }
 
 .team-card__initial {
-  font-family: var(--font);
+  font-family: var(--font-display);
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--accent);
-  letter-spacing: 1px;
+  letter-spacing: 0.02em;
   opacity: 0;
   transform: scale(0.8);
   transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
@@ -315,12 +316,13 @@
 }
 
 .team-card__name {
-  font-family: var(--font);
+  font-family: var(--font-display);
   font-size: 19px;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text);
   margin: 0 0 10px;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.02em;
+  line-height: 1;
 }
 
 .team-card__ability {
@@ -451,13 +453,15 @@
 }
 
 .guidance-block__title {
-  font-family: var(--font);
+  font-family: var(--font-display);
   font-size: clamp(22px, 2.5vw, 30px);
-  font-weight: 700;
+  font-weight: 800;
   color: var(--text);
   margin: 0 0 16px;
   position: relative;
   z-index: 1;
+  letter-spacing: 0.02em;
+  line-height: 1;
 }
 
 .guidance-block__text {
