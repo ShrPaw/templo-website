@@ -43,12 +43,12 @@
   --panel-hover: var(--dark-3);
 
   /* Typography system:
-     Montserrat = display + body (unified)
-     NOTE: Dharma font file/import is still pending.
-     If a licensed Dharma .woff2 is added later,
-     wire it via @font-face and update --font-display. */
-  --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+     Dharma Gothic C = display headings
+     Montserrat = body text */
+  --font-display: 'Dharma Gothic C', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font: var(--font-body);
+  --text: var(--white);
 
   --section-pad: clamp(80px, 12vw, 160px);
   --container-max: 1200px;
@@ -62,6 +62,34 @@
   --motion-med: 320ms;
   --motion-slow: 700ms;
   --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---------- DHARMA GOTHIC C — Display Font ---------- */
+@font-face {
+  font-family: 'Dharma Gothic C';
+  src: url('assets/fonts/DharmaGothicC-Bold.woff2') format('woff2'),
+       url('assets/fonts/DharmaGothicC-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dharma Gothic C';
+  src: url('assets/fonts/DharmaGothicC-Heavy.woff2') format('woff2'),
+       url('assets/fonts/DharmaGothicC-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Dharma Gothic C';
+  src: url('assets/fonts/DharmaGothicC-ExBoldItalic.woff2') format('woff2'),
+       url('assets/fonts/DharmaGothicC-ExBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
 }
 
 /* Reduced motion accessibility */
