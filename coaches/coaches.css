@@ -1,0 +1,459 @@
+/* ============================================================
+   COACHES PAGE — /coaches/
+   Page-specific styles for TEMPLO coaching team
+   ============================================================ */
+
+/* ---------- HERO ---------- */
+.coaches-hero {
+  padding: calc(var(--nav-h, 80px) + 80px) 0 var(--section-pad);
+  text-align: center;
+  position: relative;
+}
+
+.coaches-hero__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 36px;
+  flex-wrap: wrap;
+}
+
+/* ---------- FOUNDER SECTION ---------- */
+.founder-section {
+  padding: 0 0 var(--section-pad);
+  position: relative;
+}
+
+.founder-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: clamp(32px, 4vw, 60px);
+  background: var(--dark-2);
+  border: 1px solid var(--accent-border);
+  border-radius: 2px;
+  padding: clamp(32px, 4vw, 56px);
+  position: relative;
+  overflow: hidden;
+}
+
+.founder-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+}
+
+.founder-card::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, var(--accent-subtle) 0%, transparent 70%);
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.founder-card__portrait {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.founder-card__portrait-inner {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: var(--dark-3);
+  border: 2px solid var(--accent-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 0 40px var(--accent-subtle);
+}
+
+.founder-card__initial {
+  font-family: var(--font);
+  font-size: 64px;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.founder-card__specialty-icon {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  color: var(--accent);
+  opacity: 0.6;
+}
+
+.founder-card__specialty-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.founder-card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.founder-card__alias {
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.founder-card__role {
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 8px;
+}
+
+.founder-card__name {
+  font-family: var(--font);
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 800;
+  color: var(--text);
+  margin: 0 0 24px;
+  letter-spacing: -0.5px;
+}
+
+.founder-card__fields {
+  display: grid;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.founder-card__field-label {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.founder-card__field-text {
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.founder-card__quote {
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255,255,255,0.55);
+  border-left: 2px solid var(--accent-border);
+  padding-left: 16px;
+  margin: 0 0 28px;
+  line-height: 1.5;
+}
+
+.founder-card__cta {
+  align-self: flex-start;
+}
+
+/* ---------- TEAM GRID ---------- */
+.team-section {
+  padding: var(--section-pad) 0;
+  position: relative;
+}
+
+.team-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2px;
+  background: rgba(255,255,255,0.03);
+}
+
+.team-card {
+  background: var(--dark);
+  padding: clamp(28px, 3vw, 40px);
+  transition: all 0.4s var(--ease);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease-out);
+}
+
+.team-card:hover::before {
+  transform: scaleX(1);
+}
+
+.team-card:hover {
+  background: var(--dark-2);
+}
+
+.team-card__portrait {
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark-3);
+  border: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--motion-med) var(--ease), box-shadow var(--motion-med) var(--ease);
+  border-radius: 50%;
+}
+
+.team-card:hover .team-card__portrait {
+  border-color: rgba(212,168,83,0.2);
+  box-shadow: 0 0 20px var(--accent-subtle);
+}
+
+.team-card__initial {
+  font-family: var(--font);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+
+.team-card.is-visible .team-card__initial {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.team-card__specialty-icon {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 18px;
+  height: 18px;
+  color: var(--accent);
+  opacity: 0.5;
+}
+
+.team-card__specialty-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.team-card__name {
+  font-family: var(--font);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.team-card__ability {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+  margin: 0 0 16px;
+}
+
+.team-card__quote {
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  color: rgba(255,255,255,0.4);
+  border-left: 1px solid rgba(212,168,83,0.2);
+  padding-left: 12px;
+  margin: 0 0 20px;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.6s var(--ease) 0.15s, transform 0.6s var(--ease) 0.15s;
+}
+
+.team-card.is-visible .team-card__quote {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.team-card__socials {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.team-card__socials a {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 50%;
+  transition: all var(--motion-med) var(--ease);
+}
+
+.team-card__socials a:hover {
+  color: var(--accent);
+  border-color: var(--accent-border);
+}
+
+.team-card__socials svg {
+  width: 16px;
+  height: 16px;
+}
+
+.team-card__cta {
+  margin-top: auto;
+  text-align: center;
+  font-size: 13px;
+  padding: 10px 20px;
+}
+
+/* ---------- GUIDANCE BLOCK ---------- */
+.guidance-block {
+  padding: var(--section-pad) 0;
+  position: relative;
+}
+
+.guidance-block::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
+}
+
+.guidance-block__inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.guidance-block__title {
+  font-family: var(--font);
+  font-size: clamp(22px, 2.5vw, 30px);
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 16px;
+}
+
+.guidance-block__text {
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin: 0 0 28px;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+  .founder-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .founder-card__portrait {
+    justify-content: center;
+  }
+
+  .founder-card__body {
+    align-items: center;
+  }
+
+  .founder-card__fields {
+    text-align: left;
+  }
+
+  .founder-card__quote {
+    text-align: left;
+  }
+
+  .founder-card__cta {
+    align-self: center;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 430px) {
+  .coaches-hero {
+    padding-top: calc(var(--nav-h, 80px) + 48px);
+  }
+
+  .coaches-hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .coaches-hero__actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .founder-card {
+    padding: 24px;
+  }
+
+  .founder-card__portrait-inner {
+    width: 150px;
+    height: 150px;
+  }
+
+  .founder-card__initial {
+    font-size: 48px;
+  }
+
+  .team-card {
+    padding: 24px;
+  }
+}

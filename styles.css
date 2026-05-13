@@ -2604,6 +2604,146 @@ a {
   background: linear-gradient(90deg, transparent, var(--accent-border), transparent);
 }
 
+/* ---------- COACHES TEASER ---------- */
+.coaches-teaser {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.coaches-teaser__founder {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: clamp(24px, 3vw, 40px);
+  background: var(--dark-2);
+  border: 1px solid var(--accent-border);
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+.coaches-teaser__founder::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+}
+
+.coaches-teaser__founder-portrait {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--dark-3);
+  border: 1px solid var(--accent-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.coaches-teaser__founder-initial {
+  font-family: var(--font);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -1px;
+}
+
+.coaches-teaser__founder-alias {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.coaches-teaser__founder-role {
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 4px;
+}
+
+.coaches-teaser__founder-name {
+  font-family: var(--font);
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.coaches-teaser__founder-quote {
+  font-family: var(--font);
+  font-size: 14px;
+  font-style: italic;
+  color: rgba(255,255,255,0.5);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.coaches-teaser__team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  margin-bottom: 28px;
+}
+
+.coaches-teaser__name {
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.5);
+  padding: 10px 16px;
+  background: var(--dark);
+  text-decoration: none;
+  transition: all var(--motion-med) var(--ease);
+  letter-spacing: 0.3px;
+}
+
+.coaches-teaser__name:hover {
+  color: var(--accent);
+  background: var(--dark-2);
+}
+
+.coaches-teaser__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Mobile teaser */
+@media (max-width: 600px) {
+  .coaches-teaser__founder {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+  .coaches-teaser__team {
+    justify-content: center;
+  }
+  .coaches-teaser__name {
+    text-align: center;
+    flex: 1 1 calc(50% - 2px);
+    min-width: 0;
+  }
+  .coaches-teaser__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .coaches-teaser__actions .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
 .coaches__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));

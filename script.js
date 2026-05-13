@@ -299,88 +299,20 @@
   }
 
   // ============================================================
-  // RENDER COACHES — rebuilt for new structure
+  // RENDER COACHES TEASER — compact name strip for homepage
   // ============================================================
-  function getSpecialtyIcon(type) {
-    var icons = {
-      founder: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><polygon points="12,2 15,9 22,9 16.5,14 18.5,21 12,17 5.5,21 7.5,14 2,9 9,9"/></svg>',
-      precision: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg>',
-      intensity: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M13 2 L8 14 L12 14 L11 22 L18 10 L14 10 L17 2Z"/></svg>',
-      calisthenics: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><line x1="3" y1="8" x2="21" y2="8"/><circle cx="12" cy="16" r="3"/><line x1="12" y1="13" x2="12" y2="8"/></svg>',
-      strength: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 4 C12 4 8 8 8 14 C8 18 10 20 12 20 C14 20 16 18 16 14 C16 8 12 4 12 4Z"/><line x1="12" y1="14" x2="12" y2="20" opacity="0.4"/></svg>',
-      functional: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M4 20 L10 8 L14 16 L20 4"/><circle cx="10" cy="8" r="1.5" fill="currentColor" opacity="0.5"/><circle cx="20" cy="4" r="1.5" fill="currentColor" opacity="0.5"/></svg>',
-      power: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="2" y="10" width="4" height="4" rx="0.5"/><rect x="18" y="10" width="4" height="4" rx="0.5"/><line x1="6" y1="12" x2="18" y2="12"/><rect x="7" y="8" width="3" height="8" rx="0.5"/><rect x="14" y="8" width="3" height="8" rx="0.5"/></svg>',
-      guide: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="8"/><line x1="12" y1="4" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="20"/><line x1="4" y1="12" x2="8" y2="12"/><line x1="16" y1="12" x2="20" y2="12"/></svg>'
-    };
-    return icons[type] || icons.guide;
-  }
-
-  function getInstagramSvg() {
-    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/></svg>';
-  }
-
   function renderCoaches() {
-    var grid = document.getElementById('coachesGrid');
-    if (!grid) return;
+    var teaser = document.getElementById('coachesTeaser');
+    if (!teaser) return;
 
+    var teamCoaches = coaches.filter(function(c) { return !c.isFounder; });
     var html = '';
-    coaches.forEach(function(coach) {
-      var socialsHtml = '';
-      var socialItems = '';
 
-      // Instagram — only render if real URL exists
-      if (coach.socials && coach.socials.instagram) {
-        socialItems += '<a href="' + coach.socials.instagram + '" class="coach-card__social-link" target="_blank" rel="noopener" aria-label="Instagram de ' + coach.name + '">' + getInstagramSvg() + '</a>';
-      }
-      // Facebook
-      if (coach.socials && coach.socials.facebook) {
-        socialItems += '<a href="' + coach.socials.facebook + '" class="coach-card__social-link" target="_blank" rel="noopener" aria-label="Facebook de ' + coach.name + '">Facebook</a>';
-      }
-      if (socialItems) {
-        socialsHtml = '<div class="coach-card__socials">' + socialItems + '</div>';
-      }
-
-      var specialtyHtml = '<div class="coach-card__specialty-icon">' + getSpecialtyIcon(coach.specialtyIcon) + '</div>';
-
-      var bodyHtml = '';
-
-      if (coach.isFounder) {
-        bodyHtml =
-          specialtyHtml +
-          (coach.alias ? '<div class="coach-card__alias">' + coach.alias + '</div>' : '') +
-          '<div class="coach-card__role">' + coach.role + '</div>' +
-          '<h3 class="coach-card__name">' + coach.name + '</h3>' +
-          '<div class="coach-card__fields">' +
-            '<div><div class="coach-card__field-label">Misión</div><p class="coach-card__field-text">' + coach.mission + '</p></div>' +
-            '<div><div class="coach-card__field-label">Visión</div><p class="coach-card__field-text">' + coach.vision + '</p></div>' +
-            '<div><div class="coach-card__field-label">Habilidad distintiva</div><p class="coach-card__field-text">' + coach.ability + '</p></div>' +
-          '</div>' +
-          '<div class="coach-card__quote">"' + coach.quote + '"</div>' +
-          socialsHtml;
-      } else {
-        bodyHtml =
-          specialtyHtml +
-          '<h3 class="coach-card__name">' + coach.name + '</h3>' +
-          '<p class="coach-card__ability">' + coach.ability + '</p>' +
-          '<div class="coach-card__quote">"' + coach.quote + '"</div>' +
-          socialsHtml;
-      }
-
-      var ctaLabel = coach.isFounder ? 'Consultar disponibilidad de Lucas' : 'Consultar con ' + coach.name.split(' ')[0];
-      var ctaClass = coach.isFounder ? 'btn btn--primary' : 'btn btn--ghost';
-
-      var portraitHtml = coach.photo
-        ? '<div class="coach-card__portrait"><img src="' + coach.photo + '" alt="' + coach.name + ' - Coach en TEMPLO" loading="lazy" width="68" height="68"></div>'
-        : '<div class="coach-card__portrait"><span class="coach-card__initial">' + coach.initial + '</span></div>';
-
-      html += '<article class="coach-card' + (coach.isFounder ? ' coach-card--founder' : '') + '">' +
-        portraitHtml +
-        bodyHtml +
-        '<a href="https://wa.me/59172001680?text=' + encodeURIComponent(coach.whatsappMessage) + '" class="' + ctaClass + ' coach-card__cta" target="_blank" rel="noopener" data-cta="coach-' + coach.id + '-whatsapp">' + ctaLabel + '</a>' +
-        '</article>';
+    teamCoaches.forEach(function(coach) {
+      html += '<a href="https://wa.me/59172001680?text=' + encodeURIComponent(coach.whatsappMessage) + '" class="coaches-teaser__name" target="_blank" rel="noopener" data-cta="coach-' + coach.id + '-whatsapp">' + coach.name + '</a>';
     });
 
-    grid.innerHTML = html;
+    teaser.innerHTML = html;
   }
 
   // ============================================================
