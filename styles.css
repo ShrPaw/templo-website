@@ -370,19 +370,22 @@ button:focus-visible {
   justify-content: space-between;
 }
 
-/* Text-only TEMPLO brand */
+/* Official TEMPLO wordmark brand */
 .nav__brand {
-  font-family: var(--font-body);
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--white-pure);
-  transition: color 0.3s var(--ease);
+  display: flex;
+  align-items: center;
+  transition: opacity 0.3s var(--ease);
 }
 
 .nav__brand:hover {
-  color: var(--accent);
+  opacity: 0.8;
+}
+
+.nav__brand-logo {
+  display: block;
+  width: auto;
+  height: clamp(18px, 2vw, 26px);
+  object-fit: contain;
 }
 
 .nav__links {
@@ -531,8 +534,8 @@ button:focus-visible {
   .nav__toggle {
     display: flex;
   }
-  .nav__brand {
-    font-size: 1.2rem;
+  .nav__brand-logo {
+    height: clamp(16px, 4vw, 22px);
   }
   .mobile-menu {
     display: flex;
