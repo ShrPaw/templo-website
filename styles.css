@@ -858,6 +858,119 @@ button:focus-visible {
 }
 
 /* ========================================
+   SITE GUIDE — Bridge to Subpages
+   Compact 3-card navigation map
+   ======================================== */
+.site-guide {
+  padding: clamp(60px, 8vw, 100px) 0;
+  position: relative;
+  background: var(--black);
+  border-top: 1px solid var(--line);
+}
+
+.site-guide::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.site-guide__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
+.site-guide__card {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 3vw, 36px);
+  background: var(--dark);
+  border: 1px solid rgba(255,255,255,0.04);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--motion-med) var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.site-guide__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity var(--motion-med) var(--ease);
+}
+
+.site-guide__card:hover {
+  background: var(--dark-2);
+  border-color: rgba(255,255,255,0.08);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.site-guide__card:hover::before {
+  opacity: 1;
+}
+
+.site-guide__num {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 16px;
+  opacity: 0.6;
+}
+
+.site-guide__title {
+  font-family: var(--font-body);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  font-weight: 800;
+  color: var(--white-pure);
+  margin-bottom: 12px;
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+
+.site-guide__text {
+  font-size: 0.85rem;
+  color: var(--gray-light);
+  line-height: 1.65;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.site-guide__cta {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  transition: color var(--motion-fast) var(--ease);
+}
+
+.site-guide__card:hover .site-guide__cta {
+  color: var(--accent-light);
+}
+
+@media (max-width: 768px) {
+  .site-guide__grid {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+}
+
+/* ========================================
    ACTIVITY REEL — "Así se vive TEMPLO"
    Premium horizontal photo marquee
    ======================================== */
