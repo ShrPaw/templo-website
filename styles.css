@@ -43,8 +43,8 @@
   --panel-hover: var(--dark-3);
 
   /* Typography system:
-     Dharma Gothic C = display headings
-     Montserrat = body text */
+     Dharma Gothic C = brand-seal accent words only (1–2 words per section max)
+     Montserrat = full reading system (titles, body, UI, everything) */
   --font-display: 'Dharma Gothic C', 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
   --font: var(--font-body);
@@ -70,12 +70,13 @@
   --motion-ease: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ---------- DHARMA GOTHIC C — Display Font ----------
-   Dharma = blade, not wallpaper.
-   Use for: hero titles, section titles, metric numbers, large display moments.
-   Do NOT use for: body, paragraphs, FAQ, labels, small UI, buttons.
+/* ---------- DHARMA GOTHIC C — Brand Seal Accent ----------
+   Dharma = brand seal, not title font.
+   Use for: 1–2 strategic accent words per section max (.brand-seal class).
+   Do NOT use for: full titles, sentences, body, FAQ, buttons, nav, cards.
+   Montserrat carries the full reading system.
    Weights: 700 (Bold), 900 (Heavy), 800+italic (ExBoldItalic accent only).
-   --------------------------------------------------- */
+   --------------------------------------------------------- */
 @font-face {
   font-family: 'Dharma Gothic C';
   src: url('assets/fonts/DharmaGothicC-Bold.woff2') format('woff2'),
@@ -287,36 +288,30 @@ button:focus-visible {
 }
 
 .section-title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(2rem, 4.5vw, 3.2rem);
-  font-weight: 800;
-  line-height: var(--display-lh);
-  letter-spacing: var(--display-ls);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
   margin-bottom: 20px;
   color: var(--white-pure);
 }
 
-/* Functional question headings — Montserrat, not Dharma.
-   Pathfinder, FAQ, and similar UI prompts are functional text,
-   not high-impact brand display moments. */
-.pathfinder .section-title,
-.faq .section-title,
-.plans .section-title,
-.location .section-title,
-.exp-comparison .section-title {
-  font-family: var(--font-body);
-  font-weight: 900;
-  letter-spacing: -0.01em;
-  line-height: 1.08;
+/* Brand-seal accent — Dharma for 1–2 strategic words only */
+.brand-seal {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 0.95;
+  text-transform: uppercase;
+  display: inline-block;
+  color: var(--accent);
+  white-space: nowrap;
 }
 
 @media (max-width: 600px) {
-  .pathfinder .section-title,
-  .faq .section-title,
-  .plans .section-title,
-  .location .section-title,
-  .exp-comparison .section-title {
-    line-height: 1.12;
+  .brand-seal {
+    letter-spacing: 0.04em;
   }
 }
 
@@ -646,11 +641,11 @@ button:focus-visible {
 }
 
 .hero__title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(2.4rem, 6vw, 4.4rem);
   font-weight: 900;
-  letter-spacing: var(--display-ls-tight);
-  line-height: var(--display-lh);
+  letter-spacing: -0.015em;
+  line-height: 1.05;
   margin-bottom: 28px;
   opacity: 0;
   transform: translateY(30px);
