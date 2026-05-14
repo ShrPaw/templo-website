@@ -574,12 +574,43 @@
   }
 
   // ============================================================
+  // PLANS — EXPAND / COLLAPSE (Phase 4B)
+  // ============================================================
+  function initPlansExpand() {
+    document.addEventListener('click', function(e) {
+      var btn = e.target.closest('.pricing-card__expand');
+      if (!btn) return;
+
+      var card = btn.closest('.pricing-card');
+      var details = card.querySelector('.pricing-card__details');
+      if (!details) return;
+
+      var expanded = btn.getAttribute('data-expanded') === 'true';
+
+      if (expanded) {
+        btn.setAttribute('data-expanded', 'false');
+        btn.setAttribute('aria-expanded', 'false');
+        details.hidden = true;
+        btn.querySelector('.pricing-card__expand-label').textContent =
+          btn.querySelector('.pricing-card__expand-label').textContent.replace('Ocultar', 'Ver');
+      } else {
+        btn.setAttribute('data-expanded', 'true');
+        btn.setAttribute('aria-expanded', 'true');
+        details.hidden = false;
+        btn.querySelector('.pricing-card__expand-label').textContent =
+          btn.querySelector('.pricing-card__expand-label').textContent.replace('Ver', 'Ocultar');
+      }
+    });
+  }
+
+  // ============================================================
   // INIT
   // ============================================================
   renderCoaches();
   initCoachObserver();
   initActivityReel();
   initMetricsCounter();
+  initPlansExpand();
 
   var pathfinderTool = document.querySelector('.pathfinder__tool');
   if (pathfinderTool) {
