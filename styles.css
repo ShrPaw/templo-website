@@ -300,11 +300,24 @@ button:focus-visible {
    Pathfinder, FAQ, and similar UI prompts are functional text,
    not high-impact brand display moments. */
 .pathfinder .section-title,
-.faq .section-title {
+.faq .section-title,
+.plans .section-title,
+.location .section-title,
+.exp-comparison .section-title {
   font-family: var(--font-body);
   font-weight: 900;
   letter-spacing: -0.01em;
   line-height: 1.08;
+}
+
+@media (max-width: 600px) {
+  .pathfinder .section-title,
+  .faq .section-title,
+  .plans .section-title,
+  .location .section-title,
+  .exp-comparison .section-title {
+    line-height: 1.12;
+  }
 }
 
 .section-sub {
