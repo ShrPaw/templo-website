@@ -2067,7 +2067,8 @@ button:focus-visible {
 
 /* CTA at bottom of card */
 .pricing-card .btn--full {
-  margin: auto clamp(20px, 2.5vw, 32px) clamp(20px, 2.5vw, 32px);
+  width: calc(100% - 2 * clamp(20px, 2.5vw, 32px));
+  margin: 0 clamp(20px, 2.5vw, 32px) clamp(20px, 2.5vw, 32px);
 }
 
 /* Decision helper */
@@ -2126,6 +2127,7 @@ button:focus-visible {
     padding: 0 18px 18px;
   }
   .pricing-card .btn--full {
+    width: calc(100% - 36px);
     margin-left: 18px;
     margin-right: 18px;
     margin-bottom: 18px;
