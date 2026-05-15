@@ -24,23 +24,79 @@
 
 ---
 
-## B. Still Needed Before Public Launch
+## B. Current Placeholder Status (Phase 2B Update)
 
-### 1. Real Photography
+> ⚠️ **All current images are Unsplash stock photography** used as temporary visual scaffolding.
+> They were updated in Phase 2B to be more cohesive (dark, moody, cinematic fitness aesthetic)
+> but they are NOT real TEMPLO photography and must be replaced before public launch.
 
-| Asset | Where Used | Why It Matters | Min Quality | What to Avoid |
-|-------|------------|----------------|-------------|---------------|
-| **Hero — TEMPLO interior** | Homepage hero, OG image | First impression. Visitor must see the real space, not a Buddha statue. | 4K landscape, dark/moody lighting, negative space left for text | Bright clinical lighting, cluttered, generic gym look |
-| **Hero — mobile crop** | Homepage hero (mobile) | Mobile visitors see portrait crop | 1080×1920 portrait | Same image poorly cropped |
-| **Lucas portrait** | Coaches page, homepage teaser | Founder credibility. People buy from people. | 800×800 square, professional or action | Casual selfie, low resolution |
-| **Power Plate session** | Experiences page, service card | Shows actual TEMPLO equipment | 800×600 | Generic stock photo of any Power Plate |
-| **Calistenia session** | Experiences page, service card | Shows actual bars/area | 800×600 | Generic outdoor calisthenics |
-| **Women's training** | Experiences page, service card | Shows actual environment | 800×600 | Generic stock |
-| **Seniors session** | Experiences page, service card | Shows actual seniors program | 800×600 | Generic elderly stock photo |
-| **Adapted training** | Experiences page, service card | Shows adapted approach | 800×600 | Generic stock |
-| **Activity reel (8 photos)** | Homepage reel section | Atmosphere and energy | 800×1000 portrait each | Generic fitness stock |
-| **Community/group shot** | Social proof area | Shows real group dynamic | 1200×800 | Generic group fitness |
-| **Entrance/exterior** | Location section | Helps visitors find the place | 800×600 | Generic building |
+### Hero Image
+| File | Current | Status | Needed |
+|------|---------|--------|--------|
+| `assets/BUDDHA-desktop.webp` | Dark gym interior (Unsplash) | ⚠️ Temporary | Real TEMPLO interior |
+| `assets/BUDDHA-mobile-portrait.webp` | Same, portrait crop | ⚠️ Temporary | Same real photo, portrait crop |
+| `assets/BUDDHA-mobile.webp` | Same, mobile landscape | ⚠️ Temporary | Same real photo, mobile crop |
+| `assets/BUDDHA-og.webp` | Same, center crop | ⚠️ Temporary | Real photo or logo on dark bg |
+
+### Activity Reel (8 images)
+| File | Current | Status | Needed |
+|------|---------|--------|--------|
+| `assets/placeholders/reel-powerplate.webp` | Vibration training (Unsplash) | ⚠️ Temporary | Real Power Plate session at TEMPLO |
+| `assets/placeholders/reel-calistenia.webp` | Bodyweight training (Unsplash) | ⚠️ Temporary | Real calistenia session at TEMPLO |
+| `assets/placeholders/reel-mujeres.webp` | Women training (Unsplash) | ⚠️ Temporary | Real women's session at TEMPLO |
+| `assets/placeholders/reel-seniors.webp` | Senior training (Unsplash) | ⚠️ Temporary | Real seniors session at TEMPLO |
+| `assets/placeholders/reel-adaptado.webp` | Adapted training (Unsplash) | ⚠️ Temporary | Real adapted session at TEMPLO |
+| `assets/placeholders/reel-fuerza.webp` | Strength training (Unsplash) | ⚠️ Temporary | Real strength session at TEMPLO |
+| `assets/placeholders/reel-comunidad.webp` | Group training (Unsplash) | ⚠️ Temporary | Real community moment at TEMPLO |
+| `assets/placeholders/reel-tecnica.webp` | Form correction (Unsplash) | ⚠️ Temporary | Real technique moment at TEMPLO |
+
+### Service Cards (5 images)
+| File | Current | Status | Needed |
+|------|---------|--------|--------|
+| `assets/placeholders/powerplate.webp` | Vibration equipment (Unsplash) | ⚠️ Temporary | Real Power Plate at TEMPLO |
+| `assets/placeholders/calistenia.webp` | Calisthenics (Unsplash) | ⚠️ Temporary | Real calistenia area at TEMPLO |
+| `assets/placeholders/mujeres.webp` | Women training (Unsplash) | ⚠️ Temporary | Real women's area at TEMPLO |
+| `assets/placeholders/seniors.webp` | Senior training (Unsplash) | ⚠️ Temporary | Real seniors session at TEMPLO |
+| `assets/placeholders/adaptado.webp` | Adapted training (Unsplash) | ⚠️ Temporary | Real adapted setup at TEMPLO |
+
+### Coach Portraits (8 images)
+| File | Current | Status | Needed |
+|------|---------|--------|--------|
+| `assets/placeholders/coach-lucas.webp` | Fitness portrait (Unsplash) | ⚠️ Temporary | Real photo of Lucas Bustamante |
+| `assets/placeholders/coach-nicolas-z.webp` | Fitness portrait (Unsplash) | ⚠️ Temporary | Real photo of Nicolas Zegarra |
+| `assets/placeholders/coach-andres.webp` | Fitness portrait (Unsplash) | ⚠️ Temporary | Real photo of Andres Balderrama |
+| `assets/placeholders/coach-nicolas-a.webp` | Fitness portrait (Unsplash) | ⚠️ Temporary | Real photo of Nicolas Aranibar |
+| `assets/placeholders/coach-andrea.webp` | Fitness portrait (Unsplash) | ⚠️ Temporary | Real photo of Andrea Sejas |
+| `assets/placeholders/coach-santiago-l.webp` | Fitness portrait (Unsplash) | ⚠️ Temporary | Real photo of Santiago Lavayen |
+| `assets/placeholders/coach-oscar.webp` | Fitness portrait (Unsplash) | ⚠️ Temporary | Real photo of Oscar Encinas |
+| `assets/placeholders/coach-santiago-r.webp` | Fitness portrait (Unsplash) | ⚠️ Temporary | Real photo of Santiago Rojas |
+
+### Lifestyle & Energy (10 images)
+| File | Status | Needed |
+|------|--------|--------|
+| `assets/placeholders/lifestyle-01.webp` through `lifestyle-04.webp` | ⚠️ Temporary | Real TEMPLO lifestyle/mood shots |
+| `assets/placeholders/energy-01.webp` through `energy-06.webp` | ⚠️ Temporary | Real TEMPLO energy/training moments |
+
+---
+
+## C. Still Needed Before Public Launch
+
+### 1. Real Photography Session
+
+**Priority: P0 — biggest blocker**
+
+| Asset | Where Used | Why It Matters | Min Quality |
+|-------|------------|----------------|-------------|
+| **Hero — TEMPLO interior** | Homepage hero, OG image | First impression | 4K landscape, dark/moody lighting |
+| **Lucas portrait** | Coaches page, homepage teaser | Founder credibility | 800×800 square, professional |
+| **Power Plate session** | Experiences page, service card | Shows real equipment | 800×600 |
+| **Calistenia session** | Experiences page, service card | Shows real bars/area | 800×600 |
+| **Women's training** | Experiences page, service card | Shows real environment | 800×600 |
+| **Seniors session** | Experiences page, service card | Shows real program | 800×600 |
+| **Adapted training** | Experiences page, service card | Shows real setup | 800×600 |
+| **Activity reel (8 photos)** | Homepage reel | Atmosphere and energy | 800×1000 portrait |
+| **Community/group shot** | Social proof | Shows real group | 1200×800 |
+| **Entrance/exterior** | Location section | Helps visitors find it | 800×600 |
 
 **Photography style direction:**
 - Dark, moody, cinematic lighting (matches brand)
@@ -54,49 +110,45 @@
 
 | Item | Details | Where Used |
 |------|---------|------------|
-| **3-5 client quotes** | Name (or initials with permission), plan used, one sentence about experience | Homepage (new section or integrated) |
+| **3-5 client quotes** | Name (or initials with permission), plan used, one sentence | Homepage (new section) |
 | **Optional: client photo** | Adds credibility but not required | Testimonial section |
-| **Client count** | "X personas entrenan en TEMPLO" — only if impressive | Homepage metrics section |
-| **Transformation stories** | Before/after or progress narrative — only with explicit permission | Dedicated section |
+| **Client count** | "X personas entrenan en TEMPLO" — only if impressive | Homepage metrics |
 
-**What NOT to fabricate:** No fake names, no fake quotes, no fake results, no "trusted by hundreds."
+**What NOT to fabricate:** No fake names, no fake quotes, no fake results.
 
 ### 3. Verified Public Address / Google Maps
 
 | Item | Status | Action Needed |
 |------|--------|---------------|
-| **Exact address** | Approximate ("Ciclovía casi Av. Simón López") | Verify exact address with Lucas |
-| **Google Maps embed URL** | Uses placeholder coordinates | Get exact embed URL from Google Maps |
-| **Google Maps direct link** | Uses search query | Get exact place link |
-| **Google Business Profile** | Not created | Create GBP with address, hours, photos |
-| **Coordinates** | Approximate (-17.4, -66.1) | Get exact coordinates |
+| **Exact address** | Approximate | Verify exact address with Lucas |
+| **Google Maps embed URL** | Placeholder coordinates | Get exact embed URL |
+| **Google Maps direct link** | Search query | Get exact place link |
+| **Google Business Profile** | Not created | Create GBP |
 
 ### 4. Production Domain
 
 | Item | Current | Needed |
 |------|---------|--------|
-| **Domain** | templo-website-qbw5.vercel.app | Custom domain (e.g., templo.bo, templo.com.bo) |
-| **Canonical URLs** | Point to Vercel preview | Update to production domain |
-| **OG URLs** | Point to Vercel preview | Update to production domain |
-| **Sitemap URLs** | Point to Vercel preview | Update to production domain |
-| **robots.txt** | References Vercel preview | Update to production domain |
+| **Domain** | templo-website-qbw5.vercel.app | Custom domain |
+| **Canonical URLs** | Vercel preview | Production domain |
+| **OG URLs** | Vercel preview | Production domain |
+| **Sitemap URLs** | Vercel preview | Production domain |
 
-### 5. Real Coach / Founder Details
+### 5. Real Coach Details
 
 | Item | Status | Needed |
 |------|--------|--------|
-| **Lucas Bustamante bio** | Draft copy exists | Verify/approve mission, vision, ability text |
-| **Coach photos** | Letter initials only | Real headshots for all 8 coaches |
-| **Coach Instagram URLs** | Empty | Real Instagram links for each coach |
-| **Coach certifications** | Not listed | Only include if real and verifiable |
+| **Coach photos** | Unsplash stock | Real headshots for all 8 coaches |
+| **Coach Instagram URLs** | Empty | Real Instagram links |
+| **Coach certifications** | Not listed | Only include if verifiable |
 | **Coach specialties** | Draft copy | Verify with team |
 
 ### 6. Social Links
 
 | Platform | Status | Action |
 |----------|--------|--------|
-| **Instagram** | @templo.bol (linked) | Verify account is active and managed |
-| **Facebook** | templo.bol (linked) | Verify page is active and managed |
+| **Instagram** | @templo.bol (linked) | Verify account is active |
+| **Facebook** | templo.bol (linked) | Verify page is active |
 | **WhatsApp** | +591 72001680 (verified) | No action needed |
 | **TikTok** | Not present | Add only if active |
 | **YouTube** | Not present | Add only if active |

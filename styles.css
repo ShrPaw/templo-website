@@ -128,8 +128,9 @@ body {
   font-family: var(--font-body);
   background: var(--black);
   color: var(--white);
-  line-height: 1.6;
+  line-height: 1.65;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 img {
@@ -187,7 +188,7 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -203,13 +204,13 @@ button:focus-visible {
 .btn--primary {
   background: var(--accent);
   color: var(--black);
-  box-shadow: 0 2px 12px rgba(212, 168, 83, 0.10);
+  box-shadow: 0 2px 16px rgba(212, 168, 83, 0.12);
 }
 
 .btn--primary:hover {
   background: var(--accent-light);
   transform: translateY(-2px);
-  box-shadow: 0 8px 36px var(--accent-glow);
+  box-shadow: 0 10px 40px var(--accent-glow);
 }
 
 .btn--primary:active {
@@ -274,13 +275,13 @@ button:focus-visible {
 
 .btn--large {
   padding: 20px 48px;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
 }
 
 /* ---------- SECTION HEADERS ---------- */
 .section-label {
   display: block;
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.28em;
   text-transform: uppercase;
@@ -311,11 +312,11 @@ button:focus-visible {
 
 .section-title {
   font-family: var(--font-body);
-  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-size: clamp(1.9rem, 4.2vw, 3rem);
   font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: -0.01em;
-  margin-bottom: 20px;
+  line-height: 1.06;
+  letter-spacing: -0.015em;
+  margin-bottom: 22px;
   color: var(--white-pure);
 }
 
@@ -338,10 +339,11 @@ button:focus-visible {
 }
 
 .section-sub {
-  font-size: 1rem;
+  font-size: 1.02rem;
   color: var(--gray-light);
-  max-width: 560px;
-  line-height: 1.75;
+  max-width: 540px;
+  line-height: 1.8;
+  letter-spacing: 0.005em;
 }
 
 .section-header {
@@ -411,7 +413,7 @@ button:focus-visible {
 }
 
 .nav__link {
-  font-size: 0.75rem;
+  font-size: 0.73rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -440,7 +442,7 @@ button:focus-visible {
 }
 
 .nav__cta {
-  font-size: 0.75rem;
+  font-size: 0.73rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -516,10 +518,11 @@ button:focus-visible {
 
 .mobile-menu__link {
   font-family: var(--font-body);
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 700;
   color: var(--white);
   transition: color 0.3s;
+  letter-spacing: 0.02em;
 }
 
 .mobile-menu__link:hover {
@@ -534,7 +537,7 @@ button:focus-visible {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: 0.87rem;
   border-radius: 2px;
   transition: all 0.3s var(--ease);
 }
@@ -610,9 +613,9 @@ button:focus-visible {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(5,5,5,0.94) 0%, rgba(5,5,5,0.55) 40%, rgba(5,5,5,0.1) 70%, rgba(5,5,5,0.6) 100%),
-    linear-gradient(to bottom, rgba(10,10,10,0.1) 0%, rgba(10,10,10,0.35) 50%, rgba(10,10,10,0.95) 100%),
-    linear-gradient(135deg, rgba(212,168,83,0.06) 0%, transparent 50%);
+    linear-gradient(90deg, rgba(5,5,5,0.95) 0%, rgba(5,5,5,0.6) 35%, rgba(5,5,5,0.08) 65%, rgba(5,5,5,0.55) 100%),
+    linear-gradient(to bottom, rgba(10,10,10,0.05) 0%, rgba(10,10,10,0.3) 45%, rgba(10,10,10,0.96) 100%),
+    linear-gradient(135deg, rgba(212,168,83,0.07) 0%, transparent 45%);
   /* Subtle geometric grid lines */
   background-size: 100% 100%, 100% 100%, 100% 100%;
   /* Subtle atmospheric drift */
@@ -651,7 +654,7 @@ button:focus-visible {
 }
 
 .hero__tag {
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.35em;
   text-transform: uppercase;
@@ -664,10 +667,10 @@ button:focus-visible {
 
 .hero__title {
   font-family: var(--font-body);
-  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  font-size: clamp(2.6rem, 6.5vw, 4.8rem);
   font-weight: 900;
-  letter-spacing: -0.015em;
-  line-height: 1.05;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
   margin-bottom: 28px;
   opacity: 0;
   transform: translateY(30px);
@@ -680,11 +683,11 @@ button:focus-visible {
 }
 
 .hero__sub {
-  font-size: clamp(1rem, 2vw, 1.1rem);
+  font-size: clamp(1.02rem, 2vw, 1.15rem);
   color: var(--gray-light);
-  line-height: 1.75;
-  margin-bottom: 40px;
-  max-width: 520px;
+  line-height: 1.8;
+  margin-bottom: 44px;
+  max-width: 500px;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeUp 0.8s 0.6s var(--ease-out) forwards;
@@ -789,8 +792,8 @@ button:focus-visible {
 
 .positioning__quote p {
   font-family: var(--font-body);
-  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
-  line-height: 1.6;
+  font-size: clamp(1.15rem, 2.6vw, 1.65rem);
+  line-height: 1.65;
   font-weight: 500;
   color: var(--gray-light);
   letter-spacing: 0.01em;
@@ -864,7 +867,7 @@ button:focus-visible {
 }
 
 .metrics__label {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -962,10 +965,10 @@ button:focus-visible {
 }
 
 .site-guide__text {
-  font-size: 0.85rem;
+  font-size: 0.87rem;
   color: var(--gray-light);
-  line-height: 1.65;
-  margin-bottom: 20px;
+  line-height: 1.7;
+  margin-bottom: 22px;
   flex: 1;
 }
 
@@ -1434,7 +1437,7 @@ button:focus-visible {
   right: 16px;
   background: var(--accent);
   color: var(--black);
-  font-size: 0.58rem;
+  font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -1444,7 +1447,7 @@ button:focus-visible {
 
 .exp-card__name {
   font-family: var(--font-body);
-  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -1454,10 +1457,10 @@ button:focus-visible {
 }
 
 .exp-card__desc {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--gray-light);
-  line-height: 1.65;
-  margin-bottom: 20px;
+  line-height: 1.7;
+  margin-bottom: 22px;
 }
 
 /* Unified branded "Conocer más" action */
@@ -2027,7 +2030,7 @@ button:focus-visible {
 
 .pricing-card__name {
   font-family: var(--font-body);
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
   font-weight: 800;
   color: var(--white-pure);
   line-height: 1.15;
@@ -2037,7 +2040,7 @@ button:focus-visible {
 .pricing-card__badge {
   background: var(--accent);
   color: var(--black);
-  font-size: 0.58rem;
+  font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -2052,9 +2055,9 @@ button:focus-visible {
 
 /* Ideal-for line */
 .pricing-card__ideal {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--gray);
-  line-height: 1.5;
+  line-height: 1.55;
   letter-spacing: 0.01em;
 }
 
@@ -2068,7 +2071,7 @@ button:focus-visible {
 
 .pricing-card__price {
   font-family: var(--font-body);
-  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
   font-weight: 800;
   color: var(--accent-light);
   letter-spacing: 0.01em;
@@ -2076,7 +2079,7 @@ button:focus-visible {
 }
 
 .pricing-card__price-note {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: var(--gray);
   letter-spacing: 0.04em;
@@ -2093,7 +2096,7 @@ button:focus-visible {
   cursor: pointer;
   color: var(--gray-light);
   font-family: var(--font-body);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -2141,7 +2144,7 @@ button:focus-visible {
 }
 
 .pricing-card__detail-label {
-  font-size: 0.62rem;
+  font-size: 0.64rem;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
@@ -2149,7 +2152,7 @@ button:focus-visible {
 }
 
 .pricing-card__detail-block span:not(.pricing-card__detail-label) {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   color: var(--gray-light);
 }
 
@@ -2176,16 +2179,16 @@ button:focus-visible {
 }
 
 .pricing-option__info strong {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--white-pure);
   letter-spacing: 0.01em;
 }
 
 .pricing-option__info span {
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--gray);
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 .price-pill {
@@ -2226,7 +2229,7 @@ button:focus-visible {
 
 .plans__decide-text {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.02rem;
   font-weight: 700;
   color: var(--white-pure);
   margin-bottom: 16px;
@@ -2243,7 +2246,7 @@ button:focus-visible {
 /* Small button variant */
 .btn--sm {
   padding: 10px 20px;
-  font-size: 0.78rem;
+  font-size: 0.76rem;
 }
 
 /* ——— RESPONSIVE ——— */
@@ -2342,7 +2345,7 @@ button:focus-visible {
 }
 
 .location__detail h3 {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.12em;
@@ -2351,9 +2354,9 @@ button:focus-visible {
 }
 
 .location__detail p {
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   color: var(--gray-light);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .location__actions {
@@ -2392,7 +2395,7 @@ button:focus-visible {
 }
 
 .location__social p {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   color: var(--gray);
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -2409,7 +2412,7 @@ button:focus-visible {
   border: 1px solid rgba(255,255,255,0.08);
   color: var(--gray-light);
   padding: 8px 14px;
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: all 0.3s var(--ease);
@@ -2474,9 +2477,9 @@ button:focus-visible {
 
 .faq__question {
   font-family: var(--font-body);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
   font-weight: 700;
-  padding: 24px 0;
+  padding: 26px 0;
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -2484,6 +2487,7 @@ button:focus-visible {
   align-items: center;
   color: var(--white-pure);
   transition: color 0.3s;
+  letter-spacing: 0.005em;
 }
 
 .faq__question::-webkit-details-marker {
@@ -2509,10 +2513,10 @@ button:focus-visible {
 }
 
 .faq__answer {
-  font-size: 0.92rem;
+  font-size: 0.94rem;
   color: var(--gray-light);
-  line-height: 1.75;
-  padding-bottom: 24px;
+  line-height: 1.8;
+  padding-bottom: 26px;
 }
 
 .faq__answer a {
@@ -2560,26 +2564,26 @@ button:focus-visible {
 
 .final-cta__title {
   font-family: var(--font-body);
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.7rem, 3.8vw, 2.6rem);
   font-weight: 900;
-  line-height: 1.08;
-  letter-spacing: -0.01em;
+  line-height: 1.06;
+  letter-spacing: -0.015em;
   max-width: 680px;
-  margin: 0 auto 16px;
+  margin: 0 auto 18px;
 }
 
 .final-cta__sub {
-  font-size: 1rem;
+  font-size: 1.02rem;
   color: var(--gray-light);
-  margin-bottom: 40px;
-  line-height: 1.7;
+  margin-bottom: 44px;
+  line-height: 1.75;
 }
 
 /* ========================================
    FOOTER
    ======================================== */
 .footer {
-  padding: 60px 0 40px;
+  padding: 72px 0 44px;
   border-top: 1px solid rgba(255,255,255,0.04);
   position: relative;
 }
@@ -2597,8 +2601,8 @@ button:focus-visible {
 .footer__grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 48px;
+  gap: 48px;
+  margin-bottom: 52px;
 }
 
 .footer__logo-img {
@@ -2609,9 +2613,9 @@ button:focus-visible {
 }
 
 .footer__tagline {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--gray);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 .footer__nav h4,
@@ -2627,9 +2631,9 @@ button:focus-visible {
 .footer__nav a,
 .footer__contact a {
   display: block;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: var(--gray-light);
-  padding: 6px 0;
+  padding: 7px 0;
   transition: color 0.3s;
 }
 
@@ -2699,22 +2703,22 @@ button:focus-visible {
 }
 
 .whatsapp-float {
-  width: 56px;
-  height: 56px;
+  width: 58px;
+  height: 58px;
   background: #25D366;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: 0 4px 24px rgba(37, 211, 102, 0.3);
+  box-shadow: 0 4px 28px rgba(37, 211, 102, 0.35);
   transition: all 0.35s var(--ease);
   flex-shrink: 0;
 }
 
 .whatsapp-float:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 32px rgba(37, 211, 102, 0.5);
+  box-shadow: 0 6px 36px rgba(37, 211, 102, 0.55);
 }
 
 /* ========================================
@@ -2780,10 +2784,10 @@ button:focus-visible {
 }
 
 .start-here__step-text {
-  font-size: 0.82rem;
+  font-size: 0.84rem;
   color: var(--gray-light);
-  line-height: 1.6;
-  margin-bottom: 16px;
+  line-height: 1.65;
+  margin-bottom: 18px;
   flex: 1;
 }
 
@@ -3026,9 +3030,9 @@ button:focus-visible {
   font-family: var(--font);
   font-size: 14px;
   font-style: italic;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.55);
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.55;
 }
 
 .coaches-teaser__team {
