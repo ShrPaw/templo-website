@@ -312,10 +312,10 @@ button:focus-visible {
 
 .section-title {
   font-family: var(--font-body);
-  font-size: clamp(1.9rem, 4.2vw, 3rem);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
   font-weight: 900;
-  line-height: 1.06;
-  letter-spacing: -0.015em;
+  line-height: 1.04;
+  letter-spacing: -0.018em;
   margin-bottom: 22px;
   color: var(--white-pure);
 }
@@ -667,10 +667,10 @@ button:focus-visible {
 
 .hero__title {
   font-family: var(--font-body);
-  font-size: clamp(2.6rem, 6.5vw, 4.8rem);
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
   font-weight: 900;
-  letter-spacing: -0.02em;
-  line-height: 1.02;
+  letter-spacing: -0.025em;
+  line-height: 1;
   margin-bottom: 28px;
   opacity: 0;
   transform: translateY(30px);
@@ -858,7 +858,7 @@ button:focus-visible {
 .metrics__number {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
   font-weight: 900;
   color: var(--accent);
   line-height: 0.85;
@@ -912,9 +912,9 @@ button:focus-visible {
 .site-guide__card {
   display: flex;
   flex-direction: column;
-  padding: clamp(24px, 3vw, 36px);
+  padding: clamp(28px, 3.5vw, 40px);
   background: var(--dark);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.06);
   text-decoration: none;
   color: inherit;
   transition: all var(--motion-med) var(--ease);
@@ -936,8 +936,9 @@ button:focus-visible {
 
 .site-guide__card:hover {
   background: var(--dark-2);
-  border-color: rgba(255,255,255,0.08);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  border-color: rgba(212,168,83,0.15);
+  box-shadow: 0 10px 36px rgba(0,0,0,0.25);
+  transform: translateY(-2px);
 }
 
 .site-guide__card:hover::before {
@@ -956,12 +957,12 @@ button:focus-visible {
 
 .site-guide__title {
   font-family: var(--font-body);
-  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
-  font-weight: 800;
+  font-size: clamp(1.15rem, 1.9vw, 1.4rem);
+  font-weight: 900;
   color: var(--white-pure);
   margin-bottom: 12px;
   letter-spacing: 0.02em;
-  line-height: 1.15;
+  line-height: 1.12;
 }
 
 .site-guide__text {
@@ -1284,14 +1285,14 @@ button:focus-visible {
   position: relative;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.06);
 }
 
 .exp-card:hover {
   background: var(--dark-2);
-  border-color: rgba(212,168,83,0.12);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  border-color: rgba(212,168,83,0.18);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
 }
 
 .exp-card__visual {
@@ -1447,19 +1448,19 @@ button:focus-visible {
 
 .exp-card__name {
   font-family: var(--font-body);
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
-  font-weight: 800;
+  font-size: clamp(1.3rem, 2.2vw, 1.75rem);
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
   margin-bottom: 12px;
   color: var(--white-pure);
-  line-height: 1.15;
+  line-height: 1.1;
 }
 
 .exp-card__desc {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--gray-light);
-  line-height: 1.7;
+  line-height: 1.72;
   margin-bottom: 22px;
 }
 
@@ -1986,13 +1987,14 @@ button:focus-visible {
   flex-direction: column;
   position: relative;
   transition: all var(--motion-med) var(--ease);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.06);
 }
 
 .pricing-card:hover {
   background: var(--dark-2);
-  border-color: rgba(255,255,255,0.08);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  border-color: rgba(212,168,83,0.15);
+  box-shadow: 0 10px 36px rgba(0,0,0,0.25);
+  transform: translateY(-2px);
 }
 
 /* Premium card — gold accent */
@@ -2030,11 +2032,11 @@ button:focus-visible {
 
 .pricing-card__name {
   font-family: var(--font-body);
-  font-size: clamp(1.25rem, 2vw, 1.55rem);
-  font-weight: 800;
+  font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+  font-weight: 900;
   color: var(--white-pure);
-  line-height: 1.15;
-  letter-spacing: 0.02em;
+  line-height: 1.1;
+  letter-spacing: 0.03em;
 }
 
 .pricing-card__badge {
@@ -2071,8 +2073,8 @@ button:focus-visible {
 
 .pricing-card__price {
   font-family: var(--font-body);
-  font-size: clamp(1.35rem, 2.2vw, 1.65rem);
-  font-weight: 800;
+  font-size: clamp(1.4rem, 2.4vw, 1.75rem);
+  font-weight: 900;
   color: var(--accent-light);
   letter-spacing: 0.01em;
   line-height: 1;
@@ -2334,8 +2336,8 @@ button:focus-visible {
 
 .location__detail {
   display: flex;
-  gap: 16px;
-  margin-bottom: 32px;
+  gap: 18px;
+  margin-bottom: 36px;
 }
 
 .location__icon {
@@ -2345,10 +2347,10 @@ button:focus-visible {
 }
 
 .location__detail h3 {
-  font-size: 0.82rem;
-  font-weight: 600;
+  font-size: 0.84rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   margin-bottom: 8px;
   color: var(--white-pure);
 }
@@ -2364,6 +2366,14 @@ button:focus-visible {
   gap: 16px;
   flex-wrap: wrap;
   margin-top: 32px;
+}
+
+.location__micro {
+  font-size: 0.78rem;
+  color: var(--gray);
+  margin-top: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
 }
 
 .location__map {
@@ -2477,9 +2487,9 @@ button:focus-visible {
 
 .faq__question {
   font-family: var(--font-body);
-  font-size: 1.08rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  padding: 26px 0;
+  padding: 28px 0;
   cursor: pointer;
   list-style: none;
   display: flex;
@@ -2564,10 +2574,10 @@ button:focus-visible {
 
 .final-cta__title {
   font-family: var(--font-body);
-  font-size: clamp(1.7rem, 3.8vw, 2.6rem);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 900;
-  line-height: 1.06;
-  letter-spacing: -0.015em;
+  line-height: 1.04;
+  letter-spacing: -0.018em;
   max-width: 680px;
   margin: 0 auto 18px;
 }
@@ -2579,11 +2589,19 @@ button:focus-visible {
   line-height: 1.75;
 }
 
+.final-cta__micro {
+  font-size: 0.78rem;
+  color: var(--gray);
+  margin-top: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+}
+
 /* ========================================
    FOOTER
    ======================================== */
 .footer {
-  padding: 72px 0 44px;
+  padding: 80px 0 48px;
   border-top: 1px solid rgba(255,255,255,0.04);
   position: relative;
 }
@@ -2601,8 +2619,8 @@ button:focus-visible {
 .footer__grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
-  gap: 48px;
-  margin-bottom: 52px;
+  gap: 56px;
+  margin-bottom: 56px;
 }
 
 .footer__logo-img {
@@ -2620,12 +2638,12 @@ button:focus-visible {
 
 .footer__nav h4,
 .footer__contact h4 {
-  font-size: 0.7rem;
-  font-weight: 600;
+  font-size: 0.72rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.16em;
   color: var(--gray);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
 
 .footer__nav a,
@@ -2703,22 +2721,22 @@ button:focus-visible {
 }
 
 .whatsapp-float {
-  width: 58px;
-  height: 58px;
+  width: 60px;
+  height: 60px;
   background: #25D366;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: 0 4px 28px rgba(37, 211, 102, 0.35);
+  box-shadow: 0 4px 32px rgba(37, 211, 102, 0.4);
   transition: all 0.35s var(--ease);
   flex-shrink: 0;
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 36px rgba(37, 211, 102, 0.55);
+  transform: scale(1.12);
+  box-shadow: 0 8px 40px rgba(37, 211, 102, 0.6);
 }
 
 /* ========================================
@@ -2739,7 +2757,7 @@ button:focus-visible {
 .start-here__step {
   display: flex;
   flex-direction: column;
-  padding: 28px 24px;
+  padding: 32px 24px;
   background: rgba(255,255,255,0.02);
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 4px;
@@ -2751,8 +2769,9 @@ button:focus-visible {
 
 .start-here__step:hover {
   border-color: rgba(212,168,83,0.3);
-  background: rgba(212,168,83,0.04);
-  transform: translateY(-2px);
+  background: rgba(212,168,83,0.05);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
 }
 
 .start-here__step--cta {
@@ -2777,10 +2796,11 @@ button:focus-visible {
 
 .start-here__step-title {
   font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 0.98rem;
+  font-weight: 800;
   margin-bottom: 8px;
   color: var(--white-pure);
+  letter-spacing: 0.01em;
 }
 
 .start-here__step-text {
@@ -2942,14 +2962,14 @@ button:focus-visible {
 .coaches-teaser__founder {
   display: flex;
   align-items: center;
-  gap: 32px;
-  padding: clamp(28px, 3.5vw, 44px);
+  gap: 36px;
+  padding: clamp(32px, 4vw, 48px);
   background: var(--dark-2);
   border: 1px solid var(--accent-border);
   margin-bottom: 28px;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 36px rgba(0,0,0,0.25);
   border-radius: 2px;
 }
 
@@ -2976,16 +2996,16 @@ button:focus-visible {
 }
 
 .coaches-teaser__founder-portrait {
-  width: 80px;
-  height: 80px;
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--dark-3) 0%, rgba(212,168,83,0.06) 100%);
+  background: linear-gradient(135deg, var(--dark-3) 0%, rgba(212,168,83,0.08) 100%);
   border: 1px solid var(--accent-border);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  box-shadow: 0 0 24px var(--accent-subtle);
+  box-shadow: 0 0 28px var(--accent-subtle);
 }
 
 .coaches-teaser__founder-initial {
@@ -3018,12 +3038,12 @@ button:focus-visible {
 
 .coaches-teaser__founder-name {
   font-family: var(--font-body);
-  font-size: clamp(20px, 2.5vw, 26px);
-  font-weight: 800;
+  font-size: clamp(22px, 2.8vw, 28px);
+  font-weight: 900;
   color: var(--text);
   margin: 0 0 8px;
   letter-spacing: 0.02em;
-  line-height: 1.15;
+  line-height: 1.12;
 }
 
 .coaches-teaser__founder-quote {
