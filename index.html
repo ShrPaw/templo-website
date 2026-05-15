@@ -4,13 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TEMPLO — Estudio de Entrenamiento en Cochabamba</title>
-  <meta name="description" content="TEMPLO: estudio de entrenamiento premium con Power Plate, calistenia, fuerza y método guiado en Cochabamba. Agenda tu visita por WhatsApp.">
+  <meta name="description" content="TEMPLO: estudio de entrenamiento guiado con Power Plate, calistenia y método en Cochabamba. Agenda tu visita por WhatsApp.">
   <meta property="og:title" content="TEMPLO — Estudio de Entrenamiento en Cochabamba">
-  <meta property="og:description" content="No vienes solo a entrenar. Vienes a construirte. Power Plate, calistenia, fuerza y método guiado.">
+  <meta property="og:description" content="Estudio de entrenamiento guiado con Power Plate, calistenia y método en Cochabamba.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="assets/BUDDHA-og.webp">
   <meta property="og:url" content="https://templo-website-qbw5.vercel.app/">
   <meta name="theme-color" content="#0a0a0a">
+  <!-- TODO: Replace templo-website-qbw5.vercel.app with production domain when available -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TEMPLO — Estudio de Entrenamiento en Cochabamba">
+  <meta name="twitter:description" content="Estudio de entrenamiento guiado con Power Plate, calistenia y método en Cochabamba.">
+  <meta name="twitter:image" content="assets/BUDDHA-og.webp">
   <link rel="icon" href="assets/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=3">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png?v=3">
@@ -30,6 +35,26 @@
     "image": "assets/BUDDHA-og.webp",
     "telephone": "+59172001680",
     "address": { "@type": "PostalAddress", "addressLocality": "Cochabamba", "addressCountry": "BO" },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "06:00",
+        "closes": "12:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "14:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday",
+        "opens": "06:00",
+        "closes": "14:00"
+      }
+    ],
     "sameAs": ["https://www.instagram.com/templo.bol/","https://www.facebook.com/templo.bol"],
     "areaServed": { "@type": "City", "name": "Cochabamba" },
     "priceRange": "Bs. 230 - Bs. 550"
@@ -37,6 +62,7 @@
   </script>
 </head>
 <body>
+  <a href="#hero" class="skip-to-content">Ir al contenido principal</a>
 
   <!-- ========== NAVIGATION ========== -->
   <nav class="nav" id="nav">
@@ -76,7 +102,7 @@
     <div class="hero__content">
       <p class="hero__tag">COCHABAMBA · BOLIVIA</p>
       <h1 class="hero__title">No vienes solo a entrenar.<br><span class="hero__title--accent">Vienes a construirte.</span></h1>
-      <p class="hero__sub">Guía, técnica y disciplina para construir un cuerpo que refleje tu meta.</p>
+      <p class="hero__sub">Estudio de entrenamiento guiado con Power Plate, calistenia y método en Cochabamba.</p>
       <div class="hero__actions">
         <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="btn btn--primary" target="_blank" rel="noopener" data-cta="hero-whatsapp">Agendar visita por WhatsApp</a>
         <a href="#plans" class="btn btn--ghost">Ver planes y precios</a>
@@ -88,7 +114,7 @@
   <!-- ========== POSITIONING ========== -->
   <section class="positioning" id="positioning">
     <div class="container">
-      <blockquote class="positioning__quote"><p>TEMPLO es un estudio de entrenamiento para personas con una meta.</p></blockquote>
+      <blockquote class="positioning__quote"><p>TEMPLO es un estudio de entrenamiento guiado en Cochabamba. No es un gym abierto. Es un espacio donde cada sesión tiene dirección, técnica y un coach que te acompaña.</p></blockquote>
     </div>
   </section>
 
@@ -187,10 +213,6 @@
           </div>
         </div>
       </div>
-    </div>
-    <!-- Compact CTA after reel -->
-    <div class="activity-reel__cta">
-      <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20visitar%20TEMPLO.%20%C2%BFMe%20pueden%20orientar%3F" class="btn btn--outline-gold" target="_blank" rel="noopener" data-cta="reel-whatsapp">Agendar una visita</a>
     </div>
   </section>
 
@@ -493,17 +515,6 @@
     </div>
   </section>
 
-  <!-- ========== COMPACT CTA AFTER PATHFINDER ========== -->
-  <section class="pathfinder-cta" id="pathfinder-cta">
-    <div class="container">
-      <div class="pathfinder-cta__inner">
-        <h3 class="pathfinder-cta__title">¿Ya tienes una dirección?</h3>
-        <p class="pathfinder-cta__text">Escríbenos y te ayudamos a confirmar qué experiencia o plan va mejor con tu meta.</p>
-        <a href="https://wa.me/59172001680?text=Hola%2C%20us%C3%A9%20el%20orientador%20de%20TEMPLO%20y%20quiero%20confirmar%20qu%C3%A9%20experiencia%20o%20plan%20va%20mejor%20conmigo." class="btn btn--primary" target="_blank" rel="noopener" data-cta="pathfinder-cta-whatsapp">Confirmar mi plan por WhatsApp</a>
-      </div>
-    </div>
-  </section>
-
   <!-- ========== PLANS / PRICING — PHASE 4B COMPACT ========== -->
   <section class="plans" id="plans">
     <div class="container">
@@ -681,100 +692,6 @@
     </div>
   </section>
 
-  <!-- ========== WHATSAPP FOLLOW-UP TRUST BLOCK ========== -->
-  <section class="after-write" id="after-write">
-    <div class="container">
-      <div class="after-write__inner">
-        <h3 class="after-write__title">¿Qué pasa después de escribirnos?</h3>
-        <div class="after-write__steps">
-          <div class="after-write__step">
-            <span class="after-write__num">1</span>
-            <p class="after-write__text">Nos cuentas tu objetivo.</p>
-          </div>
-          <div class="after-write__step">
-            <span class="after-write__num">2</span>
-            <p class="after-write__text">Te orientamos con una experiencia o plan.</p>
-          </div>
-          <div class="after-write__step">
-            <span class="after-write__num">3</span>
-            <p class="after-write__text">Confirmamos horarios disponibles.</p>
-          </div>
-          <div class="after-write__step">
-            <span class="after-write__num">4</span>
-            <p class="after-write__text">Te indicamos cómo empezar.</p>
-          </div>
-        </div>
-        <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" class="btn btn--outline-gold" target="_blank" rel="noopener" data-cta="after-write-whatsapp">Escribir por WhatsApp</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== EL MÉTODO TEMPLO — COMPRESSED TEASER ========== -->
-  <section class="method" id="method">
-    <div class="container">
-      <div class="section-header section-header--center">
-        <span class="section-label">El Método TEMPLO</span>
-        <h2 class="section-title">Disciplina, técnica y <span class="brand-seal">progresión</span>.</h2>
-        <p class="section-sub">El entrenamiento cambia cuando deja de ser azar y empieza a tener método.</p>
-      </div>
-      <div class="method__grid method__grid--teaser">
-        <div class="method__pillar">
-          <div class="method__pillar-shaft">
-            <span class="method__pillar-num">I</span>
-            <svg class="method__pillar-symbol" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <rect x="14" y="8" width="20" height="32" rx="1" stroke="currentColor" stroke-width="1" opacity="0.15"/>
-              <line x1="24" y1="12" x2="24" y2="36" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2"/>
-              <circle cx="24" cy="14" r="3" stroke="currentColor" stroke-width="1.2"/>
-              <line x1="18" y1="40" x2="30" y2="40" stroke="currentColor" stroke-width="1.2"/>
-            </svg>
-          </div>
-          <div class="method__pillar-content">
-            <h3 class="method__name">Disciplina</h3>
-            <p class="method__desc">Entrenas porque elegiste hacerlo. No porque alguien te recuerde.</p>
-          </div>
-        </div>
-        <div class="method__pillar">
-          <div class="method__pillar-shaft">
-            <span class="method__pillar-num">II</span>
-            <svg class="method__pillar-symbol" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <circle cx="24" cy="24" r="14" stroke="currentColor" stroke-width="1" opacity="0.15"/>
-              <circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="1.2"/>
-              <line x1="24" y1="10" x2="24" y2="16" stroke="currentColor" stroke-width="1"/>
-              <line x1="24" y1="32" x2="24" y2="38" stroke="currentColor" stroke-width="1"/>
-              <line x1="10" y1="24" x2="16" y2="24" stroke="currentColor" stroke-width="1"/>
-              <line x1="32" y1="24" x2="38" y2="24" stroke="currentColor" stroke-width="1"/>
-              <circle cx="24" cy="24" r="2" fill="currentColor" opacity="0.4"/>
-            </svg>
-          </div>
-          <div class="method__pillar-content">
-            <h3 class="method__name">Técnica</h3>
-            <p class="method__desc">Cada movimiento tiene intención, posición y control.</p>
-          </div>
-        </div>
-        <div class="method__pillar">
-          <div class="method__pillar-shaft">
-            <span class="method__pillar-num">III</span>
-            <svg class="method__pillar-symbol" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-              <line x1="8" y1="40" x2="40" y2="40" stroke="currentColor" stroke-width="1" opacity="0.2"/>
-              <line x1="8" y1="40" x2="8" y2="8" stroke="currentColor" stroke-width="1" opacity="0.2"/>
-              <rect x="12" y="28" width="6" height="12" rx="0.5" stroke="currentColor" stroke-width="1"/>
-              <rect x="21" y="20" width="6" height="20" rx="0.5" stroke="currentColor" stroke-width="1.2"/>
-              <rect x="30" y="10" width="6" height="30" rx="0.5" stroke="currentColor" stroke-width="1.2"/>
-              <polyline points="12,28 21,20 30,10" stroke="currentColor" stroke-width="1" opacity="0.4" stroke-dasharray="2 2"/>
-            </svg>
-          </div>
-          <div class="method__pillar-content">
-            <h3 class="method__name">Progresión</h3>
-            <p class="method__desc">Carga, volumen, complejidad — todo avanza con estructura.</p>
-          </div>
-        </div>
-      </div>
-      <div class="method__teaser-cta">
-        <a href="metodo/" class="btn btn--primary" data-cta="method-teaser-view">Ver método</a>
-      </div>
-    </div>
-  </section>
-
   <!-- ========== COACHES TEASER — COMPACT ========== -->
   <section class="coaches" id="coaches">
     <div class="container">
@@ -807,7 +724,6 @@
         </div>
         <div class="coaches-teaser__actions">
           <a href="coaches/" class="btn btn--primary" data-cta="coaches-teaser-view-team">Ver coaches</a>
-          <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20consultar%20disponibilidad%20en%20TEMPLO.%20%C2%BFMe%20pueden%20orientar%3F" class="btn btn--ghost" target="_blank" rel="noopener" data-cta="coaches-teaser-whatsapp">Consultar disponibilidad</a>
         </div>
       </div>
     </div>
@@ -826,7 +742,7 @@
           </div>
           <div class="location__detail">
             <div class="location__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-            <div><h3>Horarios</h3><p>Consultar por WhatsApp</p></div>
+            <div><h3>Horarios de atención</h3><p>Lunes a viernes: 6:00 a.m. – 12:00 p.m. / 2:00 p.m. – 9:00 p.m.<br>Sábado: 6:00 a.m. – 2:00 p.m.</p><p style="font-size:0.75rem;color:var(--gray);margin-top:4px;">Disponibilidad de sesiones: consultar por WhatsApp</p></div>
           </div>
           <div class="location__actions">
             <a href="https://maps.google.com/?q=Ciclovia+casi+Av+Simon+Lopez+Cochabamba+Bolivia" class="btn btn--primary" target="_blank" rel="noopener">Ver ubicación en Google Maps</a>
@@ -843,6 +759,7 @@
           </div>
         </div>
         <div class="location__map">
+          <!-- TODO: Replace with exact Google Maps embed URL for TEMPLO. Current coordinates are approximate city-level only. -->
           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.5!2d-66.1!3d-17.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI0JzAwLjAiUyA2NsKwMDYnMDAuMCJX!5e0!3m2!1ses!2sbo!4v1" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación de TEMPLO en Google Maps"></iframe>
         </div>
       </div>
@@ -864,6 +781,8 @@
         <details class="faq__item"><summary class="faq__question">¿Cuál plan es el adecuado para mí?</summary><p class="faq__answer">Usa el Pathfinder arriba o escríbenos y te asesoramos según tu meta y nivel. <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20conocer%20los%20planes%20de%20TEMPLO.%20%C2%BFMe%20pueden%20orientar%3F" target="_blank" rel="noopener">Escríbenos →</a></p></details>
         <details class="faq__item"><summary class="faq__question">¿Dónde están ubicados?</summary><p class="faq__answer">Ciclovía casi Av. Simón López, Cochabamba, Bolivia. <a href="https://maps.google.com/?q=Ciclovia+casi+Av+Simon+Lopez+Cochabamba+Bolivia" target="_blank" rel="noopener">Ver en Google Maps →</a></p></details>
         <details class="faq__item"><summary class="faq__question">¿Cómo agendo una visita?</summary><p class="faq__answer">Escríbenos por WhatsApp y coordinamos una visita sin compromiso. <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" target="_blank" rel="noopener">Agendar visita →</a></p></details>
+        <details class="faq__item"><summary class="faq__question">¿Qué pasa después de escribirles?</summary><p class="faq__answer">Nos cuentas tu objetivo, te orientamos con una experiencia o plan, confirmamos horarios disponibles y te indicamos cómo empezar. El primer paso es escribirnos. <a href="https://wa.me/59172001680?text=Hola%2C%20me%20interesa%20entrenar%20en%20TEMPLO.%20%C2%BFMe%20pueden%20dar%20informaci%C3%B3n%3F" target="_blank" rel="noopener">Escribir por WhatsApp →</a></p></details>
+        <details class="faq__item"><summary class="faq__question">¿Puedo cambiar de plan después?</summary><p class="faq__answer">Sí. Podés ajustar tu plan según tu progreso y disponibilidad. Consultanos y te orientamos.</p></details>
       </div>
     </div>
   </section>
