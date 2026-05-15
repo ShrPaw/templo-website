@@ -1,5 +1,25 @@
 # TEMPLO — Real Content Requirements
 
+## Reference-Guided Visual Upgrade Note
+
+> **Phase 2C update (2026-05-16):** A reference-guided visual upgrade was executed,
+> studying Commando Studio's design principles (service clarity, CTA flow, visual rhythm)
+> and adapting them to TEMPLO's darker, more grounded identity.
+>
+> Placeholder imagery was improved for visual quality and cohesion.
+> **It is still placeholder imagery.** Real TEMPLO photography remains mandatory
+> before a serious public launch.
+>
+> **Photography direction for the real session:**
+> - Dark/moody cinematic but real (not overproduced)
+> - Warm gold/amber highlights
+> - Real training sessions, real interior, real equipment
+> - Lucas portrait: professional or action shot, grounded and authentic
+> - Details: equipment, space textures, movement, hands, posture
+> - Avoid: fake luxury, generic gym poses, overproduced stock look
+> - Avoid: bright/clinical lighting, cluttered compositions
+> - Minimum resolution: 800px on shortest side, WebP preferred
+
 ## A. Verified (confirmed by business owner)
 
 ### Business Hours
